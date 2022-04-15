@@ -27,8 +27,6 @@ public class Orden {
     private Date purchaseDate;
     private Usuario user;
     private Double total;
-    @OneToMany
-    private ArrayList<DetalleOrden> ordenes;
     private static final Logger LOG = Logger.getLogger(Orden.class.getName());
 
     @Override

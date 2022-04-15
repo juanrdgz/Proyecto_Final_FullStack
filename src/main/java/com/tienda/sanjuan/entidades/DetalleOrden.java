@@ -5,10 +5,10 @@
  */
 package com.tienda.sanjuan.entidades;
 
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
@@ -22,7 +22,8 @@ public class DetalleOrden {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-    private String order;
+    @ManyToOne
+    private String orden;
     private Usuario user;
     private Integer quantity;
     private Double total;
@@ -32,7 +33,7 @@ public class DetalleOrden {
 
     public DetalleOrden(String id, String order, Usuario user, Integer quantity, Double total) {
         this.id = id;
-        this.order = order;
+        this.orden = orden;
         this.user = user;
         this.quantity = quantity;
         this.total = total;
@@ -47,11 +48,11 @@ public class DetalleOrden {
     }
 
     public String getOrder() {
-        return order;
+        return orden;
     }
 
     public void setOrder(String order) {
-        this.order = order;
+        this.orden = orden;
     }
 
     public Usuario getUser() {
@@ -80,7 +81,7 @@ public class DetalleOrden {
 
     @Override
     public String toString() {
-        return "DetalleOrden{" + "id=" + id + ", order=" + order + ", user=" + user + ", quantity=" + quantity + ", total=" + total + '}';
+        return "DetalleOrden{" + "id=" + id + ", orden=" + orden + ", user=" + user + ", quantity=" + quantity + ", total=" + total + '}';
     }
 
     
