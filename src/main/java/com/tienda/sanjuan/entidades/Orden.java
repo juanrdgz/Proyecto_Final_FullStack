@@ -31,7 +31,7 @@ public class Orden {
 
     @Override
     public String toString() {
-        return "Orden{" + "id=" + id + ", purchaseDate=" + purchaseDate + ", user=" + user + ", total=" + total + ", ordenes=" + ordenes + '}';
+        return "Orden{" + "id=" + id + ", purchaseDate=" + purchaseDate + ", user=" + user + ", total=" + total + ", ordenes="+ '}';
     }
 
     public String getId() {
@@ -66,20 +66,11 @@ public class Orden {
         this.total = total;
     }
 
-    public ArrayList<DetalleOrden> getOrdenes() {
-        return ordenes;
-    }
-
-    public void setOrdenes(ArrayList<DetalleOrden> ordenes) {
-        this.ordenes = ordenes;
-    }
-
-    public Orden(String id, Date purchaseDate, Usuario user, Double total, ArrayList<DetalleOrden> ordenes) {
+    public Orden(String id, Date purchaseDate, Usuario user, Double total) {
         this.id = id;
         this.purchaseDate = purchaseDate;
         this.user = user;
         this.total = total;
-        this.ordenes = ordenes;
     }
 
     public Orden() {
