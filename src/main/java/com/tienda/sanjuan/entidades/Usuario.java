@@ -26,19 +26,17 @@ public class Usuario {
     private String email;
     private String fullName;
     private String phoneNumber;
-    private ArrayList<Direccion> direcciones;
 
     public Usuario() {
     }
 
-    public Usuario(String id, String userName, String password, String email, String fullName, String phoneNumber, ArrayList<Direccion> direcciones) {
+    public Usuario(String id, String userName, String password, String email, String fullName, String phoneNumber) {
         this.id = id;
         this.userName = userName;
         this.password = password;
         this.email = email;
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
-        this.direcciones = direcciones;
     }
 
     public String getId() {
@@ -89,12 +87,5 @@ public class Usuario {
         this.phoneNumber = phoneNumber;
     }
 
-    public ArrayList<Direccion> getDirecciones() {
-        return direcciones;
-    }
-
-    public void setDirecciones(ArrayList<Direccion> direcciones) {
-        this.direcciones = direcciones;
-    }
-    
+   
 }

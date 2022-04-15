@@ -23,18 +23,16 @@ public class DetalleOrden {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
     @ManyToOne
-    private String orden;
-    private Usuario user;
+    private Orden orden;
     private Integer quantity;
     private Double total;
 
     public DetalleOrden() {
     }
 
-    public DetalleOrden(String id, String order, Usuario user, Integer quantity, Double total) {
+    public DetalleOrden(String id, Orden orden, Integer quantity, Double total) {
         this.id = id;
         this.orden = orden;
-        this.user = user;
         this.quantity = quantity;
         this.total = total;
     }
@@ -47,20 +45,12 @@ public class DetalleOrden {
         this.id = id;
     }
 
-    public String getOrder() {
+    public Orden getOrden() {
         return orden;
     }
 
-    public void setOrder(String order) {
+    public void setOrden(Orden orden) {
         this.orden = orden;
-    }
-
-    public Usuario getUser() {
-        return user;
-    }
-
-    public void setUser(Usuario user) {
-        this.user = user;
     }
 
     public Integer getQuantity() {
@@ -79,10 +69,6 @@ public class DetalleOrden {
         this.total = total;
     }
 
-    @Override
-    public String toString() {
-        return "DetalleOrden{" + "id=" + id + ", orden=" + orden + ", user=" + user + ", quantity=" + quantity + ", total=" + total + '}';
-    }
-
+    
     
 }

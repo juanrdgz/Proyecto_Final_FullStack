@@ -8,6 +8,7 @@ package com.tienda.sanjuan.entidades;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -22,11 +23,13 @@ public class Direccion {
     private String address;
     private String details;
     private String receiver;
+    @ManyToOne
+    private Usuario user;
 
     public Direccion() {
     }
 
-    public Direccion(String id, String postalCode, String city, String province, String address, String details, String receiver) {
+    public Direccion(String id, String postalCode, String city, String province, String address, String details, String receiver, Usuario user) {
         this.id = id;
         this.postalCode = postalCode;
         this.city = city;
@@ -34,6 +37,7 @@ public class Direccion {
         this.address = address;
         this.details = details;
         this.receiver = receiver;
+        this.user = user;
     }
 
     public String getId() {
@@ -91,5 +95,14 @@ public class Direccion {
     public void setReceiver(String receiver) {
         this.receiver = receiver;
     }
+
+    public Usuario getUser() {
+        return user;
+    }
+
+    public void setUser(Usuario user) {
+        this.user = user;
+    }
+
     
 }

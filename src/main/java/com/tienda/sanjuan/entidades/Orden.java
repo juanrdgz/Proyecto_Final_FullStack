@@ -5,13 +5,12 @@
  */
 package com.tienda.sanjuan.entidades;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Logger;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
@@ -25,6 +24,7 @@ public class Orden {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
     private Date purchaseDate;
+    @OneToOne
     private Usuario user;
     private Double total;
     private static final Logger LOG = Logger.getLogger(Orden.class.getName());
