@@ -5,7 +5,6 @@
  */
 package com.tienda.sanjuan.entidades;
 
-import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,8 +12,9 @@ import org.hibernate.annotations.GenericGenerator;
 
 /**
  *
- * @author Franc
+ * @author Equipo6
  */
+
 @Entity
 public class Articulo {
     @Id
@@ -27,14 +27,15 @@ public class Articulo {
     private String description;
     private Integer stock;
     private String material;
-    private String size;
+    private String sizea;
     private String categorie;
-    private String subCategory;
+    private String subCategory;// no se si va
+    private Boolean alta;
 
     public Articulo() {
     }
 
-    public Articulo(String id, String title, Double price, String color, String description, Integer stock, String material, String size, String categorie, String subCategory) {
+    public Articulo(String id, String title, Double price, String color, String description, Integer stock, String material, String sizea, String categorie, String subCategory) {
         this.id = id;
         this.title = title;
         this.price = price;
@@ -42,9 +43,10 @@ public class Articulo {
         this.description = description;
         this.stock = stock;
         this.material = material;
-        this.size = size;
+        this.sizea = sizea;
         this.categorie = categorie;
         this.subCategory = subCategory;
+        this.alta = true;
     }
 
     public String getId() {
@@ -103,12 +105,12 @@ public class Articulo {
         this.material = material;
     }
 
-    public String getSize() {
-        return size;
+    public String getSizea() {
+        return sizea;
     }
 
-    public void setSize(String size) {
-        this.size = size;
+    public void setSizea(String sizea) {
+        this.sizea = sizea;
     }
 
     public String getCategorie() {
@@ -127,10 +129,19 @@ public class Articulo {
         this.subCategory = subCategory;
     }
 
-    @Override
-    public String toString() {
-        return "Articulo{" + "id=" + id + ", title=" + title + ", price=" + price + ", color=" + color + ", description=" + description + ", stock=" + stock + ", material=" + material + ", size=" + size + ", categorie=" + categorie + ", subCategory=" + subCategory + '}';
+    public Boolean getAlta() {
+        return alta;
     }
 
+    public void setAlta(Boolean alta) {
+        this.alta = alta;
+    }
+
+    @Override
+    public String toString() {
+        return "Articulo{" + "id=" + id + ", title=" + title + ", price=" + price + ", color=" + color + ", description=" + description + ", stock=" + stock + ", material=" + material + ", size=" + sizea + ", categorie=" + categorie + ", subCategory=" + subCategory + ", alta=" + alta + '}';
+    }
+
+    
     
 }
