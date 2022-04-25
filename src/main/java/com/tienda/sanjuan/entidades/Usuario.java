@@ -15,11 +15,14 @@ import org.hibernate.annotations.GenericGenerator;
  *
  * @author Franc
  */
+
 @Entity
+//@Data
 public class Usuario {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
+    
     private String id;
     private String userName;
     private String password;

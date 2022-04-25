@@ -5,10 +5,13 @@
  */
 package com.tienda.sanjuan.controladores;
 
+import org.springframework.stereotype.Controller;
+
 /**
  *
  * @author Franc
  */
+@Controller
 public class DireccionController {
     
 }
