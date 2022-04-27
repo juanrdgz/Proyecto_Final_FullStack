@@ -47,7 +47,7 @@
 			</td>
 			<td>
 			    <a th:href="@{/articulo/delete(id = ${articulo.id})}" th:if="${articulo.alta}"><button type="button" class="btn btn-danger">Dar Baja</button></a>
-			    <a th:href="@{/articulo/alta(id = ${articulo.id})}" th:if="${!articulo.alta}"><button type="button" class="btn btn-success">Dar Alta</button></a>
+			    <a th:href="@{/articulo/alta(id = ${articulo.id})}" th:if="${!articulo.alta}" ><button type="button" class="btn btn-success">Dar Alta</button></a>
 			</td> 
 			<td>
 			    <a th:href="@{/articulo/eliminar(id = ${articulo.id})}"><button type="button" class="btn btn-danger"> Eliminar</button></a>

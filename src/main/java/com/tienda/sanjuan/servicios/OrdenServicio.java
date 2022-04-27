@@ -7,7 +7,7 @@ package com.tienda.sanjuan.servicios;
 
 /**
  *
- * @author Franc
+ * @author Equipo6
  */
 public class OrdenServicio {
     
