@@ -10,44 +10,44 @@
     </head>
     <body>        
 	<h2>Articulo Formulario</h2>
-        <a href="/articulo/list">Ir a la lista de articulo</a>
+        <a th:href="@{/articulo/listar}">Ir a la lista de articulo</a>
         <br>
-        <a href="/">Volver a página principal</a>
+        <a th:href="@{/}">Volver a página principal</a>
         <span th:if="${error != null}"  style="color: red;" th:text="${error}"></span>
         <span th:if="${exito != null}"  style="color: red;" th:text="${exito}"></span>
-        <form th:action="@{/articulo/save}" method="POST">
+        <form th:action="@{/articulo/save}" method="POST" th:object="${articulo}">
 	    <input type="text" name="id" th:value="${articulo.id}" hidden />
             <label for="title" >Titulo</label>
             <br>
-            <input type="text" name="title" placeholder="escribí el titulo del articulo" th:value="${articulo.title}"/>
+            <input type="text" th:field="${articulo.title}" placeholder="escribí el titulo del articulo"/>
             <br>
             <label for="price" >Precio</label>
             <br>
-            <input type="number" name="price" placeholder="precio del articulo" th:value="${articulo.price}"/>
+            <input type="number" th:field="${articulo.price}"placeholder="precio del articulo" />
             <br>
             <label for="color" >Color</label>
             <br>
-            <input type="text" name="color" placeholder="escribí color del articulo" th:value="${articulo.color}"/>
+            <input type="text" th:field="${articulo.color}" placeholder="escribí color del articulo"/>
             <br>
 	    <label for="description" >Descripción</label>
 	    <br>
-            <input type="text" name="description" placeholder="escribí descripción del articulo" th:value="${articulo.description}"/>
+            <input type="text" th:field="${articulo.description}" placeholder="escribí descripción del articulo"/>
             <br>
 	    <label for="stock" >Stock</label>
 	    <br>  
-            <input type="number" name="stock" placeholder="escribí stock del articulo" th:value="${articulo.stock}"/>
+            <input type="number" th:field="${articulo.stock}" placeholder="escribí stock del articulo"/>
 	    <br>
 	    <label for="materia" >Material</label>
 	    <br>  
-            <input type="text" name="material" placeholder="escribí material del producto" th:value="${articulo.material}"/>
+            <input type="text"  th:field="${articulo.material}" placeholder="escribí material del producto"/>
 	    <br>
 	    <label for="sizea" >Talle</label>
 	    <br>  
-            <input type="text" name="sizea" placeholder="escribí talle del articulo" th:value="${articulo.sizea}"/>
+            <input type="text" th:field="${articulo.sizea}" placeholder="escribí talle del articulo" />
 	    <br>
 	    <label for="categorie" >Categoria</label>
 	    <br>  
-            <input type="text" name="categorie" placeholder="escribí categoria del articulo" th:value="${articulo.categorie}"/>
+            <input type="text"  th:field="${articulo.categorie}"placeholder="escribí categoria del articulo"/>
 	    <br>
 	    <input type="submit"/>
         </form>

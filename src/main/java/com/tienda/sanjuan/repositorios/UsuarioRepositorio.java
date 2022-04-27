@@ -4,10 +4,9 @@
  * and open the template in the editor.
  */
 package com.tienda.sanjuan.repositorios;
-
 /**
  *
- * @author Franc
+ * @author Equipo6
  */
 public interface UsuarioRepositorio {
     

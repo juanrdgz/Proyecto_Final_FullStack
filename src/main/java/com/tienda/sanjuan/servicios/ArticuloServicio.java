@@ -39,9 +39,6 @@ public class ArticuloServicio {
         if (articulo.getCategorie().isEmpty()) {
             throw new Exception("La categoría del articulo no puede estar vacio");
         }
-        if (articulo.getSubCategory().isEmpty()) {
-            throw new Exception("La subcategoría del articulo no puede estar vacio");
-        }
         if (articulo.getStock() == 0 || articulo.getStock() == null) {
             throw new Exception("El stock del articulo no puede ser 0 o vacio");
         }
@@ -82,7 +79,7 @@ public class ArticuloServicio {
         return articuloRepositorio.findAll();
     }
 
-    public Articulo buscarPorTitulo(String title) {
+    public Articulo buscarPorTitle(String title) {
         return articuloRepositorio.buscarPorTitle(title);
     }
 
