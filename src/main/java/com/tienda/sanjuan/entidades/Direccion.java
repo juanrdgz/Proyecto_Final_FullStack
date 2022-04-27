@@ -11,6 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import org.hibernate.annotations.GenericGenerator;
 
+/**
+ *
+ * @author Equipo6
+ */
 @Entity
 public class Direccion {
     @Id

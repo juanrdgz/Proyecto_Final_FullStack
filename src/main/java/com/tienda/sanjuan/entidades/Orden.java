@@ -15,7 +15,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 /**
  *
- * @author Franc
+ * @author Equipo6
  */
 @Entity
 public class Orden {

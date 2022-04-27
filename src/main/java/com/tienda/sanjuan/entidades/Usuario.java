@@ -10,10 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
-
 /**
  *
- * @author Franc
+ * @author Equipo6
  */
 @Entity
 public class Usuario {

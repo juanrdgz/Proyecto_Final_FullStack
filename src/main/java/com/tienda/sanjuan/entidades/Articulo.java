@@ -28,8 +28,7 @@ public class Articulo {
     private Integer stock;
     private String material;
     private String sizea;
-    private String categorie;
-    private String subCategory;// no se si va
+    private String categorie;// se debe crear 
     private Boolean alta;
 
     public Articulo() {
@@ -45,7 +44,6 @@ public class Articulo {
         this.material = material;
         this.sizea = sizea;
         this.categorie = categorie;
-        this.subCategory = subCategory;
         this.alta = true;
     }
 
@@ -121,14 +119,6 @@ public class Articulo {
         this.categorie = categorie;
     }
 
-    public String getSubCategory() {
-        return subCategory;
-    }
-
-    public void setSubCategory(String subCategory) {
-        this.subCategory = subCategory;
-    }
-
     public Boolean getAlta() {
         return alta;
     }
@@ -139,9 +129,6 @@ public class Articulo {
 
     @Override
     public String toString() {
-        return "Articulo{" + "id=" + id + ", title=" + title + ", price=" + price + ", color=" + color + ", description=" + description + ", stock=" + stock + ", material=" + material + ", size=" + sizea + ", categorie=" + categorie + ", subCategory=" + subCategory + ", alta=" + alta + '}';
+        return "Articulo{" + "id=" + id + ", title=" + title + ", price=" + price + ", color=" + color + ", description=" + description + ", stock=" + stock + ", material=" + material + ", size=" + sizea + ", categorie=" + categorie + ", alta=" + alta + '}';
     }
-
-    
-    
 }

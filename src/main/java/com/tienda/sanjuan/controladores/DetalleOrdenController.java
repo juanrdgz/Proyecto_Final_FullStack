@@ -7,7 +7,7 @@ package com.tienda.sanjuan.controladores;
 
 /**
  *
- * @author Franc
+ * @author Equipo6
  */
 public class DetalleOrdenController {
     

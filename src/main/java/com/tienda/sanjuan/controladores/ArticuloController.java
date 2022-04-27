@@ -12,12 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+ 
 /**
  *
  * @author Equipo6
@@ -25,43 +25,22 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/articulo")
-
 public class ArticuloController {
-    
     
     @Autowired
     ArticuloServicio articuloServicio;
-
     
     @GetMapping("")
     public String formularioArticulo(Model modelo) {
-	Articulo articulo = new Articulo();
-	modelo.addAttribute("articulo", articulo);
+	modelo.addAttribute("articulo", new Articulo());
 	return "articulo";
     }
 
     @PostMapping("/save")
-    public String formularioData(@RequestParam("title") String title, @RequestParam("id") String id,
-            @RequestParam("price") Double price, @RequestParam("color") String color, 
-            @RequestParam("description") String description, @RequestParam("stock") Integer stock,
-            @RequestParam("material") String material, @RequestParam("sizea") String sizea, 
-            @RequestParam("categorie") String categorie, Model modelo, 
-            @RequestParam(name="modificar", required = false) String modificar ) {
-	Articulo articulo = new Articulo();
+    public String formularioData(@ModelAttribute("articulo") Articulo articulo, Model modelo) {
 	try {
-	    articulo.setTitle(title);
-            articulo.setPrice(price);
-            articulo.setColor(color);
-            articulo.setDescription(description);
-            articulo.setStock(stock);
-            articulo.setMaterial(material);
-            System.out.println("sizea: " + sizea);
-            articulo.setSizea(sizea);
-            articulo.setCategorie(categorie);
-	    articulo.setAlta(true);
-	    articulo.setId(id);
 	    modelo.addAttribute("articulo", articulo);
-	     if(id!= null && !id.isEmpty()) {
+	     if(articulo.getId()!= null && !articulo.getId().isEmpty()) {
 		articuloServicio.modificarArticulo(articulo);
 	    }
              else{
@@ -84,7 +63,7 @@ public class ArticuloController {
 	return "articulo";
     }
 
-    @GetMapping("/list")
+    @GetMapping("/listar")
     public String listAll(Model modelo) {
 	List<Articulo> articulos = articuloServicio.listarArticulos();
 	modelo.addAttribute("listaDeArticulos", articulos);
@@ -95,10 +74,10 @@ public class ArticuloController {
     public String alta(@RequestParam("id") String id) {
 	try {
 	    articuloServicio.altaArticulo(id);
-	    return "redirect:/articulo/list";
+	    return "redirect:/articulo/listar";
 	} catch (Exception e) {
 	    e.printStackTrace();
-	    return "redirect:/articulo/list";
+	    return "redirect:/articulo/listar";
 	}
     }
 
@@ -106,10 +85,10 @@ public class ArticuloController {
     public String delete(@RequestParam("id") String id) {
 	try {
 	    articuloServicio.bajaArticulo(id);
-	    return "redirect:/articulo/list";
+	    return "redirect:/articulo/listar";
 	} catch (Exception e) {
 	    e.printStackTrace();
-	    return "redirect:/articulo/list";
+	    return "redirect:/articulo/listar";
 	}
     }
 
@@ -117,23 +96,23 @@ public class ArticuloController {
     public String eliminarArticulo(@RequestParam("id") String id) {
 	try {
 	    articuloServicio.eliminarArticulo(id);
-	    return "redirect:/articulo/list";
+	    return "redirect:/articulo/listar";
 	} catch (Exception e) {
 	    e.printStackTrace();
-	    return "redirect:/articulo/list";
+	    return "redirect:/articulo/listar";
 	}
     }
     
     @GetMapping("/compra")
-    public String prestamo(@RequestParam("id") String id, RedirectAttributes attributes){
+    public String prestamo(@ModelAttribute("articulo") Articulo articulo, RedirectAttributes attributes){
         try {
-            articuloServicio.compra(id);
+            articuloServicio.compra(articulo.getId());
             attributes.addFlashAttribute("exito", "compra realizada");
-            return "redirect:/articulo/list";
+            return "redirect:/articulo/listar";
         } catch (Exception e) {
              e.printStackTrace();
              attributes.addFlashAttribute("error", e.getMessage());
-             return "redirect:/articulo/list";    
+             return "redirect:/articulo/listar";    
         }
     }
 }
