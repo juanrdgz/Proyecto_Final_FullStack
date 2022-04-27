@@ -131,7 +131,7 @@
 
                         <!-- User -->
                         <!-- Boton para Iniciar sesion -->
-                        <!-- <li class=" li">
+                        <li class=" li">
 
                             <a href="login.html">
                                 <div class="buttonPart btn btn-main btn-small btn-round-full button-text-color" id="login-btn">
@@ -139,8 +139,10 @@
                                 </div>
                             </a>
 
-                        </li> -->
-
+                        </li>
+                       <!-- <form th:action="@{/logout}" method="POST" sec:authorize="isAuthenticated()">
+                            <button type="submit" class="btn text-black">cerrar sesion</button>
+                        </form>-->
                         <!-- Opcion para cuando sea un usuarion logueado -->
                         
                         <li class="dropdown dropdown-slide ">
