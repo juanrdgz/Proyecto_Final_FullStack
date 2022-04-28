@@ -83,6 +83,18 @@ public class ArticuloServicio {
         return articuloRepositorio.buscarPorTitle(title);
     }
 
+////     public void articuloDestacado(String id) throws Error {
+////        Optional<Articulo> respuesta = articuloRepositorio.findById(id);
+////        if (respuesta.isPresent()) {
+////            Articulo articulo = respuesta.get();
+////            articulo.setDestacado(true);
+////            articuloRepositorio.save(articulo);
+////        } else {
+////            throw new Error("No se encontró un articulo con ese nombre");
+////
+////        }
+////    }
+    
     public Articulo buscarPorId(String id) {
         return articuloRepositorio.getById(id);
     }
