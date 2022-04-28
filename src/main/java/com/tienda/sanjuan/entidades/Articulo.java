@@ -30,8 +30,17 @@ public class Articulo {
     private String sizea;
     private String categorie;// se debe crear 
     private Boolean alta;
+    private Boolean destacado;
 
     public Articulo() {
+    }
+
+    public Boolean getDestacado() {
+        return destacado;
+    }
+
+    public void setDestacado(Boolean destacado) {
+        this.destacado = destacado;
     }
 
     public Articulo(String id, String title, Double price, String color, String description, Integer stock, String material, String sizea, String categorie, String subCategory) {

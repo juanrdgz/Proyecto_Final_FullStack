@@ -46,7 +46,7 @@ public class ArticuloController {
              else{
                  articuloServicio.guardarArticulo(articulo);
              }
-             modelo.addAttribute("exito", "articulo guardado con exito");
+             modelo.addAttribute("exito", "articulo guardado correctamente");
 	    return "articulo";
 	} catch (Exception ex) {
 	    ex.printStackTrace();
@@ -67,7 +67,7 @@ public class ArticuloController {
     public String listAll(Model modelo) {
 	List<Articulo> articulos = articuloServicio.listarArticulos();
 	modelo.addAttribute("listaDeArticulos", articulos);
-	return "articulo-listar";
+	return "listar-articulo";
     }
 
     @GetMapping("/alta")
@@ -116,14 +116,14 @@ public class ArticuloController {
         }
     }
     
-////    @GetMapping("/destacado")
-////    public String destacado(@RequestParam("id") String id) {
-////	try {
-////	    articuloServicio.articuloDestacado(id);
-////	    return "redirect:/articulo/listar";
-////	} catch (Exception e) {
-////	    e.printStackTrace();
-////	    return "redirect:/articulo/listar";
-////	}
-////    }
+    @GetMapping("/destacado")
+    public String destacado(@RequestParam("id") String id) {
+	try {
+	    articuloServicio.articuloDestacado(id);
+	    return "redirect:/articulo/listar";
+	} catch (Exception e) {
+	    e.printStackTrace();
+	    return "redirect:/articulo/listar";
+	}
+    }
 }
