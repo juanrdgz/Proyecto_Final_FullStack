@@ -46,7 +46,7 @@ public class ArticuloController {
              else{
                  articuloServicio.guardarArticulo(articulo);
              }
-             modelo.addAttribute("Buenisimo!", "articulo guardado correctamente");
+             modelo.addAttribute("exito", "articulo guardado correctamente");
 	    return "articulo";
 	} catch (Exception ex) {
 	    ex.printStackTrace();
