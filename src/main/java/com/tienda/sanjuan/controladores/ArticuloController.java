@@ -104,9 +104,9 @@ public class ArticuloController {
     }
     
     @GetMapping("/compra")
-    public String prestamo(@ModelAttribute("articulo") Articulo articulo, RedirectAttributes attributes){
+    public String prestamo(@RequestParam("id") String id, RedirectAttributes attributes){
         try {
-            articuloServicio.compra(articulo.getId());
+            articuloServicio.compra(id);
             attributes.addFlashAttribute("exito", "compra realizada");
             return "redirect:/articulo/listar";
         } catch (Exception e) {
@@ -114,5 +114,16 @@ public class ArticuloController {
              attributes.addFlashAttribute("error", e.getMessage());
              return "redirect:/articulo/listar";    
         }
+    }
+    
+    @GetMapping("/destacado")
+    public String destacado(@RequestParam("id") String id) {
+	try {
+	    articuloServicio.articuloDestacado(id);
+	    return "redirect:/articulo/listar";
+	} catch (Exception e) {
+	    e.printStackTrace();
+	    return "redirect:/articulo/listar";
+	}
     }
 }

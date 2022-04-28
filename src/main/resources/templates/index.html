@@ -151,7 +151,7 @@
 
                         <!-- User -->
                         <!-- Boton para Iniciar sesion -->
-                        <!-- <li class=" li">
+                        <li class=" li">
 
                             <a href="login.html">
                                 <div class="buttonPart btn btn-main btn-small btn-round-full button-text-color" id="login-btn">
@@ -159,7 +159,12 @@
                                 </div>
                             </a>
 
-                        </li> -->
+                        </li>
+                       <!-- <form th:action="@{/logout}" method="POST" sec:authorize="isAuthenticated()">
+                            <button type="submit" class="btn text-black">cerrar sesion</button>
+                        </form>
+                   
+                    <a href="/login"sec:authorize="!isAuthenticated()"><button>LogIn</button></a> -->
 
                         <!-- Opcion para cuando sea un usuarion logueado -->
 
