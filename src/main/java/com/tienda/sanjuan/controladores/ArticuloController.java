@@ -46,7 +46,7 @@ public class ArticuloController {
              else{
                  articuloServicio.guardarArticulo(articulo);
              }
-             modelo.addAttribute("exito", "articulo guardado con exito");
+             modelo.addAttribute("exito", "articulo guardado correctamente");
 	    return "articulo";
 	} catch (Exception ex) {
 	    ex.printStackTrace();
@@ -67,7 +67,7 @@ public class ArticuloController {
     public String listAll(Model modelo) {
 	List<Articulo> articulos = articuloServicio.listarArticulos();
 	modelo.addAttribute("listaDeArticulos", articulos);
-	return "articulo-listar";
+	return "listar-articulo";
     }
 
     @GetMapping("/alta")
