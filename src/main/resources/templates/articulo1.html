@@ -278,6 +278,12 @@
     </section>
     <section class="page-header">
         <div class="container">
+            <!-- Mensajes de error y exito -->
+
+            <div th:if="${exito != null}" th:text="${exito}" class="alert alert-success alert-common" role="alert"><i class="tf-ion-thumbsup"></i><span>Buenisimo!</span> </div>
+            <div th:if="${error != null}" th:text="${error}" class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span>Error!</span> </div>
+
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="content">
@@ -291,6 +297,12 @@
             </div>
         </div>
     </section>
+
+    <a th:href="@{/articulo/listar}" class="btn btn-main btn-medium"> Ir a la lista de articulos</a>
+    <br>
+    <br>
+    <a th:href="@{/}" class="btn btn-main btn-medium">Volver a página principal</a>
+
     <div class="page-wrapper">
         <div class="checkout shopping">
             <div class="container">
@@ -298,7 +310,9 @@
                     <div class="">
                         <div class="block billing-details">
                             <h4 class="widget-title">Detalles del producto</h4>
-                            <form class="checkout-form">
+                            <form th:action="@{/articulo/save}" method="POST" th:object="${articulo}">
+                                <input type="text" name="id" th:value="${articulo.id}" hidden />
+
 
                                 <div class="form-group">
                                     <label for="full_name">Nombre</label>
@@ -313,7 +327,7 @@
                                 <div class="checkout-country-code clearfix">
                                     <div class="form-group">
                                         <label for="user_post_code">Color</label>
-                                        <input type="color" class="form-control" id="user_post_code" name="" value="">
+                                        <input type="text" class="form-control" id="user_post_code" name="" value="">
                                     </div>
                                     <div class="form-group">
                                         <label for="user_city">Stock</label>
@@ -340,6 +354,8 @@
                                     <label for="categioria">Categoria</label>
                                     <input type="text" class="form-control" id="categioria" placeholder="">
                                 </div>
+
+                                <button class="btn btn-main btn-medium btn-round" type="submit">Guardar</button>
 
                             </form>
                         </div>
