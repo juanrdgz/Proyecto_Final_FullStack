@@ -8,8 +8,10 @@ package com.tienda.sanjuan.entidades;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.ManyToAny;
 
 /**
  *
@@ -32,10 +34,11 @@ public class Articulo {
     private Material material;
     @OneToOne
     private Medida sizea;
-    @OneToOne
+    private String dimension;
+    @ManyToOne
     private Categoria categorie;
-    private Boolean alta;
-    private Boolean destacado;
+    private Boolean alta = true;
+    private Boolean destacado = false;
 
     public Articulo() {
     }

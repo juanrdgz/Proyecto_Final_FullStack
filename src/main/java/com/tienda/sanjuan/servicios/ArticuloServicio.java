@@ -26,6 +26,9 @@ public class ArticuloServicio {
         if (articulo.getTitle().isEmpty()) {
             throw new Exception("El titulo del articulo no puede estar vacio");
         }
+        if(articuloRepositorio.buscarPorTitle(articulo.getTitle()) != null){
+            throw new Exception("Ya existe el articulo");
+        }
         if (articulo.getPrice() == 0 || articulo.getPrice() == null) {
             throw new Exception("El precio del articulo no puede ser 0 o vacio");
         }
@@ -69,11 +72,6 @@ public class ArticuloServicio {
         return articuloRepositorio.save(articulo);
     }
 
-    public Articulo darBaja(Articulo articulo) {
-        articulo.setAlta(false);
-        return articuloRepositorio.save(articulo);
-    }
-
     public List<Articulo> listarArticulos() {
         return articuloRepositorio.findAll();
     }
@@ -93,6 +91,14 @@ public class ArticuloServicio {
 
         }
     }
+     public Articulo articuloNoDestacado(Articulo articulo) {
+        articulo.setDestacado(false);
+        return articuloRepositorio.save(articulo);
+    }
+     
+     public List<Articulo> listardestacados(){
+         return articuloRepositorio.findDestacados();
+     }
     
     public Articulo buscarPorId(String id) {
         return articuloRepositorio.getById(id);
@@ -111,6 +117,11 @@ public class ArticuloServicio {
         }
     }
 
+    public Articulo darBaja(Articulo articulo) {
+        articulo.setAlta(false);
+        return articuloRepositorio.save(articulo);
+    }
+    
     public void bajaArticulo(String id) throws Error {
         Optional<Articulo> respuesta = articuloRepositorio.findById(id);
         if (respuesta.isPresent()) {

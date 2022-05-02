@@ -21,7 +21,7 @@ public interface ArticuloRepositorio extends JpaRepository<Articulo, String>{
      @Query("select a from Articulo a where a.title= :title")
     public Articulo buscarPorTitle(@Param("title") String title);
     
-     @Query("select a from Articulo a where a.destacado= :destacado")
-    public Articulo listarDestacado(@Param("destacado") Boolean destacado);
+     @Query("select a from Articulo a where a.destacado= true")
+    public List<Articulo> findDestacados();
 }
   
