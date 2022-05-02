@@ -47,13 +47,22 @@ public class ArticuloController {
                  articuloServicio.guardarArticulo(articulo);
              }
              modelo.addAttribute("exito", "articulo guardado correctamente");
+
 	    return "articulo-formulario";
+
 	} catch (Exception ex) {
 	    ex.printStackTrace();
 	    modelo.addAttribute("articulo", articulo);
 	    modelo.addAttribute("error", ex.getMessage());
 	    return "articulo-formulario";
 	}
+    }
+    
+    @GetMapping("/producto")
+    public String mostrarProducto(@RequestParam("id") String id,Model modelo){
+        Articulo articulo = articuloServicio.buscarPorId(id);
+        modelo.addAttribute("articulo", articulo);
+        return "product-single";
     }
 
     @GetMapping("/modificar")
