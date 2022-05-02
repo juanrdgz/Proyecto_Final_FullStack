@@ -5,10 +5,20 @@
  */
 package com.tienda.sanjuan.entidades;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
+
 /**
  *
- * @author carop
+ * @author Equipo6
  */
-public abstract class  Medida {
-    
+@Entity
+public abstract class Medida {
+     @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String id;
+    private String medida;
 }

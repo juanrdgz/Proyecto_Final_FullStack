@@ -33,7 +33,7 @@ public class ArticuloController {
     @GetMapping("")
     public String formularioArticulo(Model modelo) {
 	modelo.addAttribute("articulo", new Articulo());
-	return "articulo";
+	return "articulo1";
     }
 
     @PostMapping("/save")
@@ -47,20 +47,27 @@ public class ArticuloController {
                  articuloServicio.guardarArticulo(articulo);
              }
              modelo.addAttribute("exito", "articulo guardado correctamente");
-	    return "articulo";
+	    return "articulo1";
 	} catch (Exception ex) {
 	    ex.printStackTrace();
 	    modelo.addAttribute("articulo", articulo);
 	    modelo.addAttribute("error", ex.getMessage());
-	    return "articulo";
+	    return "articulo1";
 	}
+    }
+    
+    @GetMapping("/producto")
+    public String mostrarProducto(@RequestParam("id") String id,Model modelo){
+        Articulo articulo = articuloServicio.buscarPorId(id);
+        modelo.addAttribute("articulo", articulo);
+        return "product-single";
     }
 
     @GetMapping("/modificar")
     public String formulario(@RequestParam(name = "id", required = true) String id, Model modelo) {
 	Articulo articulo = articuloServicio.buscarPorId(id);
 	modelo.addAttribute("articulo", articulo);
-	return "articulo";
+	return "articulo1";
     }
 
     @GetMapping("/listar")

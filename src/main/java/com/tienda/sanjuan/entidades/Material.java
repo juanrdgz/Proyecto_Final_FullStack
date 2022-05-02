@@ -5,18 +5,46 @@
  */
 package com.tienda.sanjuan.entidades;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
  *
- * @author carop
+ * @author Equipo6
  */
-public class Material{
+@Entity
+public abstract class Material{
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-    String material;
+    private String material;
+
+    public Material() {
+    }
+
+    public Material(String id, String material) {
+        this.id = id;
+        this.material = material;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+    
+    
 }

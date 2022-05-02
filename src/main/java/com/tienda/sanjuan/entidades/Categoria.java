@@ -15,21 +15,19 @@ import org.hibernate.annotations.GenericGenerator;
  * @author Equipo6
  */
 @Entity
-public class Color {
+public class Categoria {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-    private String color;
-    private String colorExadecimal;
+    private String categoria;
 
-    public Color() {
+    public Categoria() {
     }
 
-    public Color(String id, String color, String colorExadecimal) {
+    public Categoria(String id, String categoria) {
         this.id = id;
-        this.color = color;
-        this.colorExadecimal = colorExadecimal;
+        this.categoria = categoria;
     }
 
     public String getId() {
@@ -40,21 +38,12 @@ public class Color {
         this.id = id;
     }
 
-    public String getColor() {
-        return color;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
-
-    public String getColorExadecimal() {
-        return colorExadecimal;
-    }
-
-    public void setColorExadecimal(String colorExadecimal) {
-        this.colorExadecimal = colorExadecimal;
-    }
-    
     
 }
