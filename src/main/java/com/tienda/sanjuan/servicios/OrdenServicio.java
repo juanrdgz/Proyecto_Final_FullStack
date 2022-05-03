@@ -1,9 +1,13 @@
 package com.tienda.sanjuan.servicios;
 
 import java.util.List;
+
+import com.tienda.sanjuan.entidades.Articulo;
 import com.tienda.sanjuan.entidades.Orden;
 import com.tienda.sanjuan.entidades.Usuario;
+import com.tienda.sanjuan.repositorios.ArticuloRepositorio;
 import com.tienda.sanjuan.repositorios.OrdenRepositorio;
+import com.tienda.sanjuan.repositorios.UsuarioRepositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +18,12 @@ public class OrdenServicio {
     @Autowired
     private OrdenRepositorio ordenRepositorio;
 
+    @Autowired
+    private ArticuloRepositorio articuloRepositorio;
+
+    @Autowired
+    private UsuarioRepositorio usuarioRepositorio;
+
     public Orden guardar(Orden orden) {
         return ordenRepositorio.save(orden);
     }
@@ -22,7 +32,15 @@ public class OrdenServicio {
         return ordenRepositorio.getById(id);
     }
 
-    public List<Orden> buscarPorUsuario(Usuario usuario) {
-        return ordenRepositorio.buscarPorUsuario(usuario);
+    public void descontarStock(String id, Integer stock) {
+        Articulo articulo = articuloRepositorio.getById(id);
+        articulo.setStock(articulo.getStock() - stock);
     }
+
+    /*
+     * public List<Orden> buscarPorUsuario(String idUsuario) {
+     * Usuario usuario = usuarioRepositorio.buscarUsuario(idUsuario);
+     * return ordenRepositorio.buscarPorUsuario(usuario);
+     * }
+     */
 }

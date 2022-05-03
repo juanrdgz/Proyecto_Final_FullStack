@@ -1,38 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.tienda.sanjuan.entidades;
 
-import java.util.Date;
-import java.util.logging.Logger;
+import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import org.hibernate.annotations.GenericGenerator;
 
-/**
- *
- * @author Franc
- */
+
 @Entity
 public class Orden {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-    private Date purchaseDate;
+
+    @Temporal(TemporalType.DATE)
+    private LocalDate purchaseDate;
+    
     @OneToOne
     private Usuario user;
+    
     private Double total;
-    private static final Logger LOG = Logger.getLogger(Orden.class.getName());
+    //private static final Logger LOG = Logger.getLogger(Orden.class.getName());
 
-    @Override
-    public String toString() {
-        return "Orden{" + "id=" + id + ", purchaseDate=" + purchaseDate + ", user=" + user + ", total=" + total + ", ordenes="+ '}';
-    }
 
     public String getId() {
         return id;
@@ -42,11 +36,11 @@ public class Orden {
         this.id = id;
     }
 
-    public Date getPurchaseDate() {
+    public LocalDate getPurchaseDate() {
         return purchaseDate;
     }
 
-    public void setPurchaseDate(Date purchaseDate) {
+    public void setPurchaseDate(LocalDate purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
 
@@ -66,7 +60,7 @@ public class Orden {
         this.total = total;
     }
 
-    public Orden(String id, Date purchaseDate, Usuario user, Double total) {
+    public Orden(String id, LocalDate purchaseDate, Usuario user, Double total) {
         this.id = id;
         this.purchaseDate = purchaseDate;
         this.user = user;
