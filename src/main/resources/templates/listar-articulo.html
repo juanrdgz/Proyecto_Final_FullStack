@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
     <!-- Basic Page Needs
   ================================================== -->
     <meta charset="utf-8">
-    <title>Tienda San Juan</title>
+    <title>Listado de articulos</title>
 
     <!-- Mobile Specific Metas
   ================================================== -->
@@ -16,13 +16,13 @@
     <meta name="author" content="Themefisher">
     <meta name="generator" content="Themefisher Constra HTML Template v1.0">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="../static/images/favicon.png" />
 
     <!-- Themefisher Icon font -->
     <link rel="stylesheet" href="../static/plugins/themefisher-font/style.css">
+
     <!-- bootstrap.min css -->
     <link rel="stylesheet" href="../static/plugins/bootstrap/css/bootstrap.min.css">
+
 
     <!-- Animate css -->
     <link rel="stylesheet" href="../static/plugins/animate/animate.css">
@@ -32,6 +32,21 @@
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="../static/css/style.css">
+
+    <!-- Themefisher Icon font -->
+    <link rel="stylesheet" th:href="@{/plugins/themefisher-font/style.css}">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}">
+
+    <!-- Animate css -->
+    <link rel="stylesheet" th:href="@{/plugins/animate/animate.css}">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" th:href="@{/plugins/slick/slick.css}">
+    <link rel="stylesheet" th:href="@{/plugins/slick/slick-theme.css}">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
 
 </head>
 
@@ -51,25 +66,21 @@
                     <div class="logo text-center">
                         <a href="index.html">
                             <!-- replace logo here -->
-                            <svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40"
-								font-family="AustinBold, Austin" font-weight="bold">
-								<g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
-									<text id="AVIATO">
-										<tspan x="108.94" y="325">AVIATO</tspan>
-									</text>
-								</g>
-							</g>
-						</svg>
+                            <figure>
+                                <img src="../static/images/logo-nuevo.png" alt="">
+                                <img src="/images/logo-nuevo.png" alt="">
+                            </figure>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-12 col-sm-4">
                     <!-- Cart -->
+
+                    <!-- si borro el carrito entero se rompe el css -->
                     <ul class="top-menu text-right list-inline">
                         <li class="dropdown cart-nav dropdown-slide">
-                            <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
-								class="tf-ion-android-cart"></i>Carrito</a>
+                            <!-- <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
+								class="tf-ion-android-cart"></i>Carrito</a> -->
                             <div class="dropdown-menu cart-dropdown">
                                 <!-- Cart Item -->
                                 <div class="media">
@@ -153,14 +164,12 @@
                                         <!-- Basic -->
                                         <div class="col-lg-12 col-md-12 mb-sm-12">
                                             <ul>
-                                                <li class="dropdown-header">Hogar</li>
-                                                <li role="separator" class="divider"></li>
-                                                <li class="account-slider"><a href="shop.html">Compras</a></li>
-                                                <li role="separator" class="divider"></li>
+                                                <!-- <li class="account-slider"><a href="shop.html">Compras</a></li> -->
+                                                <!-- <li role="separator" class="divider"></li> -->
                                                 <li class="account-slider"><a href="checkout.html">Perfil</a></li>
                                                 <li role="separator" class="divider"></li>
-                                                <li class="account-slider"><a href="cart.html">Direcciones</a></li>
-                                                <li role="separator" class="divider"></li>
+                                                <!-- <li class="account-slider"><a href="cart.html">Direcciones</a></li> -->
+                                                <!-- <li role="separator" class="divider"></li> -->
                                                 <li class="account-slider"><a href="pricing.html">Cerrar sesion</a></li>
                                                 <!-- / User -->
 
@@ -278,10 +287,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="content">
-                        <h1 class="page-name">Cart</h1>
+                        <h1 class="page-name">Lista de Articulos</h1>
                         <ol class="breadcrumb">
                             <li><a href="index.html">Home</a></li>
-                            <li class="active">cart</li>
+                            <li class="active">lista de articulos</li>
                         </ol>
                     </div>
                 </div>
@@ -290,63 +299,97 @@
     </section>
 
 
+    <a href="/articulo" class="btn btn-main pull-left">Agregar Articulo</a>
 
     <div class="page-wrapper">
+        <div th:if="${exito != null}" th:text="${exito}" class="alert alert-success alert-common" role="alert"><i class="tf-ion-thumbsup"></i><span >Buenisimo!</span> </div>
+        <!-- <div class="alert alert-warning alert-common" role="alert"><i class="tf-ion-alert-circled"></i><span>Cuidado!</span> Por favor, revisa que todo esté bien</div> -->
+        <div th:if="${error != null}" th:text="${error}" class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span >Error!</span> </div>
+
         <div class="cart shopping">
+
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
+                    <div>
                         <div class="block">
                             <div class="product-list">
+
                                 <form method="post">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th class="">Item Name</th>
-                                                <th class="">Item Price</th>
-                                                <th class="">Actions</th>
+                                                <!--<th scope="row">Identificador</th>-->
+                                                <th scope="row">Destacado</th>
+                                                <th scope="row">Titulo</th>
+                                                <th scope="row">Precio</th>
+                                                <th scope="row">Color</th>
+                                                <th scope="row">Descripción</th>
+                                                <th scope="row">Stock</th>
+                                                <th scope="row">Material</th>
+                                                <th scope="row">sizea</th>
+                                                <th scope="row">Categoria</th>
+
+                                                <th class="">Acciones</th>
                                             </tr>
                                         </thead>
+
                                         <tbody>
-                                            <tr class="">
-                                                <td class="">
-                                                    <div class="product-info">
-                                                        <img width="80" src="../static/images/shop/cart/cart-1.jpg" alt="" />
-                                                        <a href="#!">Sunglass</a>
-                                                    </div>
+                                            <tr class="" th:each="articulo : ${listaDeArticulos}">
+
+                                                <td>
+                                                    <input type="checkbox" >
                                                 </td>
-                                                <td class="">$200.00</td>
+
+                                                <!-- Preguntar como hacer un link dinamico -->
+                                                <td class="" th:text="${articulo.title}">
+                                                    <a href="#!"></a>
+                                                </td>
+
+                                                <td th:text="${articulo.price}"></td>
+
+                                                <td th:text="${articulo.color}"></td>
+
+                                                <td th:text="${articulo.description}"></td>
+
+                                                <td th:text="${articulo.stock}"></td>
+
+                                                <td th:text="${articulo.material}"></td>
+
+                                                <td th:text="${articulo.sizea}"></td>
+
+                                                <td th:text="${articulo.categorie}"></td>
+
                                                 <td class="">
-                                                    <a class="product-remove" href="#!">Remove</a>
+                                                    <a href="#!" th:href="@{/articulo/eliminar(id = ${articulo.id})}">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                                          </svg>
+                                                    </a>
+
+                                                    <a href="" th:href="@{/articulo/modificar(id = ${articulo.id})}">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                                          </svg>
+                                                    </a>
+
+                                                    <a href="" th:href="@{/articulo/alta(id = ${articulo.id})}" th:if="${articulo.alta == null || !articulo.alta}">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                                                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+                                                          </svg>
+                                                    </a>
+
+                                                    <a href="" th:href="@{/articulo/delete(id = ${articulo.id})}" th:if="${articulo.alta != null && articulo.alta}">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-square-fill" viewBox="0 0 16 16">
+                                                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1z"/>
+                                                          </svg>
+                                                    </a>
                                                 </td>
                                             </tr>
-                                            <tr class="">
-                                                <td class="">
-                                                    <div class="product-info">
-                                                        <img width="80" src="../static/images/shop/cart/cart-2.jpg" alt="" />
-                                                        <a href="#!">Airspace</a>
-                                                    </div>
-                                                </td>
-                                                <td class="">$200.00</td>
-                                                <td class="">
-                                                    <a class="product-remove" href="#!">Remove</a>
-                                                </td>
-                                            </tr>
-                                            <tr class="">
-                                                <td class="">
-                                                    <div class="product-info">
-                                                        <img width="80" src="../static/images/shop/cart/cart-3.jpg" alt="" />
-                                                        <a href="#!">Bingo</a>
-                                                    </div>
-                                                </td>
-                                                <td class="">$200.00</td>
-                                                <td class="">
-                                                    <a class="product-remove" href="#!">Remove</a>
-                                                </td>
-                                            </tr>
+
+
                                         </tbody>
                                     </table>
-                                    <a href="checkout.html" class="btn btn-main pull-right">Checkout</a>
                                 </form>
                             </div>
                         </div>

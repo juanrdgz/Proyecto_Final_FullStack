@@ -1,6 +1,7 @@
 package com.tienda.sanjuan.entidades;
 
-import java.time.LocalDate;
+
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,7 +11,6 @@ import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.GenericGenerator;
 
-
 @Entity
 public class Orden {
     @Id
@@ -19,7 +19,7 @@ public class Orden {
     private String id;
 
     @Temporal(TemporalType.DATE)
-    private LocalDate purchaseDate;
+    private Date purchaseDate;
     
     @OneToOne
     private Usuario user;
@@ -36,11 +36,11 @@ public class Orden {
         this.id = id;
     }
 
-    public LocalDate getPurchaseDate() {
+    public Date getPurchaseDate() {
         return purchaseDate;
     }
 
-    public void setPurchaseDate(LocalDate purchaseDate) {
+    public void setPurchaseDate(Date purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
 
@@ -60,7 +60,7 @@ public class Orden {
         this.total = total;
     }
 
-    public Orden(String id, LocalDate purchaseDate, Usuario user, Double total) {
+    public Orden(String id, Date purchaseDate, Usuario user, Double total) {
         this.id = id;
         this.purchaseDate = purchaseDate;
         this.user = user;

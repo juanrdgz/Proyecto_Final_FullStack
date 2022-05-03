@@ -1,6 +1,7 @@
 
 package com.tienda.sanjuan.controladores;
 
+
 import javax.servlet.http.HttpSession;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import com.tienda.sanjuan.entidades.Orden;
 import com.tienda.sanjuan.entidades.Usuario;
 import com.tienda.sanjuan.servicios.DetalleServicio;
 import com.tienda.sanjuan.servicios.OrdenServicio;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -53,7 +55,7 @@ public class OrdenController {
         try {
             Orden orden = new Orden();
             //SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
-            orden.setPurchaseDate(LocalDate.now());
+            orden.setPurchaseDate(new Date());
             orden.setUser(usuario);
             orden.setTotal(total);
             orden = ordenServicio.guardar(orden);

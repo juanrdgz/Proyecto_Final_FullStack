@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -11,6 +11,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+/**
+ *
+ * @author Equipo6
+ */
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -19,7 +24,7 @@ public class Seguridad extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/*", "/home", "/js/**", "/css/**", "/images/**","/plugins/**").permitAll()
+                .antMatchers("/**", "/home", "/js/**", "/css/**", "/images/**","/plugins/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
