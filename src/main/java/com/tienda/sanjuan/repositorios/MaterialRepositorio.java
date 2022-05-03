@@ -5,13 +5,15 @@
  */
 package com.tienda.sanjuan.repositorios;
 
-import javafx.scene.paint.Material;
+import com.tienda.sanjuan.entidades.Material;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author carop
  */
+@Repository
 public interface MaterialRepositorio extends JpaRepository<Material, String>{
     
 }

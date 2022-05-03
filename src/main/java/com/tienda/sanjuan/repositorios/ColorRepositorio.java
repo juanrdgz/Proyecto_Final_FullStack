@@ -7,11 +7,13 @@ package com.tienda.sanjuan.repositorios;
 
 import com.tienda.sanjuan.entidades.Color;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Equipo6
  */
+@Repository
 public interface ColorRepositorio extends JpaRepository<Color, String> {
     
 }
