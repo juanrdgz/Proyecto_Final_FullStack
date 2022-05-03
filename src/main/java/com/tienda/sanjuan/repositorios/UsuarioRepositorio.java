@@ -4,10 +4,17 @@
  * and open the template in the editor.
  */
 package com.tienda.sanjuan.repositorios;
+
+import com.tienda.sanjuan.entidades.Usuario;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author Equipo6
  */
-public interface UsuarioRepositorio {
+@Repository
+public interface UsuarioRepositorio extends JpaRepository<Usuario, String>{
     
 }
