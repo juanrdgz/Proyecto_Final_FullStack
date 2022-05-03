@@ -302,9 +302,9 @@
     <a href="/articulo" class="btn btn-main pull-left">Agregar Articulo</a>
 
     <div class="page-wrapper">
-        <div th:if="${exito != null}" th:text="${exito}" class="alert alert-success alert-common" role="alert"><i class="tf-ion-thumbsup"></i><span >Buenisimo!</span> </div>
+        <div th:if="${exito != null}" th:text="${exito}" class="alert alert-success alert-common" role="alert"><i class="tf-ion-thumbsup"></i><span>Buenisimo!</span> </div>
         <!-- <div class="alert alert-warning alert-common" role="alert"><i class="tf-ion-alert-circled"></i><span>Cuidado!</span> Por favor, revisa que todo esté bien</div> -->
-        <div th:if="${error != null}" th:text="${error}" class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span >Error!</span> </div>
+        <div th:if="${error != null}" th:text="${error}" class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span>Error!</span> </div>
 
         <div class="cart shopping">
 
@@ -336,9 +336,11 @@
                                         <tbody>
                                             <tr class="" th:each="articulo : ${listaDeArticulos}">
 
-                                                <!--th:text="${articulo.id}"-->
-                                                <td class="" >
-                                                                <input type="checkbox">
+                                                <!--th:text="${articulo.id}" -->
+
+
+                                                <td>
+                                                    <input type="checkbox">
                                                 </td>
 
                                                 <!-- Preguntar como hacer un link dinamico -->

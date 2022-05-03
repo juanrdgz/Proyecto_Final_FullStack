@@ -9,7 +9,6 @@ import com.tienda.sanjuan.entidades.Articulo;
 import com.tienda.sanjuan.repositorios.ArticuloRepositorio;
 import java.util.List;
 import java.util.Optional;
-import java.util.Scanner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,22 +26,25 @@ public class ArticuloServicio {
         if (articulo.getTitle().isEmpty()) {
             throw new Exception("El titulo del articulo no puede estar vacio");
         }
+        if(articuloRepositorio.buscarPorTitle(articulo.getTitle()) != null){
+            throw new Exception("Ya existe el articulo");
+        }
         if (articulo.getPrice() == 0 || articulo.getPrice() == null) {
             throw new Exception("El precio del articulo no puede ser 0 o vacio");
         }
-        if (articulo.getColor().isEmpty()) {
+        if (articulo.getColor() == null) {
             throw new Exception("El color del articulo no puede estar vacio");
         }
-        if (articulo.getMaterial().isEmpty()) {
+        if (articulo.getMaterial() == null) {
             throw new Exception("El material del articulo no puede estar vacio");
         }
-        if (articulo.getCategorie().isEmpty()) {
+        if (articulo.getCategorie()== null) {
             throw new Exception("La categoría del articulo no puede estar vacio");
         }
         if (articulo.getStock() == 0 || articulo.getStock() == null) {
             throw new Exception("El stock del articulo no puede ser 0 o vacio");
         }
-        if (articulo.getSizea().isEmpty()) {
+        if (articulo.getSizea()== null) {
                     throw new Exception("El talle del articulo no puede estar vacio");
                 }
         return articuloRepositorio.save(articulo);
@@ -55,23 +57,18 @@ public class ArticuloServicio {
                 if (articulo.getPrice() == 0 || articulo.getPrice()== null) {
                     throw new Exception("El nuevo preciodel articulo no puede estar vacio o nulo");
                 }
-                if (articulo.getColor().isEmpty()) {
+                if (articulo.getColor() == null) {
                     throw new Exception("El nuevo color no puede estar vacio");
                 }
-                if (articulo.getMaterial().isEmpty()) {
+                if (articulo.getMaterial() == null) {
                     throw new Exception("El nuevo material del articulo no puede estar vacio");
                 }
-                if (articulo.getCategorie().isEmpty()) {
+                if (articulo.getCategorie()==null) {
                     throw new Exception("La nueva categoria no puede estar vacia");
                 }
-                if (articulo.getSizea().isEmpty()) {
+                if (articulo.getSizea() == null) {
                     throw new Exception("El nuevo talle del articulo no puede estar vacio");
                 }
-        return articuloRepositorio.save(articulo);
-    }
-
-    public Articulo darBaja(Articulo articulo) {
-        articulo.setAlta(false);
         return articuloRepositorio.save(articulo);
     }
 
@@ -83,10 +80,31 @@ public class ArticuloServicio {
         return articuloRepositorio.buscarPorTitle(title);
     }
 
+     public void articuloDestacado(String id) throws Error {
+        Optional<Articulo> respuesta = articuloRepositorio.findById(id);
+        if (respuesta.isPresent()) {
+            Articulo articulo = respuesta.get();
+            articulo.setDestacado(true);
+            articuloRepositorio.save(articulo);
+        } else {
+            throw new Error("No se encontró un articulo con ese nombre");
+
+        }
+    }
+     public Articulo articuloNoDestacado(Articulo articulo) {
+        articulo.setDestacado(false);
+        return articuloRepositorio.save(articulo);
+    }
+     
+     public List<Articulo> listardestacados(){
+         return articuloRepositorio.findDestacados();
+     }
+    
     public Articulo buscarPorId(String id) {
         return articuloRepositorio.getById(id);
     }
 
+    
     public void altaArticulo(String id) throws Error {
         Optional<Articulo> respuesta = articuloRepositorio.findById(id);
         if (respuesta.isPresent()) {
@@ -99,6 +117,11 @@ public class ArticuloServicio {
         }
     }
 
+    public Articulo darBaja(Articulo articulo) {
+        articulo.setAlta(false);
+        return articuloRepositorio.save(articulo);
+    }
+    
     public void bajaArticulo(String id) throws Error {
         Optional<Articulo> respuesta = articuloRepositorio.findById(id);
         if (respuesta.isPresent()) {

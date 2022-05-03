@@ -33,7 +33,7 @@ public class ArticuloController {
     @GetMapping("")
     public String formularioArticulo(Model modelo) {
 	modelo.addAttribute("articulo", new Articulo());
-	return "articulo";
+	return "articulo-formulario";
     }
 
     @PostMapping("/save")
@@ -47,20 +47,29 @@ public class ArticuloController {
                  articuloServicio.guardarArticulo(articulo);
              }
              modelo.addAttribute("exito", "articulo guardado correctamente");
-	    return "articulo";
+
+	    return "articulo-formulario";
+
 	} catch (Exception ex) {
 	    ex.printStackTrace();
 	    modelo.addAttribute("articulo", articulo);
 	    modelo.addAttribute("error", ex.getMessage());
-	    return "articulo";
+	    return "articulo-formulario";
 	}
+    }
+    
+    @GetMapping("/producto")
+    public String mostrarProducto(@RequestParam("id") String id,Model modelo){
+        Articulo articulo = articuloServicio.buscarPorId(id);
+        modelo.addAttribute("articulo", articulo);
+        return "product-single";
     }
 
     @GetMapping("/modificar")
     public String formulario(@RequestParam(name = "id", required = true) String id, Model modelo) {
 	Articulo articulo = articuloServicio.buscarPorId(id);
 	modelo.addAttribute("articulo", articulo);
-	return "articulo";
+	return "articulo-formulario";
     }
 
     @GetMapping("/listar")
@@ -104,9 +113,9 @@ public class ArticuloController {
     }
     
     @GetMapping("/compra")
-    public String prestamo(@ModelAttribute("articulo") Articulo articulo, RedirectAttributes attributes){
+    public String prestamo(@RequestParam("id") String id, RedirectAttributes attributes){
         try {
-            articuloServicio.compra(articulo.getId());
+            articuloServicio.compra(id);
             attributes.addFlashAttribute("exito", "compra realizada");
             return "redirect:/articulo/listar";
         } catch (Exception e) {
@@ -114,5 +123,16 @@ public class ArticuloController {
              attributes.addFlashAttribute("error", e.getMessage());
              return "redirect:/articulo/listar";    
         }
+    }
+    
+    @GetMapping("/destacado")
+    public String destacado(@RequestParam("id") String id) {
+	try {
+	    articuloServicio.articuloDestacado(id);
+	    return "redirect:/articulo/listar";
+	} catch (Exception e) {
+	    e.printStackTrace();
+	    return "redirect:/articulo/listar";
+	}
     }
 }
