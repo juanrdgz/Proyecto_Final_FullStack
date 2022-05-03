@@ -25,7 +25,7 @@ public class DetalleController {
     @PostMapping("/agregarAlCarrito")
     public String agregar(Model modelo, @ModelAttribute("articulo") Articulo articulo,
             @RequestParam("cantidad") Integer cantidad, HttpSession session) {
-                // agregar al carrito y si ya se encuenta sumarlo
+        // agregar al carrito y si ya se encuenta sumarlo
         Boolean esta = false;
         ArrayList<Detalle> carrito = (ArrayList<Detalle>) session.getAttribute("carrito");
 
@@ -67,7 +67,7 @@ public class DetalleController {
     public String verCArrito(Model modelo, HttpSession session) {
         ArrayList<Detalle> carrito = (ArrayList<Detalle>) session.getAttribute("carrito");
         if (carrito != null) {
-            modelo.addAttribute("carrito", carrito);            
+            modelo.addAttribute("carrito", carrito);
         } else {
             modelo.addAttribute("vacio", "El carrito esta vacio");
         }

@@ -1,7 +1,6 @@
 
 package com.tienda.sanjuan.controladores;
 
-
 import javax.servlet.http.HttpSession;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -30,15 +29,16 @@ public class OrdenController {
     @Autowired
     private DetalleServicio detalleServicio;
 
-
     @GetMapping("/checkout")
     public String checkout(Model modelo, HttpSession session) {
-        /* ------agregar al modelo una entidad (Metodo de pago) vacio
-            -----y rellenar la direccion del usuario y el detalle de la compra*/
+        /*
+         * ------agregar al modelo una entidad (Metodo de pago) vacio
+         * -----y rellenar la direccion del usuario y el detalle de la compra
+         */
 
-            ArrayList<Detalle> carrito = (ArrayList<Detalle>) session.getAttribute("carrito");
-            Usuario usuario = (Usuario) session.getAttribute("usuario");
-            modelo.addAttribute("carrito", carrito);
+        ArrayList<Detalle> carrito = (ArrayList<Detalle>) session.getAttribute("carrito");
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        modelo.addAttribute("carrito", carrito);
 
         return "checkout";
     }
@@ -48,13 +48,13 @@ public class OrdenController {
         // --------se genera la orden y se la persiste
         ArrayList<Detalle> carrito = (ArrayList<Detalle>) session.getAttribute("carrito");
         Usuario usuario = (Usuario) session.getAttribute("usuario");
-        Double total=0.0;
+        Double total = 0.0;
         for (Detalle item : carrito) {
             total += item.getSubTotal();
         }
         try {
             Orden orden = new Orden();
-            //SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
+            // SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
             orden.setPurchaseDate(new Date());
             orden.setUser(usuario);
             orden.setTotal(total);
@@ -63,22 +63,22 @@ public class OrdenController {
                 item.setOrden(orden);
                 detalleServicio.guardar(item);
                 ordenServicio.descontarStock(item.getArticulo().getId(), item.getQuantity());
-            }        
+            }
             session.removeAttribute("carrito");
-            modelo.addAttribute("succes", "Orden Generada");     
-            return "confirmation";       
+            modelo.addAttribute("succes", "Orden Generada");
+            return "confirmation";
         } catch (Exception e) {
             e.printStackTrace();
             modelo.addAttribute("error", "No se pudo hacer la compra.");
-            return "confirmation";//------ deberia devolver a una pagina de error
+            return "confirmation";// ------ deberia devolver a una pagina de error
         }
     }
 
     @GetMapping("/listar")
     public String listar(Model modelo, @RequestParam("idUsuario") String idUsuario) {
         // ---- listar las ordenes por el id del usuario
-        //ArrayList<Orden> ordenes = ordenServicio.buscarPorUsuario(idUsuario);
-        //modelo.addAttribute("listaOrdenes", ordenes);
+        // ArrayList<Orden> ordenes = ordenServicio.buscarPorUsuario(idUsuario);
+        // modelo.addAttribute("listaOrdenes", ordenes);
         return "order";
     }
 }
