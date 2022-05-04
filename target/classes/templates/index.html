@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
@@ -34,28 +34,29 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="../static/css/style.css">
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Construction Html5 Template">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="author" content="Themefisher">
-  <meta name="generator" content="Themefisher Constra HTML Template v1.0">
-  
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
-  
-  <!-- Themefisher Icon font -->
-  <link rel="stylesheet" th:href="@{/plugins/themefisher-font/style.css}">
-  <!-- bootstrap.min css -->
-  <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}">
-  
-  <!-- Animate css -->
-  <link rel="stylesheet" th:href="@{/plugins/animate/animate.css}">
-  <!-- Slick Carousel -->
-  <link rel="stylesheet" th:href="@{/plugins/slick/slick.css}">
-  <link rel="stylesheet" th:href="@{/plugins/slick/slick-theme.css}">
-  
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" th:href="@{/css/style.css}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Construction Html5 Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="author" content="Themefisher">
+    <meta name="generator" content="Themefisher Constra HTML Template v1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+
+    <!-- thymeleaf -->
+    <!-- Themefisher Icon font -->
+    <link rel="stylesheet" th:href="@{/plugins/themefisher-font/style.css}">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}">
+
+    <!-- Animate css -->
+    <link rel="stylesheet" th:href="@{/plugins/animate/animate.css}">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" th:href="@{/plugins/slick/slick.css}">
+    <link rel="stylesheet" th:href="@{/plugins/slick/slick-theme.css}">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 
 
 </head>
@@ -76,11 +77,11 @@
                     <div class="logo text-center">
                         <a href="index.html">
                             <!-- replace logo here -->
-                            
+
 
                             <figure>
                                 <img src="/images/logo-nuevo.png" alt="">
-                            </figure> 
+                            </figure>
                         </a>
                     </div>
                 </div>
@@ -160,7 +161,7 @@
                             </a>
 
                         </li>
-                       <!-- <form th:action="@{/logout}" method="POST" sec:authorize="isAuthenticated()">
+                        <!-- <form th:action="@{/logout}" method="POST" sec:authorize="isAuthenticated()">
                             <button type="submit" class="btn text-black">cerrar sesion</button>
                         </form>
                    
