@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
@@ -29,8 +30,18 @@ public class Usuario {
     private String email;
     private String fullName;
     private String phoneNumber;
+    @OneToOne
+    private Direccion direccion;
 
     public Usuario() {
+    }
+
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
     }
 
     public Usuario(String id, String userName, String password, String email, String fullName, String phoneNumber) {

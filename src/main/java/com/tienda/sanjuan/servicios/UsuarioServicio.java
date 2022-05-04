@@ -58,6 +58,29 @@ public class UsuarioServicio {
         return usuarioRepositorio.save(usuario);
     }
 
+    public void modificarUsuario(Usuario usuario) throws Exception {
+        if (usuario.getUserName().isEmpty()) {
+            throw new Exception("Este campo no puede estar vacío");
+        }
+
+        if (usuario.getPassword().isEmpty()) {
+            throw new Exception("Este campo no puede estar vacío");
+
+        }
+        if (usuario.getEmail().isEmpty()) {
+            throw new Exception("La contraseña no puede estar vacía");
+        }
+        if (usuario.getFullName().isEmpty()) {
+            throw new Exception("Este campo no puede estar vacío");
+        }
+        if (usuario.getPhoneNumber().isEmpty()) {
+            throw new Exception("Este campo no puede estar vacío");
+        }
+        
+        usuarioRepositorio.save(usuario);
+
+    }
+
     public List<Usuario> findAll() {
         return usuarioRepositorio.findAll();
     }
@@ -67,9 +90,23 @@ public class UsuarioServicio {
         HttpSession session = attributes.getRequest().getSession(true);
         session.setAttribute("usuario", usuario);
     }
+
+    public void eliminarUsuario(String id) throws Exception {
+        Usuario usuario = usuarioRepositorio.getById(id);
+        if (usuario == null) {
+            throw new Exception("El usuario no existe");
+        } else {
+            usuarioRepositorio.delete(usuario);
+        }
+
+    }
+
+    public Usuario buscarUsuario(String id) {
+        return usuarioRepositorio.getById(id);
+    }
+    
     
     
 
-    //modificar - eliminar - listar - buscar. 
-    // 
+  
 }
