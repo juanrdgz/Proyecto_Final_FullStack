@@ -5,16 +5,14 @@
  */
 package com.tienda.sanjuan.entidades;
 
-import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
-
 /**
  *
- * @author Franc
+ * @author Equipo6
  */
 
 @Entity
@@ -30,7 +28,10 @@ public class Usuario {
     private String email;
     private String fullName;
     private String phoneNumber;
-    @OneToOne
+
+
+    @OneToOne 
+
     private Direccion direccion;
 
     public Usuario() {
@@ -44,13 +45,16 @@ public class Usuario {
         this.direccion = direccion;
     }
 
-    public Usuario(String id, String userName, String password, String email, String fullName, String phoneNumber) {
+   
+    public Usuario(String id, String userName, String password, String email, String fullName, String phoneNumber, Direccion direccion) {
+
         this.id = id;
         this.userName = userName;
         this.password = password;
         this.email = email;
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
+        this.direccion = direccion;
     }
 
     public String getId() {
@@ -101,5 +105,12 @@ public class Usuario {
         this.phoneNumber = phoneNumber;
     }
 
-   
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+
 }

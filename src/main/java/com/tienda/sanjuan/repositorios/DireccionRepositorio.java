@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author Franc
+ * @author Equipo6
  */
 @Repository
 public interface DireccionRepositorio extends JpaRepository<Direccion, String>{

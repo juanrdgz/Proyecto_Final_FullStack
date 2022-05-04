@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
- * @author Franc
+ * @author Equipo6
  */
 @Controller
 @RequestMapping("/usuario")

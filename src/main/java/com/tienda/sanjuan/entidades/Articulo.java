@@ -1,19 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.tienda.sanjuan.entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
-
-/**
- *
- * @author Equipo6
- */
+import org.hibernate.annotations.ManyToAny;
 
 @Entity
 public class Articulo {
@@ -23,19 +16,24 @@ public class Articulo {
     private String id;
     private String title;
     private Double price;
-    private String color;
+    @OneToOne
+    private Color color;
     private String description;
     private Integer stock;
-    private String material;
-    private String sizea;
-    private String categorie;
-    private String subCategory;// no se si va
-    private Boolean alta;
+    @OneToOne
+    private Material material;
+    @OneToOne
+    private Medida sizea;
+    private String dimension;
+    @ManyToOne
+    private Categoria categorie;
+    private Boolean alta = true;
+    private Boolean destacado = false;
 
     public Articulo() {
     }
 
-    public Articulo(String id, String title, Double price, String color, String description, Integer stock, String material, String sizea, String categorie, String subCategory) {
+    public Articulo(String id, String title, Double price, Color color, String description, Integer stock, Material material, Medida sizea, Categoria categorie, Boolean alta, Boolean destacado) {
         this.id = id;
         this.title = title;
         this.price = price;
@@ -45,8 +43,8 @@ public class Articulo {
         this.material = material;
         this.sizea = sizea;
         this.categorie = categorie;
-        this.subCategory = subCategory;
-        this.alta = true;
+        this.alta = alta;
+        this.destacado = destacado;
     }
 
     public String getId() {
@@ -73,11 +71,11 @@ public class Articulo {
         this.price = price;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 
@@ -97,36 +95,28 @@ public class Articulo {
         this.stock = stock;
     }
 
-    public String getMaterial() {
+    public Material getMaterial() {
         return material;
     }
 
-    public void setMaterial(String material) {
+    public void setMaterial(Material material) {
         this.material = material;
     }
 
-    public String getSizea() {
+    public Medida getSizea() {
         return sizea;
     }
 
-    public void setSizea(String sizea) {
+    public void setSizea(Medida sizea) {
         this.sizea = sizea;
     }
 
-    public String getCategorie() {
+    public Categoria getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(String categorie) {
+    public void setCategorie(Categoria categorie) {
         this.categorie = categorie;
-    }
-
-    public String getSubCategory() {
-        return subCategory;
-    }
-
-    public void setSubCategory(String subCategory) {
-        this.subCategory = subCategory;
     }
 
     public Boolean getAlta() {
@@ -137,11 +127,18 @@ public class Articulo {
         this.alta = alta;
     }
 
-    @Override
-    public String toString() {
-        return "Articulo{" + "id=" + id + ", title=" + title + ", price=" + price + ", color=" + color + ", description=" + description + ", stock=" + stock + ", material=" + material + ", size=" + sizea + ", categorie=" + categorie + ", subCategory=" + subCategory + ", alta=" + alta + '}';
+    public Boolean getDestacado() {
+        return destacado;
     }
 
-    
-    
+    public void setDestacado(Boolean destacado) {
+        this.destacado = destacado;
+    }
+
+    @Override
+    public String toString() {
+        return "Articulo{" + "id=" + id + ", title=" + title + ", price=" + price + ", color=" + color + 
+                ", description=" + description + ", stock=" + stock + ", material=" + material + ", sizea=" + sizea
+                + ", categorie=" + categorie + ", alta=" + alta + ", destacado=" + destacado + '}';
+    }
 }

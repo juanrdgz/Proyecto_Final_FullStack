@@ -1,38 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.tienda.sanjuan.entidades;
 
+
 import java.util.Date;
-import java.util.logging.Logger;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import org.hibernate.annotations.GenericGenerator;
 
-/**
- *
- * @author Franc
- */
 @Entity
 public class Orden {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+
+    @Temporal(TemporalType.DATE)
     private Date purchaseDate;
+    
     @OneToOne
     private Usuario user;
+    
     private Double total;
-    private static final Logger LOG = Logger.getLogger(Orden.class.getName());
+    //private static final Logger LOG = Logger.getLogger(Orden.class.getName());
 
-    @Override
-    public String toString() {
-        return "Orden{" + "id=" + id + ", purchaseDate=" + purchaseDate + ", user=" + user + ", total=" + total + ", ordenes="+ '}';
-    }
 
     public String getId() {
         return id;

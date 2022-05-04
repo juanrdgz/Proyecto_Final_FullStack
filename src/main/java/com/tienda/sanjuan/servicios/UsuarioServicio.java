@@ -17,7 +17,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 /**
  *
- * @author Franc
+ * @author Equipo6
  */
 @Service
 public class UsuarioServicio {

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Franc
+ * @author Equipo6
  */
 @Service
 public class DireccionServicio {

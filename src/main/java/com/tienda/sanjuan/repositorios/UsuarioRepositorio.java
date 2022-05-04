@@ -6,17 +6,17 @@
 package com.tienda.sanjuan.repositorios;
 
 import com.tienda.sanjuan.entidades.Usuario;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author Franc
+ * @author Equipo6
  */
 @Repository
-public interface UsuarioRepositorio extends JpaRepository<Usuario, String>{
+public interface UsuarioRepositorio extends JpaRepository<Usuario, String> {
 
     public Usuario findByUsername(String userName);
 
-    
 }

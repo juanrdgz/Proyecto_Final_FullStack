@@ -1,14 +1,46 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.tienda.sanjuan.servicios;
 
-/**
- *
- * @author Franc
- */
+import java.util.List;
+
+import com.tienda.sanjuan.entidades.Articulo;
+import com.tienda.sanjuan.entidades.Orden;
+import com.tienda.sanjuan.entidades.Usuario;
+import com.tienda.sanjuan.repositorios.ArticuloRepositorio;
+import com.tienda.sanjuan.repositorios.OrdenRepositorio;
+import com.tienda.sanjuan.repositorios.UsuarioRepositorio;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class OrdenServicio {
-    
+
+    @Autowired
+    private OrdenRepositorio ordenRepositorio;
+
+    @Autowired
+    private ArticuloRepositorio articuloRepositorio;
+
+    @Autowired
+    private UsuarioRepositorio usuarioRepositorio;
+
+    public Orden guardar(Orden orden) {
+        return ordenRepositorio.save(orden);
+    }
+
+    public Orden buscarPorId(String id) {
+        return ordenRepositorio.getById(id);
+    }
+
+    public void descontarStock(String id, Integer stock) {
+        Articulo articulo = articuloRepositorio.getById(id);
+        articulo.setStock(articulo.getStock() - stock);
+    }
+
+    /*
+     * public List<Orden> buscarPorUsuario(String idUsuario) {
+     * Usuario usuario = usuarioRepositorio.buscarUsuario(idUsuario);
+     * return ordenRepositorio.buscarPorUsuario(usuario);
+     * }
+     */
 }

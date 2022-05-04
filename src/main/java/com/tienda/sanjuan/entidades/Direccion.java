@@ -10,6 +10,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
 
+/**
+ *
+ * @author Equipo6
+ */
 @Entity
 public class Direccion {
     @Id
@@ -22,12 +26,12 @@ public class Direccion {
     private String address;
     private String details;
     private String receiver;
-   
+
 
     public Direccion() {
     }
 
-    public Direccion(String id, String postalCode, String city, String province, String address, String details, String receiver, Usuario user) {
+    public Direccion(String id, String postalCode, String city, String province, String address, String details, String receiver) {
         this.id = id;
         this.postalCode = postalCode;
         this.city = city;
@@ -93,6 +97,4 @@ public class Direccion {
         this.receiver = receiver;
     }
 
-
-    
 }
