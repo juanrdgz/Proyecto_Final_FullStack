@@ -8,7 +8,6 @@ package com.tienda.sanjuan.entidades;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
@@ -98,5 +97,4 @@ public class Direccion {
         this.receiver = receiver;
     }
 
-   
 }

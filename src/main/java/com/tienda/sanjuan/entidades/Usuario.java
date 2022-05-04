@@ -14,24 +14,40 @@ import org.hibernate.annotations.GenericGenerator;
  *
  * @author Equipo6
  */
+
 @Entity
+//@Data
 public class Usuario {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
+    
     private String id;
     private String userName;
     private String password;
     private String email;
     private String fullName;
     private String phoneNumber;
+
+
     @OneToOne 
+
     private Direccion direccion;
 
     public Usuario() {
     }
 
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+
+   
     public Usuario(String id, String userName, String password, String email, String fullName, String phoneNumber, Direccion direccion) {
+
         this.id = id;
         this.userName = userName;
         this.password = password;

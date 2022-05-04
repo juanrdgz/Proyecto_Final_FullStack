@@ -5,10 +5,15 @@
  */
 package com.tienda.sanjuan.repositorios;
 
+import com.tienda.sanjuan.entidades.Direccion;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author Equipo6
  */
-public interface DireccionRepositorio {
+@Repository
+public interface DireccionRepositorio extends JpaRepository<Direccion, String>{
     
 }
