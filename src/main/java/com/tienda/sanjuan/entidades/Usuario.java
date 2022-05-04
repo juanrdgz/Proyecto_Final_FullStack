@@ -20,8 +20,7 @@ import org.hibernate.annotations.GenericGenerator;
 public class Usuario {
     @Id
     @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    
+    @GenericGenerator(name = "uuid", strategy = "uuid2")    
     private String id;
     private String userName;
     private String password;
@@ -30,14 +29,12 @@ public class Usuario {
     private String phoneNumber;
 
 
-    @OneToOne 
-
+    @OneToOne
     private Direccion direccion;
 
     public Usuario() {
     }
 
-   
     public Usuario(String id, String userName, String password, String email, String fullName, String phoneNumber, Direccion direccion) {
 
         this.id = id;
