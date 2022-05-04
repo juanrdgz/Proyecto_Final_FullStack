@@ -37,14 +37,6 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Direccion getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(Direccion direccion) {
-        this.direccion = direccion;
-    }
-
    
     public Usuario(String id, String userName, String password, String email, String fullName, String phoneNumber, Direccion direccion) {
 
