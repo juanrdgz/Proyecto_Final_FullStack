@@ -45,7 +45,7 @@ public class UsuarioServicio {
             throw new Exception("Este campo no puede estar vacío");
         }
 
-        Usuario user = usuarioRepositorio.findByUsername(usuario.getUserName());
+        Usuario user = usuarioRepositorio.findByUserName(usuario.getUserName());
         if (user != null) {
             throw new Exception("El usuario ya existe, pruebe con otro nombre");
         }
