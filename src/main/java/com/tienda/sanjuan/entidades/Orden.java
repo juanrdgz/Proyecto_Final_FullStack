@@ -4,6 +4,7 @@ package com.tienda.sanjuan.entidades;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -17,6 +18,9 @@ public class Orden {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer orderId;
 
     @Temporal(TemporalType.DATE)
     private Date purchaseDate;
