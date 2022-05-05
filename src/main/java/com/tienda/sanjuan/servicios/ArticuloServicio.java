@@ -44,9 +44,6 @@ public class ArticuloServicio {
         if (articulo.getStock() == 0 || articulo.getStock() == null) {
             throw new Exception("El stock del articulo no puede ser 0 o vacio");
         }
-        if (articulo.getSizea()== null) {
-                    throw new Exception("El talle del articulo no puede estar vacio");
-                }
         return articuloRepositorio.save(articulo);
     }
 
@@ -65,9 +62,6 @@ public class ArticuloServicio {
                 }
                 if (articulo.getCategorie()==null) {
                     throw new Exception("La nueva categoria no puede estar vacia");
-                }
-                if (articulo.getSizea() == null) {
-                    throw new Exception("El nuevo talle del articulo no puede estar vacio");
                 }
         return articuloRepositorio.save(articulo);
     }

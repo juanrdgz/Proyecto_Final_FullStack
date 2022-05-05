@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tienda.sanjuan.servicios;
-
-import org.springframework.stereotype.Service;
+package com.tienda.sanjuan.enums;
 
 /**
  *
  * @author carop
  */
-@Service
-public class MaterialServicio {
+public enum RopaBebe {
     
 }

@@ -15,7 +15,6 @@ com\tienda\sanjuan\controladores\OrdenController.class
 com\tienda\sanjuan\repositorios\ColorRepositorio.class
 com\tienda\sanjuan\controladores\DetalleController.class
 com\tienda\sanjuan\entidades\Detalle.class
-com\tienda\sanjuan\Enums\Talle.class
 com\tienda\sanjuan\DTOs\FiltroArticulo.class
 com\tienda\sanjuan\entidades\Medida.class
 com\tienda\sanjuan\servicios\MaterialServicio.class
