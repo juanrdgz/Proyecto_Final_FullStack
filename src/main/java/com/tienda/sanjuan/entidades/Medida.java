@@ -5,7 +5,7 @@
  */
 package com.tienda.sanjuan.entidades;
 
-import com.tienda.sanjuan.Enums.SistemaDeMedida;
+import com.tienda.sanjuan.enums.SistemaDeMedida;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
