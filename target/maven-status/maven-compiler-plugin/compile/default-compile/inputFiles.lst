@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\ArticuloServicio.java
 C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\MedidaRepositorio.java
 C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\OrdenRepositorio.java
@@ -39,3 +40,47 @@ C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\
 C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\Seguridad.java
 C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Orden.java
 C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\OrdenServicio.java
+=======
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\DetalleController.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\MedidaController.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\ArticuloRepositorio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Color.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\DetalleServicio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\OrdenRepositorio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Usuario.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\ColorRepositorio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\UsuarioServicio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\MaterialServicio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Articulo.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\UsuarioRepositorio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\CategoriaRepositorio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\ColorServicio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\Enums\SistemaDeMedida.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Direccion.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\DetalleRepositorio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\OrdenServicio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Categoria.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\UsuarioController.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Orden.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\ArticuloServicio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\MedidaServicio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\ColorController.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\Seguridad.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Material.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\MedidaRepositorio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\DTOs\FiltroArticulo.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\MaterialController.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Detalle.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\OrdenController.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Medida.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\CategoriaController.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\Filters\ArticuloFilter.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\MaterialRepositorio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\DireccionServicio.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\LoginController.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\Enums\TipoMedida.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\DireccionController.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\SanjuanApplication.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\ArticuloController.java
+C:\Users\andru\Desktop\Teoria Egg\Proyecto Tienda San Juan\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\DireccionRepositorio.java
+>>>>>>> 27e94ae2d21c1a5ee2fb762643f70aff54e37c3b

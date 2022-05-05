@@ -280,10 +280,7 @@
     </section>
     <section class="page-header">
         <div class="container">
-            <!-- Mensajes de error y exito -->
 
-            <div th:if="${exito != null}" th:text="${exito}" class="alert alert-success alert-common" role="alert"><i class="tf-ion-thumbsup"></i><span>Buenisimo!</span> </div>
-            <div th:if="${error != null}" th:text="${error}" class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span>Error!</span> </div>
 
 
             <div class="row">
@@ -312,40 +309,44 @@
                     <div class="">
                         <div class="block billing-details">
                             <h4 class="widget-title">Detalles del producto</h4>
-                            <p th:text="${error}"></p>
-                            <form th:action="@{/articulo/save}"  method="POST" th:object="${articulo}">
-                                <input  type="text" name="id" th:field="${articulo.id}" hidden />
+
+                            <!-- Mensajes de error y exito -->
+                            <div th:if="${exito != null}" th:text="${exito}" class="alert alert-success alert-common" role="alert"><i class="tf-ion-thumbsup"></i><span>Buenisimo!</span> </div>
+                            <div th:if="${error != null}" th:text="${error}" class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span>Error!</span> </div>
+
+                            <form th:action="@{/articulo/save}" method="POST" th:object="${articulo}">
+                                <input type="text" name="id" th:field="${articulo.id}" hidden />
 
 
                                 <div class="form-group">
                                     <label for="full_name">Nombre</label>
-                                    <input type="text" class="form-control" id="full_name" placeholder="Ingrese el nombre tal cual como se verá en la tineda"/>
+                                    <input type="text" class="form-control" id="full_name" placeholder="Ingrese el nombre tal cual como se verá en la tineda" />
                                 </div>
 
                                 <div class="form-group">
                                     <label for="user_address">Precio</label>
-                                    <input type="number" class="form-control" id="user_address" placeholder=""/>
+                                    <input type="number" class="form-control" id="user_address" placeholder="" />
                                 </div>
 
                                 <div class="checkout-country-code clearfix">
                                     <div class="form-group">
                                         <label for="user_post_code">Color</label>
-                                        <input type="text" class="form-control" id="user_post_code" name="" value=""/>
+                                        <input type="text" class="form-control" id="user_post_code" name="" value="" />
                                     </div>
                                     <div class="form-group">
                                         <label for="user_city">Stock</label>
-                                        <input type="number" class="form-control" id="user_city" name="" value=""/>
+                                        <input type="number" class="form-control" id="user_city" name="" value="" />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="user_country">Descripcion</label>
-                                    <input type="text" class="form-control" id="user_country" placeholder=""/>
+                                    <input type="text" class="form-control" id="user_country" placeholder="" />
                                 </div>
 
                                 <div class="form-group">
                                     <label for="material">Material</label>
-                                    <input type="text" class="form-control" id="material" placeholder=""/>
+                                    <input type="text" class="form-control" id="material" placeholder="" />
                                 </div>
 
                                 <div class="form-group">
@@ -366,15 +367,15 @@
 
                                 <div class="form-group">
                                     <label for="talle">Talle</label>
-                                    <input type="text" class="form-control" id="talle" placeholder=""/>
+                                    <input type="text" class="form-control" id="talle" placeholder="" />
                                 </div>
 
                                 <div class="form-group">
                                     <label for="categioria">Categoria</label>
-                                    <input type="text" class="form-control" id="categioria" placeholder=""/>
+                                    <input type="text" class="form-control" id="categioria" placeholder="" />
                                 </div>
 
-                                
+
 
 
                                 <button class="btn btn-main btn-medium btn-round" type="submit">Guardar</button>
