@@ -1,6 +1,8 @@
 package com.tienda.sanjuan.entidades;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -16,14 +18,15 @@ public class Articulo {
     private String id;
     private String title;
     private Double price;
-    @OneToOne
+    @Enumerated(EnumType.STRING)
     private Color color;
     private String description;
     private Integer stock;
-    @OneToOne
+    @Enumerated(EnumType.STRING)
     private Material material;
-    @OneToOne
-    private Medida sizea;
+    /*@Enumerated(EnumType.STRING)
+    private Medida sizea; // preguntar si tenemos que poner 3 Enum por cada medidad de talles
+    */
     private String dimension;
     @ManyToOne
     private Categoria categorie;
@@ -41,7 +44,6 @@ public class Articulo {
         this.description = description;
         this.stock = stock;
         this.material = material;
-        this.sizea = sizea;
         this.categorie = categorie;
         this.alta = alta;
         this.destacado = destacado;
@@ -103,13 +105,6 @@ public class Articulo {
         this.material = material;
     }
 
-    public Medida getSizea() {
-        return sizea;
-    }
-
-    public void setSizea(Medida sizea) {
-        this.sizea = sizea;
-    }
 
     public Categoria getCategorie() {
         return categorie;
@@ -135,10 +130,4 @@ public class Articulo {
         this.destacado = destacado;
     }
 
-    @Override
-    public String toString() {
-        return "Articulo{" + "id=" + id + ", title=" + title + ", price=" + price + ", color=" + color + 
-                ", description=" + description + ", stock=" + stock + ", material=" + material + ", sizea=" + sizea
-                + ", categorie=" + categorie + ", alta=" + alta + ", destacado=" + destacado + '}';
-    }
 }
