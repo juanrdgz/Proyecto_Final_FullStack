@@ -33,7 +33,7 @@ public class ArticuloController {
     @GetMapping("")
     public String formularioArticulo(Model modelo) {
 	modelo.addAttribute("articulo", new Articulo());
-	return "articulo-formulario";
+	return "formulario-articulo";
     }
 
     @PostMapping("/save")
@@ -48,13 +48,13 @@ public class ArticuloController {
              }
              modelo.addAttribute("exito", "articulo guardado correctamente");
 
-	    return "articulo-formulario";
+	    return "formulario-articulo";
 
 	} catch (Exception ex) {
 	    ex.printStackTrace();
 	    modelo.addAttribute("articulo", articulo);
 	    modelo.addAttribute("error", ex.getMessage());
-	    return "articulo-formulario";
+	    return "formulario-articulo";
 	}
     }
     
@@ -69,7 +69,7 @@ public class ArticuloController {
     public String formulario(@RequestParam(name = "id", required = true) String id, Model modelo) {
 	Articulo articulo = articuloServicio.buscarPorId(id);
 	modelo.addAttribute("articulo", articulo);
-	return "articulo-formulario";
+	return "formulario-articulo";
     }
 
     @GetMapping("/listar")
