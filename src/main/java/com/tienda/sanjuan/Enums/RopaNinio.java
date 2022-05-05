@@ -10,5 +10,15 @@ package com.tienda.sanjuan.enums;
  * @author carop
  */
 public enum RopaNinio {
+   T4("4"),T6("6"),T8("8"),T10("10"),T12("12"),T14("14"),T16("16");
+   
+    private RopaNinio(String text) {
+        this.text = text;
+    }
     
+    private String text;
+    
+    public String getText() {
+        return text;
+    }
 }

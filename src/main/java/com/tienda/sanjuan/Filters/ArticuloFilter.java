@@ -34,6 +34,9 @@ public class ArticuloFilter {
         if (filtroArticulo.getPrecioMaximo() != null) {
             query = query.concat("and a.precio < :precioMaximo");
         }
+        if (filtroArticulo.getCategoria()!= null) {
+            query = query.concat("and a.categoria.categoria < :categoria");
+        }
         
         return query;
     }

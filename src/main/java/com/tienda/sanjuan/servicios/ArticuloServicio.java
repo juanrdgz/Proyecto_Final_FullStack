@@ -5,6 +5,8 @@ Articulo change this license header, choose License Headers in Project Propertie
  */
 package com.tienda.sanjuan.servicios;
 
+import com.tienda.sanjuan.DTOs.FiltroArticulo;
+import com.tienda.sanjuan.Filters.ArticuloFilter;
 import com.tienda.sanjuan.entidades.Articulo;
 import com.tienda.sanjuan.repositorios.ArticuloRepositorio;
 import java.util.List;
@@ -21,6 +23,9 @@ public class ArticuloServicio {
 
     @Autowired
     private ArticuloRepositorio articuloRepositorio;
+    
+    @Autowired
+    private ArticuloFilter  articuloFilter;
 
     public Articulo guardarArticulo(Articulo articulo) throws Exception {
         if (articulo.getTitle().isEmpty()) {
@@ -96,6 +101,10 @@ public class ArticuloServicio {
     
     public Articulo buscarPorId(String id) {
         return articuloRepositorio.getById(id);
+    }
+    
+    public List<Articulo> filtrarArticulos(FiltroArticulo filtroArticulo) {
+        return  articuloFilter.filtrar(filtroArticulo); 
     }
 
     

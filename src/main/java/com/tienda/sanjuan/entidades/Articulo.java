@@ -1,5 +1,12 @@
 package com.tienda.sanjuan.entidades;
 
+import com.tienda.sanjuan.enums.Color;
+import com.tienda.sanjuan.enums.Material;
+import com.tienda.sanjuan.enums.Pantalon;
+import com.tienda.sanjuan.enums.RopaBebe;
+import com.tienda.sanjuan.enums.RopaNinio;
+import com.tienda.sanjuan.enums.RopaNormal;
+import com.tienda.sanjuan.enums.TipoMedida;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -24,19 +31,27 @@ public class Articulo {
     private Integer stock;
     @Enumerated(EnumType.STRING)
     private Material material;
-    /*@Enumerated(EnumType.STRING)
-    private Medida sizea; // preguntar si tenemos que poner 3 Enum por cada medidad de talles
-    */
-    private String dimension;
+    @Enumerated(EnumType.STRING)
+    private TipoMedida tm; // preguntar si tenemos que poner 3 Enum por cada medidad de talles
+    @Enumerated(EnumType.STRING)
+    private RopaNormal rn;
+    @Enumerated(EnumType.STRING)
+    private Pantalon p ;
+    @Enumerated(EnumType.STRING)
+    private RopaNinio rni;
+    @Enumerated(EnumType.STRING)
+    private RopaBebe rb;
+   
+    private String medida;
     @ManyToOne
-    private Categoria categorie;
+    private Categoria categoria;
     private Boolean alta = true;
     private Boolean destacado = false;
 
     public Articulo() {
     }
 
-    public Articulo(String id, String title, Double price, Color color, String description, Integer stock, Material material, Medida sizea, Categoria categorie, Boolean alta, Boolean destacado) {
+    public Articulo(String id, String title, Double price, Color color, String description, Integer stock, Material material, Medida sizea, Categoria categoria, Boolean alta, Boolean destacado) {
         this.id = id;
         this.title = title;
         this.price = price;
@@ -44,7 +59,7 @@ public class Articulo {
         this.description = description;
         this.stock = stock;
         this.material = material;
-        this.categorie = categorie;
+        this.categoria = categoria;
         this.alta = alta;
         this.destacado = destacado;
     }
@@ -107,11 +122,11 @@ public class Articulo {
 
 
     public Categoria getCategorie() {
-        return categorie;
+        return categoria;
     }
 
-    public void setCategorie(Categoria categorie) {
-        this.categorie = categorie;
+    public void setCategorie(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     public Boolean getAlta() {

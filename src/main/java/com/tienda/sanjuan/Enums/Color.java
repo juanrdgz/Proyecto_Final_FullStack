@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tienda.sanjuan.Enums;
+package com.tienda.sanjuan.enums;
 
 /**
  *
  * @author carop
  */
-
 public enum Color {
-    BLANCO, NEGRO, GRIS;
+    BLANCO, NEGRO, GRIS, ROJO, AZUL;
+    
 }
