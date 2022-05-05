@@ -1,3 +1,26 @@
+<<<<<<< HEAD
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\ArticuloController.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\Direccion.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\DetalleOrden.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\DetalleOrdenController.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\DireccionController.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\UsuarioRepositorio.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\OrdenServicio.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\DireccionServicio.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\Usuario.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\SanjuanApplication.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\Articulo.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\ArticuloRepositorio.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\DetalleOrdenRepositorio.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\OrdenController.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\DetalleOrdenServicio.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\OrdenRepositorio.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\ArticuloServicio.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\UsuarioServicio.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\DireccionRepositorio.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\Orden.java
+C:\Users\usuario_2\Desktop\Romina\Programacion Full Stack\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\UsuarioController.java
+=======
 C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\CategoriaRepositorio.java
 C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\CategoriaController.java
 C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\OrdenController.java
@@ -36,3 +59,4 @@ C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\repositori
 C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\MedidaRepositorio.java
 C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\DireccionServicio.java
 C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\ArticuloServicio.java
+>>>>>>> ab922d572fa15c39940ef458efaca37c7f0744c7
