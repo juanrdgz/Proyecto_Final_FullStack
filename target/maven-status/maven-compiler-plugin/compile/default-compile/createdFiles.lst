@@ -1,8 +1,5 @@
 com\tienda\sanjuan\entidades\Usuario.class
-<<<<<<< HEAD
 com\tienda\sanjuan\enums\RopaNinio.class
-=======
->>>>>>> 27e94ae2d21c1a5ee2fb762643f70aff54e37c3b
 com\tienda\sanjuan\entidades\Articulo.class
 com\tienda\sanjuan\Filters\ArticuloFilter.class
 com\tienda\sanjuan\repositorios\DireccionRepositorio.class
@@ -13,10 +10,7 @@ com\tienda\sanjuan\repositorios\CategoriaRepositorio.class
 com\tienda\sanjuan\servicios\OrdenServicio.class
 com\tienda\sanjuan\repositorios\DetalleRepositorio.class
 com\tienda\sanjuan\repositorios\OrdenRepositorio.class
-<<<<<<< HEAD
 com\tienda\sanjuan\enums\RopaNormal.class
-=======
->>>>>>> 27e94ae2d21c1a5ee2fb762643f70aff54e37c3b
 com\tienda\sanjuan\controladores\MedidaController.class
 com\tienda\sanjuan\repositorios\ArticuloRepositorio.class
 com\tienda\sanjuan\enums\Pantalon.class
@@ -24,47 +18,24 @@ com\tienda\sanjuan\controladores\CategoriaController.class
 com\tienda\sanjuan\controladores\LoginController.class
 com\tienda\sanjuan\controladores\UsuarioController.class
 com\tienda\sanjuan\servicios\DetalleServicio.class
-<<<<<<< HEAD
-=======
-com\tienda\sanjuan\entidades\Color.class
->>>>>>> 27e94ae2d21c1a5ee2fb762643f70aff54e37c3b
 com\tienda\sanjuan\servicios\UsuarioServicio.class
 com\tienda\sanjuan\Seguridad.class
 com\tienda\sanjuan\entidades\Direccion.class
 com\tienda\sanjuan\servicios\ArticuloServicio.class
-<<<<<<< HEAD
 com\tienda\sanjuan\controladores\MainController.class
 com\tienda\sanjuan\servicios\MedidaServicio.class
 com\tienda\sanjuan\enums\TipoMedida.class
 com\tienda\sanjuan\servicios\CategoriaServicio.class
 com\tienda\sanjuan\servicios\DireccionServicio.class
-=======
-com\tienda\sanjuan\repositorios\MaterialRepositorio.class
-com\tienda\sanjuan\servicios\MedidaServicio.class
-com\tienda\sanjuan\entidades\Material.class
-com\tienda\sanjuan\controladores\MaterialController.class
-com\tienda\sanjuan\servicios\DireccionServicio.class
-com\tienda\sanjuan\servicios\ColorServicio.class
->>>>>>> 27e94ae2d21c1a5ee2fb762643f70aff54e37c3b
 com\tienda\sanjuan\controladores\DireccionController.class
 com\tienda\sanjuan\repositorios\UsuarioRepositorio.class
 com\tienda\sanjuan\enums\Material.class
 com\tienda\sanjuan\controladores\ArticuloController.class
 com\tienda\sanjuan\controladores\OrdenController.class
-<<<<<<< HEAD
-=======
-com\tienda\sanjuan\repositorios\ColorRepositorio.class
->>>>>>> 27e94ae2d21c1a5ee2fb762643f70aff54e37c3b
 com\tienda\sanjuan\controladores\DetalleController.class
 com\tienda\sanjuan\entidades\Detalle.class
 com\tienda\sanjuan\entidades\Categoria.class
 com\tienda\sanjuan\DTOs\FiltroArticulo.class
-<<<<<<< HEAD
 com\tienda\sanjuan\enums\RopaBebe.class
 com\tienda\sanjuan\repositorios\MedidaRepositorio.class
 com\tienda\sanjuan\entidades\Medida.class
-=======
-com\tienda\sanjuan\repositorios\MedidaRepositorio.class
-com\tienda\sanjuan\entidades\Medida.class
-com\tienda\sanjuan\servicios\MaterialServicio.class
->>>>>>> 27e94ae2d21c1a5ee2fb762643f70aff54e37c3b

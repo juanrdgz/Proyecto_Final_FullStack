@@ -8,7 +8,7 @@ public class FiltroArticulo {
     private Double precioMinimo;
     private Double precioMaximo;
     private String categoria;
-    //private List<Color> colores;
+    
 
     public Double getPrecioMinimo() {
         return precioMinimo;

@@ -17,6 +17,8 @@ public class ArticuloFilter {
     private EntityManager em;
     private final String PRECIO_MINIMO = "precioMinimo";
     private final String PRECIO_MAXIMO = "precioMaximo";
+    private final String CATEGORIA = "categoria";
+    
 
 
     public List<Articulo> filtrar(FiltroArticulo filtroArticulo) {
@@ -47,6 +49,9 @@ public class ArticuloFilter {
         }
         if (filtroArticulo.getPrecioMaximo() != null) {
             query.setParameter(PRECIO_MAXIMO, filtroArticulo.getPrecioMaximo() );
+        }
+        if (filtroArticulo.getCategoria()!= null) {
+            query.setParameter(CATEGORIA, filtroArticulo.getCategoria());
         }
     }
 }

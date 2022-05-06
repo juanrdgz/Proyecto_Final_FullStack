@@ -36,7 +36,7 @@ public class CategoriaController {
     @GetMapping("")
     public String formularioCategoria(Model modelo) {
 	modelo.addAttribute("categoria", new Categoria());
-	return "categoria-formulario";
+	return "formulario-categoria";
     }
 
     @PostMapping("/save")
@@ -51,27 +51,27 @@ public class CategoriaController {
              }
              modelo.addAttribute("exito", "articulo guardado correctamente");
 
-	    return "categoria-formulario";
+	    return "formulario-categoria";
 
 	} catch (Exception ex) {
 	    ex.printStackTrace();
 	    modelo.addAttribute("categoria", categoria);
 	    modelo.addAttribute("error", ex.getMessage());
-	    return "articulo-formulario";
+	    return "formulario-categoria";
 	}
     }
     @GetMapping("/modificar")
     public String modificarCategoria(@RequestParam(name = "id", required = true) String id, Model modelo) {
 	Categoria categoria = categoriaServicio.buscarPorId(id);
 	modelo.addAttribute("categoria", categoria);
-	return "categoria-formulario";
+	return "formulario-categoria";
     }
 
     @GetMapping("/listar")
     public String listAll(Model modelo) {
 	List<Categoria> categorias = categoriaServicio.listarCategorias();
 	modelo.addAttribute("listaDeCategorias", categorias);
-	return "listar-categoria";
+	return "listar-categorias";
     }
     
     @GetMapping("/listararticulos")

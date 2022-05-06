@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author carop
  */
 @Controller
-@RequestMapping(" ")
+@RequestMapping("")
 public class MainController {
     @GetMapping("")
     public String index(){

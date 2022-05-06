@@ -33,7 +33,7 @@
 
     <!-- Th -->
     <!-- Themefisher Icon font -->
-    <link rel="stylesheet" th:href="@{/plugins/themefisher-font/style.css}">
+   <link rel="stylesheet" th:href="@{/plugins/themefisher-font/style.css}">
     <!-- bootstrap.min css -->
     <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}">
 
@@ -43,7 +43,7 @@
     <link rel="stylesheet" th:href="@{/plugins/slick/slick.css}">
     <link rel="stylesheet" th:href="@{/plugins/slick/slick-theme.css}">
 
-    <!-- Main Stylesheet -->
+    
     <link rel="stylesheet" th:href="@{/css/style.css}">
 
 </head>
@@ -314,8 +314,8 @@
                             <div th:if="${exito != null}" th:text="${exito}" class="alert alert-success alert-common" role="alert"><i class="tf-ion-thumbsup"></i><span>Buenisimo!</span> </div>
                             <div th:if="${error != null}" th:text="${error}" class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span>Error!</span> </div>
 
-                            <form th:action="@{/articulo/save}" method="POST" th:object="${articulo}">
-                                <input type="text" name="id" th:field="${articulo.id}" hidden />
+                            <form th:action="@{/categoria/save}" method="POST" th:object="${categoria}">
+                                <input type="text" name="id" th:field="${categoria.id}" hidden />
 
 
                                 <div class="form-group">
