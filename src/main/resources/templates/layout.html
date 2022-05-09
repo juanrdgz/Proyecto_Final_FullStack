@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8">
+    <title>Tienda San Juan_layout</title>
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Construction Html5 Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="author" content="Themefisher">
+    <meta name="generator" content="Themefisher Constra HTML Template v1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+
+    <!-- Themefisher Icon font -->
+    <link rel="stylesheet" th:href="@{/plugins/themefisher-font/style.css}">
+
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- Animate css -->
+    <link rel="stylesheet" th:href="@{/plugins/animate/animate.css}">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" th:href="@{/plugins/slick/slick.css}">
+    <link rel="stylesheet" th:href="@{/plugins/slick/slick-theme.css}">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+    <!-- Start Top Header Bar -->
+    <section class="top-header">
+        <div id="contenedor" class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-12 col-sm-4">
+                    <div class="contact-number">
+                        <p>Bienvenido wachin</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-4">
+                    <!-- Site Logo -->
+                    <div class="logo text-center">
+                        <a href="/">
+                            <!-- replace logo here -->
+                            <figure>
+                                <img class="logo-header" src="/images/logo-nuevo.png" alt="">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-4">
+                    <!-- Cart -->
+                    <ul class="top-menu text-right list-inline">
+                        <li class="dropdown cart-nav dropdown-slide">
+                            <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
+                                    class="tf-ion-android-cart"></i>Carrito</a>
+                            <div class="dropdown-menu cart-dropdown">
+
+                                <!-- Cart Item -->
+                                <div class="media">
+                                    <a class="pull-left" href="#!">
+                                        <img class="media-object" src="images/shop/cart/cart-1.jpg" alt="image" />
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><a href="#!">Producto</a></h4>
+                                        <div class="cart-price">
+                                            <span>1 x</span>
+                                            <span>1250.00</span>
+                                        </div>
+                                        <h5><strong>$1200</strong></h5>
+                                    </div>
+                                    <a href="#!" class="remove"><i class="tf-ion-close"></i></a>
+                                </div>
+                                <!-- / Cart Item -->
+
+
+                                <div class="cart-summary">
+                                    <span>Total</span>
+                                    <span class="total-price">$1799.00</span>
+                                </div>
+                                <ul class="text-center cart-buttons">
+                                    <li><a href="/detalle/verCarrito" class="btn btn-small">Ver Carrito</a></li>
+                                    <li class="disabled"><a href="/orden/checkout"
+                                            class="btn btn-small btn-solid-border">Comprar</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </li>
+                        <!-- / Cart -->
+
+                        <!-- Search -->
+                        <li class="dropdown search dropdown-slide">
+                            <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
+                                    class="tf-ion-ios-search-strong"></i> Buscar</a>
+                            <ul class="dropdown-menu search-dropdown">
+                                <li>
+                                    <form action="post"><input type="search" class="form-control"
+                                            placeholder="¿Que estas buscando?"></form>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- / Search -->
+
+                        <!-- User -->
+                        <!-- Boton para Iniciar sesion -->
+                        <li class="dropdown dropdown-slide" sec:authorize="!isAuthenticated()">
+                            <a href="/login">
+                                <div class="buttonPart btn btn-main btn-small btn-round-full button-text-color"
+                                    id="login-btn">
+                                    <span>Iniciar sesion</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Opcion para cuando sea un usuarion logueado -->
+
+                        <li class="dropdown dropdown-slide " sec:authorize="isAuthenticated()">
+                            <div id="navbar" class="navbar-collapse collapse text-center">
+                                <a href="dashboard.html" class="dropdown-toggle " data-toggle="dropdown"
+                                    data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true"
+                                    aria-expanded="false" sec:authentication="name">Mi cuenta<span
+                                        class="tf-ion-ios-arrow-down arrow-down"></span></a>
+                                <div class="dropdown-menu">
+                                    <div class="row">
+
+                                        <!-- Basic -->
+                                        <div class="col-lg-12 col-md-12 mb-sm-12">
+                                            <ul>
+                                                <li class="dropdown-header">Hogar</li>
+                                                <li role="separator" class="divider"></li>
+                                                <li class="account-slider"><a href="shop.html">Compras</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li class="account-slider"><a href="/usuario">Perfil</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li class="account-slider"><a href="cart.html">Direcciones</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li class="account-slider"><a href="/logout">Cerrar sesion</a></li>
+                                                <!-- / User -->
+
+                                            </ul>
+                                            <!-- / .nav .navbar-nav .navbar-right -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+    </section>
+    <!-- End Top Header Bar -->
+
+
+
+
+    <!-- Main Menu Section -->
+    <section class="menu" th:fragment="menu">
+        <nav class="navbar navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <h2 class="menu-title">Main Menu</h2>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <!-- / .navbar-header -->
+
+                <!-- Navbar Links -->
+                <div id="navbar" class="navbar-collapse collapse text-center">
+                    <ul class="nav navbar-nav">
+
+                        <!-- Home -->
+                        <li class="dropdown ">
+                            <a href="/">Home</a>
+                        </li>
+                        <!-- / Home -->
+
+
+                        <!-- Elements -->
+                        <li class="dropdown dropdown-slide">
+                            <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                                data-delay="350" role="button" aria-haspopup="true"
+                                aria-expanded="false">Categorias<span
+                                    class="tf-ion-ios-arrow-down arrow-down"></span></a>
+                            <div class="dropdown-menu">
+                                <div class="row">
+
+                                    <!-- Basic -->
+                                    <div class="col-lg-6 col-md-6 mb-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header">Hogar</li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="/seccion?categoria=dormitorio">Dormitorio</a>
+                                            </li>
+                                            <li><a href="/seccion?categoria=banio">Baño</a></li>
+                                            <li><a href="/seccion?categoria=cocina">Cocina y Bazar</a></li>
+                                            <li><a href="/seccion?categoria=decoracion">Deco & Co</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Layout -->
+                                    <div class="col-lg-6 col-md-6 mb-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header">Ropa</li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="/seccion?categoria=mujer">Mujer</a></li>
+                                            <li><a href="/seccion?categoria=hombre">Hombre</a></li>
+                                            <li><a href="/seccion?categoria=ninios">Niños</a></li>
+                                            <li><a href="/seccion?categoria=bebes">Bebés</a></li>
+                                            <li><a href="/seccion?categoria=colegial">Colegial</a></li>
+
+
+
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <!-- / .row -->
+                            </div>
+                            <!-- / .dropdown-menu -->
+                        </li>
+                        <!-- / Elements -->
+
+
+                        <!-- Pages -->
+                        <li class="dropdown full-width dropdown-slide">
+                            <a href="about.html" class="dropdown-toggle">Conocenos</a>
+                        </li>
+
+                        <li class="dropdown full-width dropdown-slide">
+                            <a href="#sucursales" class="dropdown-toggle">Sucursales</a>
+                        </li>
+
+
+
+
+                    </ul>
+                    <!-- / .nav .navbar-nav -->
+
+                </div>
+                <!--/.navbar-collapse -->
+            </div>
+            <!-- / .container -->
+        </nav>
+    </section>
+
+
+
+    <main layout:fragment="main">
+
+    </main>
+
+
+
+
+
+    <footer class="footer section text-center" th:fragment="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="social-media">
+                        <li>
+                            <a href="https://www.facebook.com/TiendaSanJuanOK/">
+                                <i class="tf-ion-social-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/tiendasanjuanok/?hl=es">
+                                <i class="tf-ion-social-instagram"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="footer-menu text-uppercase">
+                        <li>
+                            <a href="contact.html">CONTACTO</a>
+                        </li>
+                        <li>
+                            <a href="shop.html">Tienda</a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">POLITICA DE PRIVACIDAD</a>
+                        </li>
+                    </ul>
+                    <p class="copyright-text">Copyright &copy;2022, Diseñado &amp; Desarrollado por <a
+                            href="https://youtu.be/dQw4w9WgXcQ">AOT Studios</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+
+    <!-- Main Js File -->
+    <script th:src="@{/js/script.js}" type="text/javascript"></script>
+
+    <!-- Main jQuery -->
+    <script th:src="@{/plugins/jquery/dist/jquery.min.js}"></script>
+    <!-- Bootstrap 3.1 -->
+    <script th:src="@{/plugins/bootstrap/js/bootstrap.min.js}"></script>
+    <!-- Bootstrap Touchpin -->
+    <script th:src="@{/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js}"></script>
+    <!-- Instagram Feed Js -->
+    <script th:src="@{/plugins/instafeed/instafeed.min.js}"></script>
+    <!-- Video Lightbox Plugin -->
+    <script th:src="@{/plugins/ekko-lightbox/dist/ekko-lightbox.min.js}"></script>
+    <!-- Count Down Js -->
+    <script th:src="@{/plugins/syo-timer/build/jquery.syotimer.min.js}"></script>
+
+    <!-- slick Carousel -->
+    <script th:src="@{/plugins/slick/slick.min.js}"></script>
+    <script th:src="@{/plugins/slick/slick-animation.min.js}"></script>
+
+    <!-- Google Mapl -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script type="text/javascript" th:src="@{/plugins/google-map/gmap.js}"></script>
+
+</body>
+
+</html>
