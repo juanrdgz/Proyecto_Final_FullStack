@@ -35,15 +35,18 @@ public class OrdenController {
          * ------agregar al modelo una entidad (Metodo de pago) vacio
          * -----y rellenar la direccion del usuario y el detalle de la compra
          */
-
+        Double total = 0.0;
         ArrayList<Detalle> carrito = (ArrayList<Detalle>) session.getAttribute("carrito");
+        for (Detalle item : carrito) {
+            total += item.getSubTotal();
+        }
         Usuario usuario = (Usuario) session.getAttribute("usuario");
-        modelo.addAttribute("carrito", carrito);
+        modelo.addAttribute("total", total);
 
         return "checkout";
     }
 
-    @PostMapping("/hacerPedido")
+    @GetMapping("/realizarCompra")
     public String hacerPedido(Model modelo, HttpSession session) {
         // --------se genera la orden y se la persiste
         ArrayList<Detalle> carrito = (ArrayList<Detalle>) session.getAttribute("carrito");
@@ -70,7 +73,7 @@ public class OrdenController {
         } catch (Exception e) {
             e.printStackTrace();
             modelo.addAttribute("error", "No se pudo hacer la compra.");
-            return "confirmation";// ------ deberia devolver a una pagina de error
+            return "404";// ------ deberia devolver a una pagina de error
         }
     }
 

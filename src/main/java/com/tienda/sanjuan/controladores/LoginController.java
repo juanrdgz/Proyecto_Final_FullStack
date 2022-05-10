@@ -19,13 +19,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/login")
 public class LoginController {
-
+/* 
     @GetMapping("")
     public String login(@RequestParam(name = "error", required = false) String error, Model modelo) {
         if (error != null && !error.isEmpty()) {
             modelo.addAttribute("error", "Usuario o contraseña incorrectos");
         }
         return "login";
+    } */
+    @GetMapping("")
+    public String login() {
+        return "login";
     }
-
 }

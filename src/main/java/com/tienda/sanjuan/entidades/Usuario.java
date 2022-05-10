@@ -6,6 +6,8 @@
 package com.tienda.sanjuan.entidades;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -30,6 +32,7 @@ public class Usuario {
     private String email;
     private String fullName;
     private String phoneNumber;
+    @Enumerated(EnumType.STRING)
     private Rol rol;
     @OneToOne
     private Direccion direccion;
