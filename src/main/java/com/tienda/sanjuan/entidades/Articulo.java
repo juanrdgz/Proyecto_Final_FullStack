@@ -1,21 +1,20 @@
 package com.tienda.sanjuan.entidades;
 
-import com.tienda.sanjuan.enums.Color;
-import com.tienda.sanjuan.enums.Material;
-import com.tienda.sanjuan.enums.Pantalon;
-import com.tienda.sanjuan.enums.RopaBebe;
-import com.tienda.sanjuan.enums.RopaNinio;
+import com.tienda.sanjuan.enums.Bebes;
+import com.tienda.sanjuan.enums.Ninios;
+import com.tienda.sanjuan.enums.Pantalones;
+import com.tienda.sanjuan.enums.Plazas;
 import com.tienda.sanjuan.enums.RopaNormal;
+import com.tienda.sanjuan.enums.Seccion;
 import com.tienda.sanjuan.enums.TipoMedida;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.ManyToAny;
 
 @Entity
 public class Articulo {
@@ -23,18 +22,32 @@ public class Articulo {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+
+    @ManyToOne
+    private Foto foto;
     private String title;
     private Double price;
     private String color;
-    private String description;
     private Integer stock;
+    //private Seccion seccion;
     private String material;
-    /*@Enumerated(EnumType.STRING)
-    private Medida sizea; // preguntar si tenemos que poner 3 Enum por cada medidad de talles
-    */
-    private String dimension;
-    @ManyToOne
-    private Categoria categoria;
+    //private String sizea;
+    @Lob
+    private String description;
+    @Enumerated(EnumType.STRING)
+    private Seccion categoria;
+    @Enumerated(EnumType.STRING)
+    private TipoMedida tipoMedida;
+    @Enumerated(EnumType.STRING)
+    private RopaNormal ropaComun;
+    @Enumerated(EnumType.STRING)
+    private Pantalones pantalones;
+    @Enumerated(EnumType.STRING)
+    private Ninios ninios;
+    @Enumerated(EnumType.STRING)
+    private Bebes bebes;
+    @Enumerated(EnumType.STRING)
+    private Plazas plazas;
     private Boolean alta = true;
     private Boolean destacado = false;
 
@@ -98,11 +111,11 @@ public class Articulo {
     }
 
 
-    public Categoria getCategorie() {
+    public Seccion getCategorie() {
         return categoria;
     }
 
-    public void setCategorie(Categoria categoria) {
+    public void setCategorie(Seccion categoria) {
         this.categoria = categoria;
     }
 
@@ -120,6 +133,70 @@ public class Articulo {
 
     public void setDestacado(Boolean destacado) {
         this.destacado = destacado;
+    }
+
+    public Foto getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Foto foto) {
+        this.foto = foto;
+    }
+
+    public Seccion getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Seccion categoria) {
+        this.categoria = categoria;
+    }
+
+    public TipoMedida getTipoMedida() {
+        return tipoMedida;
+    }
+
+    public void setTipoMedida(TipoMedida tipoMedida) {
+        this.tipoMedida = tipoMedida;
+    }
+
+    public RopaNormal getRopaComun() {
+        return ropaComun;
+    }
+
+    public void setRopaComun(RopaNormal ropaComun) {
+        this.ropaComun = ropaComun;
+    }
+
+    public Pantalones getPantalones() {
+        return pantalones;
+    }
+
+    public void setPantalones(Pantalones pantalones) {
+        this.pantalones = pantalones;
+    }
+
+    public Ninios getNinios() {
+        return ninios;
+    }
+
+    public void setNinios(Ninios ninios) {
+        this.ninios = ninios;
+    }
+
+    public Bebes getBebes() {
+        return bebes;
+    }
+
+    public void setBebes(Bebes bebes) {
+        this.bebes = bebes;
+    }
+
+    public Plazas getPlazas() {
+        return plazas;
+    }
+
+    public void setPlazas(Plazas plazas) {
+        this.plazas = plazas;
     }
 
 }

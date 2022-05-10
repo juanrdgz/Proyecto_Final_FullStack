@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+
+import com.tienda.sanjuan.enums.Rol;
+
 import org.hibernate.annotations.GenericGenerator;
 /**
  *
@@ -27,8 +30,7 @@ public class Usuario {
     private String email;
     private String fullName;
     private String phoneNumber;
-
-
+    private Rol rol;
     @OneToOne
     private Direccion direccion;
 
@@ -100,6 +102,14 @@ public class Usuario {
 
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
+    }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
 
 }

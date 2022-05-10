@@ -8,7 +8,10 @@ package com.tienda.sanjuan.servicios;
 import com.tienda.sanjuan.DTOs.FiltroArticulo;
 import com.tienda.sanjuan.Filters.ArticuloFilter;
 import com.tienda.sanjuan.entidades.Articulo;
+import com.tienda.sanjuan.enums.Seccion;
 import com.tienda.sanjuan.repositorios.ArticuloRepositorio;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -145,13 +148,32 @@ public class ArticuloServicio {
         }
     }
     
-     public void compra(String id) throws Exception{
-         Articulo articulo= articuloRepositorio.getById(id);
-         if(articulo.getStock()-1 <0){
-             throw new Exception("Sin stock");
-         }
-         
-         articulo.setStock(articulo.getStock() - 1);
-         articuloRepositorio.save(articulo);
-     }
+    public List<Articulo> buscarPorCategoria(String categoria){
+        List<Articulo> articulos = new ArrayList<>();
+        for (Seccion var : Seccion.values()) {
+            if (var.toString().equals(categoria.toUpperCase())) {
+                articulos = articuloRepositorio.buscarPorCategoria(var);                
+            }
+        }
+        /* switch (categoria) {
+            case value:
+                
+                break;
+        
+            default:
+                break;
+        } */
+        List<Articulo> listaCorta = new ArrayList<Articulo>();
+
+        for (Articulo articulo : articulos) {
+            for (Articulo articulo2 : listaCorta) {
+                if (articulo2.getTitle().isEmpty() ||  articulo2.getTitle() == null) {
+                    listaCorta.add(articulo);
+                }else if (!articulo2.getTitle().equals(articulo.getTitle())) {
+                    listaCorta.add(articulo);
+                }       
+            }
+        }
+        return articulos;
+    }
 }

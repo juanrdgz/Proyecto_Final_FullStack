@@ -130,13 +130,13 @@
 					<div class="col-md-9">
 						<div class="row">
 							<div class="col-md-4" th:each="item : ${articulos}">
-								<div class="product-item">
-									<div class="product-thumb">
-										<a th:href="@{/articulo/ver (idArticulo=${item.id})}">
-											<img class="img-responsive" th:src="@{/foto/articulo(idArticulo= ${item.id})}"
-												alt="product-img" />
-										</a>
-										<!-- <div class="preview-meta">
+								<a th:href="@{/articulo/producto (idArticulo=${item.id})}">
+									<div class="product-item">
+										<div class="product-thumb">
+											<img class="img-responsive"
+												th:src="@{/foto/articulo(idArticulo= ${item.id})}" alt="product-img" />
+
+											<!-- <div class="preview-meta">
 											<ul>
 												<li>
 													<span data-toggle="modal" data-target="#product-modal"
@@ -155,15 +155,16 @@
 												</li>
 											</ul>
 										</div> -->
-									</div>
-									<div class="product-content">
-										<h4><a href="product-single.html" th:text="${item.title}"> </a>
-										</h4>
-										<div>
-											<p class="price" th:text="'$'+${item.price}"></p>
+										</div>
+										<div class="product-content">
+											<h4><a href="product-single.html" th:text="${item.title}"> </a>
+											</h4>
+											<div>
+												<p class="price" th:text="'$'+${item.price}"></p>
+											</div>
 										</div>
 									</div>
-								</div>
+								</a>
 							</div>
 
 
@@ -204,7 +205,8 @@
 										</div>
 									</div>
 								</div>
-							</div> --><!-- /.modal -->
+							</div> -->
+							<!-- /.modal -->
 
 						</div>
 					</div>

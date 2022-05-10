@@ -36,16 +36,16 @@ public class UsuarioController {
         return "signin";
     }
     //guardar usuario
-    @PostMapping("/guardar")
-    private String guardarUsuario(@ModelAttribute("usuario") Usuario usuario, Model modelo) {
+    @PostMapping("/registro")
+    private String guardarUsuario(@ModelAttribute("usuario") Usuario usuario,@RequestParam(name = "password2", required = false) String password2, Model modelo) {
         try {
             if (usuario.getId().isEmpty()) {
-                usuarioServicio.registrarUsuario(usuario);
+                usuarioServicio.registrarUsuario(usuario, password2);
             } else {
                 usuarioServicio.modificarUsuario(usuario);
             }
 
-            usuarioServicio.registrarUsuario(usuario);
+            usuarioServicio.registrarUsuario(usuario ,password2);
             modelo.addAttribute("success", "Tarea guardada con exito");
         } catch (Exception ex) {
             modelo.addAttribute("error", ex.getMessage());
