@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\LoginController.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\Enums\TipoMedida.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Usuario.java
@@ -14,18 +13,17 @@ c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\san
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\ArticuloServicio.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\ArticuloController.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\DireccionRepositorio.java
-c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Color.java
+c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\CategoriaServicio.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\OrdenServicio.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\ArticuloRepositorio.java
-c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\Enums\SistemaDeMedida.java
+c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\MainController.java
+c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\Enums\Pantalon.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\DTOs\FiltroArticulo.java
-c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Material.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\UsuarioRepositorio.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\Seguridad.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Detalle.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\MedidaServicio.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\MedidaRepositorio.java
-c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\MaterialRepositorio.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\UsuarioServicio.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\DireccionController.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\SanjuanApplication.java
@@ -41,100 +39,3 @@ c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\san
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\DetalleServicio.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Articulo.java
 c:\Users\Franc\Desktop\Proyecto final\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\OrdenController.java
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\CategoriaRepositorio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\CategoriaController.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\OrdenController.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\Categoria.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\Detalle.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\UsuarioServicio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\Filters\ArticuloFilter.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\DTOs\FiltroArticulo.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\Orden.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\LoginController.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\SanjuanApplication.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\MedidaServicio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\ColorServicio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\OrdenServicio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\MaterialController.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\enums\SistemaDeMedida.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\DireccionRepositorio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\ColorController.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\ArticuloController.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\DetalleServicio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\DetalleController.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\Direccion.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\MedidaController.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\ColorRepositorio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\enums\TipoMedida.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\UsuarioRepositorio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\ArticuloRepositorio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\Material.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\Seguridad.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\DireccionController.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\Medida.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\Usuario.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\MaterialRepositorio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\controladores\UsuarioController.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\Color.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\OrdenRepositorio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\MaterialServicio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\entidades\Articulo.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\DetalleRepositorio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\repositorios\MedidaRepositorio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\DireccionServicio.java
-C:\Users\Juan\Desktop\Proyecto Final\src\main\java\com\tienda\sanjuan\servicios\ArticuloServicio.java
-=======
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\ColorRepositorio.java
->>>>>>> 10103ed42aec0328dc1109bb240868fc6bd4ac0c
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\ArticuloServicio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\MedidaRepositorio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\OrdenRepositorio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Detalle.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Medida.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\SanjuanApplication.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\enums\RopaNormal.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\MainController.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\enums\Pantalon.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\enums\RopaBebe.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\DireccionServicio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\CategoriaController.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\UsuarioController.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\enums\Material.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\CategoriaRepositorio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\DetalleServicio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Articulo.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\DetalleRepositorio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\DetalleController.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\enums\RopaNinio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\enums\Color.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\ArticuloRepositorio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Direccion.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\MedidaController.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Usuario.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Categoria.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\DTOs\FiltroArticulo.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\Filters\ArticuloFilter.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\DireccionRepositorio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\MedidaServicio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\OrdenController.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\CategoriaServicio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\enums\TipoMedida.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\LoginController.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\repositorios\UsuarioRepositorio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\UsuarioServicio.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\ArticuloController.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\DireccionController.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\Seguridad.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\entidades\Orden.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\servicios\OrdenServicio.java
-<<<<<<< HEAD
-=======
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\controladores\MaterialController.java
-C:\Users\carop\OneDrive\Documentos\NetBeansProjects\tiendasanjuan\src\main\java\com\tienda\sanjuan\Enums\SistemaDeMedida.java
->>>>>>> 55eb176db115171f86e52baac14632699fcfcfa1
->>>>>>> 10103ed42aec0328dc1109bb240868fc6bd4ac0c
->>>>>>> f69b35c0ac513a93895b5d7d6e748d77323bdb5f

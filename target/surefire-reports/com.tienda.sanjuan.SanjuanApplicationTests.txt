@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.tienda.sanjuan.SanjuanApplicationTests
--------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.317 s - in com.tienda.sanjuan.SanjuanApplicationTests
-=======
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.968 s - in com.tienda.sanjuan.SanjuanApplicationTests
->>>>>>> 10103ed42aec0328dc1109bb240868fc6bd4ac0c

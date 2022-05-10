@@ -774,7 +774,8 @@ input[type="tel"]:focus {
 }
 
 #contenedor{
-    padding-bottom: 0;
+    padding-bottom: 1rem;
+    padding-top:2rem;
 }
 
 .logo-header{
@@ -815,6 +816,14 @@ input[type="tel"]:focus {
     .top-header .logo {
         padding: 10px;
     }
+}
+
+#inline-input{
+    width: 35rem;
+}
+
+.column-2{
+    padding-top: 3rem;
 }
 
 .top-header .logo a {
