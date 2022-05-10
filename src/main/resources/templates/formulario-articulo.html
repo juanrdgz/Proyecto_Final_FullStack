@@ -22,23 +22,27 @@
 <body id="body">
 
     <main layout:fragment="main">
-        <section class="page-header">
-            <div class="container">
-
+        <section class="page-header page-header-form">
+            <div class="side-options">
+                <a th:href="@{/articulo/listar}" class="btn btn-main btn-medium"> Ir a la lista de articulos</a>
+                <br>
+                <br>
+                <a th:href="@{/}" class="btn btn-main btn-medium">Volver a página principal</a>
+            </div>
+            <div class="container form-container">
                 <!-- Mensajes de error y exito -->
                 <div th:if="${error != null}" th:text="${error}" class="alert alert-danger alert-common" role="alert"><i
                         class="tf-ion-close-circled"></i><span>Error!</span> </div>
                 <div th:if="${succes != null}" th:text="${succes}" class="alert alert-success alert-common"
                     role="alert"><i class="tf-ion-thumbsup"></i><span>!</span> </div>
 
-
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="content">
+                        <div class="content header-content">
                             <h1 class="page-name">Ingresar un nuevo articulo</h1>
                             <ol class="breadcrumb">
                                 <li><a href="index.html">Home</a></li>
-                                <li class="active">ingresar nuevo articulo</li>
+                                <li class="active">articulo</li>
                             </ol>
                         </div>
                     </div>
@@ -46,12 +50,9 @@
             </div>
         </section>
 
-        <a th:href="@{/articulo/listar}" class="btn btn-main btn-medium"> Ir a la lista de articulos</a>
-        <br>
-        <br>
-        <a th:href="@{/}" class="btn btn-main btn-medium">Volver a página principal</a>
 
-        <div class="page-wrapper">
+
+        <div class="page-wrapper page-form">
             <div class="checkout shopping">
                 <div class="container">
                     <div class="row">
@@ -65,31 +66,31 @@
 
 
                                     <div class="form-group">
-                                        <label for="full_name">Subir Imagen</label>
+                                        <label class="form-label" for="full_name">Subir Imagen</label>
                                         <input class="form-control" type="file" name="file" id="" />
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="full_name">Nombre</label>
+                                        <label class="form-label" for="full_name">Nombre</label>
                                         <input th:field="${articulo.title}" type="text" class="form-control"
                                             id="full_name"
                                             placeholder="Ingrese el nombre tal cual como se verá en la tineda" />
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="user_address">Precio</label>
+                                        <label class="form-label" for="user_address">Precio</label>
                                         <input th:field="${articulo.price}" type="number" class="form-control"
                                             id="user_address" placeholder="" />
                                     </div>
 
                                     <div class="checkout-country-code clearfix">
                                         <div class="form-group">
-                                            <label for="user_post_code">Color</label>
+                                            <label class="form-label" for="user_post_code">Color</label>
                                             <input th:field="${articulo.color}" type="text" class="form-control"
                                                 id="user_post_code" name="" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="user_city">Stock</label>
+                                            <label class="form-label" for="user_city">Stock</label>
                                             <input th:field="${articulo.Stock}" type="number" class="form-control"
                                                 id="user_city" name="" value="" />
                                             </span>
@@ -97,13 +98,13 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="material">Material</label>
+                                        <label class="form-label" for="material">Material</label>
                                         <input th:field="${articulo.material}" type="text" class="form-control"
                                             id="material" placeholder="" />
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="material">Categoria</label>
+                                        <label class="form-label" for="material">Categoria</label>
                                         <select id="" th:field="*{categoria}">
                                             <option value="">Seleccione una opcion..</option>
                                             <option
@@ -113,7 +114,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="material">Tipo de medidas</label>
+                                        <label class="form-label" for="material">Tipo de medidas</label>
                                         <select id="tipoMedida" th:field="*{tipoMedida}">
                                             <option value="">Seleccione una opcion..</option>
                                             <option
@@ -182,14 +183,14 @@
 
 
                                     <div class="form-group">
-                                        <label for="user_country">Descripcion</label>
+                                        <label class="form-label" for="user_country">Descripcion</label>
                                         <textarea th:field="${articulo.description}" class="form-control" name=""
                                             id="user_country" cols="30" rows="10"></textarea>
                                     </div>
 
 
 
-                                    <button class="btn btn-main btn-medium btn-round" type="submit">Guardar</button>
+                                    <button class="btn btn-main btn-medium btn-round d-flex align-items-center" type="submit">Guardar</button>
 
                                 </form>
                             </div>
