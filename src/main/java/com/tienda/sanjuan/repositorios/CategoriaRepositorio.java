@@ -7,6 +7,8 @@ package com.tienda.sanjuan.repositorios;
 
 import com.tienda.sanjuan.entidades.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -16,4 +18,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CategoriaRepositorio extends JpaRepository<Categoria, String> {
     
+     @Query("select cat from Categoria cat where cat.categoria= :categoria")
+    public Categoria buscarCategoria(@Param("categoria") String categoria);
 }

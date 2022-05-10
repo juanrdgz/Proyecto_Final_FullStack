@@ -1,5 +1,12 @@
 package com.tienda.sanjuan.entidades;
 
+import com.tienda.sanjuan.enums.Color;
+import com.tienda.sanjuan.enums.Material;
+import com.tienda.sanjuan.enums.Pantalon;
+import com.tienda.sanjuan.enums.RopaBebe;
+import com.tienda.sanjuan.enums.RopaNinio;
+import com.tienda.sanjuan.enums.RopaNormal;
+import com.tienda.sanjuan.enums.TipoMedida;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -27,7 +34,7 @@ public class Articulo {
     */
     private String dimension;
     @ManyToOne
-    private Categoria categorie;
+    private Categoria categoria;
     private Boolean alta = true;
     private Boolean destacado = false;
 
@@ -92,11 +99,11 @@ public class Articulo {
 
 
     public Categoria getCategorie() {
-        return categorie;
+        return categoria;
     }
 
-    public void setCategorie(Categoria categorie) {
-        this.categorie = categorie;
+    public void setCategorie(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     public Boolean getAlta() {

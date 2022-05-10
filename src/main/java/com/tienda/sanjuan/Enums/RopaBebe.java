@@ -10,5 +10,16 @@ package com.tienda.sanjuan.enums;
  * @author carop
  */
 public enum RopaBebe {
+   M0("0m"),M3("3m"),M6("6m"),M9("9m"),M12("12m"),M18("18m"),M36("36m");
+   
+     private RopaBebe(String text) {
+        this.text = text;
+    }
     
+    private String text;
+    
+    public String getText() {
+        return text;
+    }
+   
 }
