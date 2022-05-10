@@ -28,7 +28,7 @@
                         <div class="content">
                             <h1 class="page-name">Checkout</h1>
                             <ol class="breadcrumb">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li class="active">checkout</li>
                             </ol>
                         </div>
@@ -42,10 +42,12 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="block billing-details">
-                                <h4 class="widget-title">Billing Details</h4>
+                                <h4 class="widget-title">Detalle Facturacion</h4>
+
+
                                 <form class="checkout-form">
                                     <div class="form-group">
-                                        <label for="full_name">Nombre Completo</label>
+                                        <label for="full_name">Nombre</label>
                                         <input type="text" class="form-control" id="full_name" placeholder="">
                                     </div>
                                     <div class="form-group">
@@ -69,12 +71,14 @@
                                     </div>
                                 </form>
                             </div>
+
                             <div class="block">
                                 <h4 class="widget-title">Metodo de pago</h4>
-                                <p>Credit Cart Details (Secure payment)</p>
+                                <p>Detalle Tarjeta de Credito (Secure payment)</p>
                                 <div class="checkout-product-details">
                                     <div class="payment">
                                         <div class="card-details">
+                                            
                                             <form class="checkout-form">
                                                 <div class="form-group">
                                                     <label for="card-number">Numero de Tarjeta <span
@@ -94,8 +98,9 @@
                                                     <input id="card-cvc" class="form-control" type="tel" maxlength="4"
                                                         placeholder="CVC">
                                                 </div>
-                                                <a href="/orden/" class="btn btn-main mt-20">Realizar Compra</a>
+                                                <a href="/orden/realizarCompra" class="btn btn-main mt-20">Realizar Compra</a>
                                             </form>
+
                                         </div>
                                     </div>
                                 </div>
@@ -104,36 +109,37 @@
                         <div class="col-md-4">
                             <div class="product-checkout-details">
                                 <div class="block">
-                                    <h4 class="widget-title">Order Summary</h4>
-                                    <div class="media product-card">
-                                        <a class="pull-left" href="product-single.html">
-                                            <img class="media-object" src="/images/shop/cart/cart-1.jpg"
+                                    <h4 class="widget-title">Detalle de la Compra</h4>
+
+                                    <div class="media product-card" th:each="item : ${session.carrito}">
+                                        <a class="pull-left" href="#">
+                                            <img class="media-object" th:src="@{/foto/articulo(idArticulo=${item.articulo.id})}"
                                                 alt="Image" />
                                         </a>
                                         <div class="media-body">
-                                            <h4 class="media-heading"><a href="product-single.html">Ambassador Heritage
+                                            <h4 class="media-heading"><a href="#" th:text="${item.articulo.title}">Ambassador Heritage
                                                     1921</a></h4>
-                                            <p class="price">1 x $249</p>
-                                            <span class="remove">Remove</span>
+                                                    
+                                            <p class="price" th:text="${item.quantity}+'x'">1 x</p>
+                                            <p class="price" th:text="'$'+${item.precioUnit}">$249</p>
+                                            <!-- <span class="remove">Remove</span> -->
                                         </div>
                                     </div>
+
                                     <div class="discount-code">
-                                        <p>Have a discount ? <a data-toggle="modal" data-target="#coupon-modal"
-                                                href="#!">enter it here</a></p>
+                                       <!--  <p>Have a discount ? <a data-toggle="modal" data-target="#coupon-modal"
+                                                href="#!">enter it here</a></p> -->
                                     </div>
-                                    <ul class="summary-prices">
+                                    <!-- <ul class="summary-prices">
                                         <li>
                                             <span>Subtotal:</span>
                                             <span class="price">$190</span>
                                         </li>
-                                        <li>
-                                            <span>Shipping:</span>
-                                            <span>Free</span>
-                                        </li>
-                                    </ul>
+                                        
+                                    </ul> -->
                                     <div class="summary-total">
                                         <span>Total</span>
-                                        <span>$250</span>
+                                        <span th:text="'$'+${total}">$</span>
                                     </div>
                                     <div class="verified-icon">
                                         <img src="/images/shop/verified.png">
