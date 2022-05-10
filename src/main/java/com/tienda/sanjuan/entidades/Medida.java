@@ -5,7 +5,7 @@
  */
 package com.tienda.sanjuan.entidades;
 
-import com.tienda.sanjuan.enums.Pantalon;
+import com.tienda.sanjuan.enums.Pantalones;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -24,13 +24,13 @@ public class Medida {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
     @Enumerated(EnumType.STRING)
-    private Pantalon sdm;
+    private Pantalones sdm;
     private String medida;
 
     public Medida() {
     }
 
-    public Medida(String id, Pantalon sdm, String medida) {
+    public Medida(String id, Pantalones sdm, String medida) {
         this.id = id;
         this.sdm = sdm;
         this.medida = medida;
@@ -44,11 +44,11 @@ public class Medida {
         this.id = id;
     }
 
-    public Pantalon getSdm() {
+    public Pantalones getSdm() {
         return sdm;
     }
 
-    public void setSdm(Pantalon sdm) {
+    public void setSdm(Pantalones sdm) {
         this.sdm = sdm;
     }
 

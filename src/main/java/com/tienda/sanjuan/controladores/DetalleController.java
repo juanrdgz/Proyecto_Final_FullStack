@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import com.tienda.sanjuan.entidades.Articulo;
 import com.tienda.sanjuan.entidades.Detalle;
+import com.tienda.sanjuan.servicios.ArticuloServicio;
 import com.tienda.sanjuan.servicios.DetalleServicio;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +23,14 @@ public class DetalleController {
     @Autowired
     private DetalleServicio detalleServicio;
 
-    @PostMapping("/agregarAlCarrito")
-    public String agregar(Model modelo, @ModelAttribute("articulo") Articulo articulo,
-            @RequestParam("cantidad") Integer cantidad, HttpSession session) {
+    @Autowired
+    private ArticuloServicio articuloServicio;
+
+    @GetMapping("/agregarAlCarrito")
+    public String agregar(Model modelo, @RequestParam("idArticulo") String id, HttpSession session) {
         // agregar al carrito y si ya se encuenta sumarlo
         Boolean esta = false;
+        Articulo articulo = articuloServicio.buscarPorId(id);
         ArrayList<Detalle> carrito = (ArrayList<Detalle>) session.getAttribute("carrito");
 
         if (carrito == null) {
@@ -35,7 +39,8 @@ public class DetalleController {
             for (Detalle item : carrito) {
                 if (item.getArticulo().getId().equals(articulo.getId())) {
                     // aqui otro if verificando mismo color y tamanio
-                    item.setQuantity(item.getQuantity() + cantidad);
+                    item.setQuantity(item.getQuantity() + 1);
+                    item.setSubTotal(item.getQuantity() * item.getPrecioUnit());;
                     esta = true;
                 }
             }
@@ -43,34 +48,34 @@ public class DetalleController {
         if (!esta) {
             Detalle detalle = new Detalle();
             detalle.setArticulo(articulo);
-            detalle.setQuantity(cantidad);
+            detalle.setQuantity(1);
             detalle.setPrecioUnit(articulo.getPrice());
-            detalle.setSubTotal(cantidad * articulo.getPrice());
-            // detalle.setColor(color);
-            // detalle.setTamanio(tamanio);
+            detalle.setSubTotal(detalle.getQuantity() * articulo.getPrice());
+            detalle.setColor(articulo.getColor());
+            
+            //detalle.setTamanio(tamanio);
             carrito.add(detalle);
         }
         session.setAttribute("carrito", carrito);
         return "cart";
     }
 
-    @PostMapping("/quitarDelCarrito")
-    public String quitarDelCarrito(Model modelo, @RequestParam("posicion") String posicion, HttpSession session) {
+    @GetMapping("/quitarDelCarrito")
+    public String quitarDelCarrito(Model modelo, @RequestParam("posicion") Integer posicion, HttpSession session) {
         ArrayList<Detalle> carrito = (ArrayList<Detalle>) session.getAttribute("carrito");
-        carrito.remove(posicion);
+        carrito.remove(carrito.get(posicion));
         session.setAttribute("carrito", carrito);
         // quitar un item del carrito de la sesion
-        return "redirect:/verCarrito";
+        return "redirect:/detalle/verCarrito";
     }
 
     @GetMapping("/verCarrito")
     public String verCArrito(Model modelo, HttpSession session) {
         ArrayList<Detalle> carrito = (ArrayList<Detalle>) session.getAttribute("carrito");
-        if (carrito != null) {
-            modelo.addAttribute("carrito", carrito);
-        } else {
-            modelo.addAttribute("vacio", "El carrito esta vacio");
+        if (carrito == null || carrito.isEmpty()) {
+            return "empty-cart";
         }
+        modelo.addAttribute("carrito", "");
         // mostrar carrito de la sesion
         return "cart";
     }

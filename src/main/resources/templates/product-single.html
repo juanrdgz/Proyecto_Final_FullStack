@@ -37,30 +37,10 @@
 									<!-- me art lab slider -->
 									<div class='carousel-inner '>
 										<div class='item active'>
-											<img src='../static/images/shop/single-products/product-1.jpg' alt=''
+											<img th:src="@{/foto/articulo(idArticulo= ${articulo.id})}" alt=''
 												data-zoom-image="images/shop/single-products/product-1.jpg" />
 										</div>
-										<div class='item'>
-											<img src='../static/images/shop/single-products/product-2.jpg' alt=''
-												data-zoom-image="images/shop/single-products/product-2.jpg" />
-										</div>
-
-										<div class='item'>
-											<img src='../static/images/shop/single-products/product-3.jpg' alt=''
-												data-zoom-image="images/shop/single-products/product-3.jpg" />
-										</div>
-										<div class='item'>
-											<img src='../static/images/shop/single-products/product-4.jpg' alt=''
-												data-zoom-image="images/shop/single-products/product-4.jpg" />
-										</div>
-										<div class='item'>
-											<img src='../static/images/shop/single-products/product-5.jpg' alt=''
-												data-zoom-image="images/shop/single-products/product-5.jpg" />
-										</div>
-										<div class='item'>
-											<img src='../static/images/shop/single-products/product-6.jpg' alt=''
-												data-zoom-image="images/shop/single-products/product-6.jpg" />
-										</div>
+										
 
 									</div>
 
@@ -76,25 +56,9 @@
 								<!-- thumb -->
 								<ol class='carousel-indicators mCustomScrollbar meartlab'>
 									<li data-target='#carousel-custom' data-slide-to='0' class='active'>
-										<img src='../static/images/shop/single-products/product-1.jpg' alt='' />
+										<img th:src="@{/foto/articulo(idArticulo= ${articulo.id})}" alt='' />
 									</li>
-									<li data-target='#carousel-custom' data-slide-to='1'>
-										<img src='../static/images/shop/single-products/product-2.jpg' alt='' />
-									</li>
-									<li data-target='#carousel-custom' data-slide-to='2'>
-										<img src='../static/images/shop/single-products/product-3.jpg' alt='' />
-									</li>
-									<li data-target='#carousel-custom' data-slide-to='3'>
-										<img src='../static/images/shop/single-products/product-4.jpg' alt='' />
-									</li>
-									<li data-target='#carousel-custom' data-slide-to='4'>
-										<img src='../static/images/shop/single-products/product-5.jpg' alt='' />
-									</li>
-									<li data-target='#carousel-custom' data-slide-to='5'>
-										<img src='../static/images/shop/single-products/product-6.jpg' alt='' />
-									</li>
-									<li data-target='#carousel-custom' data-slide-to='6'>
-										<img src='../static/images/shop/single-products/product-7.jpg' alt='' />
+									
 									</li>
 								</ol>
 							</div>
@@ -102,19 +66,16 @@
 					</div>
 					<div class="col-md-7">
 						<div class="single-product-details">
-							<h2 th:text="${articulo.title}">Eclipse Crossbody</h2>
-							<p class="product-price" th:text="'$'+${articulo.title}">$300</p>
+							<h1 th:text="${articulo.title}"> </h1>
+							<h2><p class="product-price" th:text="'$'+${articulo.price}"></p></h2>
 
-							<p class="product-description mt-20">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ipsum dicta quod,
-								quia
-								doloremque aut deserunt commodi quis. Totam a consequatur beatae nostrum, earum
-								consequuntur? Eveniet consequatur ipsum dicta recusandae.
+							<p class="product-description mt-20" th:text="${articulo.description}">
 							</p>
 
 							<div class="color-swatches">
 								<span>color:</span>
-								<ul>
+								<span th:text="${articulo.color}"></span>
+								<!-- <ul>
 									<li>
 										<a th:href="@{/foto/articulo(idArticulo = ${articulo.id})}"
 											class="swatch-violet"></a>
@@ -125,28 +86,32 @@
 									<li>
 										<a href="#!" class="swatch-cream"></a>
 									</li>
-								</ul>
+								</ul> -->
 							</div>
-							<div class="product-size">
-								<span>Size:</span>
-								<select class="form-control">
+							<div class="product-size" th:if="${articulo.tipoMedida != null}">
+								<span>Talle/Tamaño:</span>
+								<span th:if="${articulo.ropaComun != null}" th:text="${articulo.ropaComun}"></span>
+								<span th:if="${articulo.pantalones != null}" th:text="${articulo.pantalones}"></span>
+								<span th:if="${articulo.ninios != null}" th:text="${articulo.ninios}"></span>
+								<span th:if="${articulo.bebes != null}" th:text="${articulo.bebes}"></span>
+								<span th:if="${articulo.plazas != null}" th:text="${articulo.plazas}"></span>
+								<!-- <select class="form-control">
 									<option>S</option>
 									<option>M</option>
 									<option>L</option>
 									<option>XL</option>
-								</select>
+								</select> -->
 							</div>
 							<div class="product-quantity">
-								<span>Quantity:</span>
-								<div class="product-quantity-slider">
+								<span>Quantity: 1</span>
+								<!-- <div class="product-quantity-slider">
 									<input id="product-quantity" type="text" value="0" name="product-quantity">
-								</div>
+								</div> -->
 							</div>
 							<div class="product-category">
-								<span>Categories:</span>
+								<span>Categorias:</span>
 								<ul>
-									<li><a href="product-single.html">Products</a></li>
-									<li><a href="product-single.html">Soap</a></li>
+									<li><a href="product-single.html" th:text="${articulo.categoria}"></a></li>
 								</ul>
 							</div>
 							<a th:href="@{/detalle/agregarAlCarrito (idArticulo=${articulo.id})}"
@@ -161,130 +126,21 @@
 								<li class="active"><a data-toggle="tab" href="#details"
 										aria-expanded="true">Detalles</a>
 								</li>
-								<li class=""><a data-toggle="tab" href="#reviews" aria-expanded="false">Reviews
-										(3)</a>
-								</li>
 							</ul>
 							<div class="tab-content patternbg">
 								<div id="details" class="tab-pane fade active in">
 									<h4>Descripcion del Producto</h4>
-									<p th:text="${articulo.description}">Lorem ipsum dolor sit amet, consectetur
-										adipisicing elit, sed do eiusmod tempor
-										incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-										nostrud
-										exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									<p th:text="${articulo.description}"></p>
 								</div>
 								<div id="reviews" class="tab-pane fade">
 									<div class="post-comments">
 										<ul class="media-list comments-list m-bot-50 clearlist">
-											<!-- Comment Item start-->
-											<li class="media">
 
-												<a class="pull-left" href="#!">
-													<img class="media-object comment-avatar"
-														src="../static/images/blog/avater-1.jpg" alt="" width="50"
-														height="50" />
-												</a>
-
-												<div class="media-body">
-													<div class="comment-info">
-														<h4 class="comment-author">
-															<a href="#!">Jonathon Andrew</a>
-
-														</h4>
-														<time datetime="2013-04-06T13:53">July 02, 2015, at
-															11:34</time>
-														<a class="comment-button" href="#!"><i
-																class="tf-ion-chatbubbles"></i>Reply</a>
-													</div>
-
-													<p>
-														Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-														Quisque
-														at
-														magna ut ante eleifend eleifend.Lorem ipsum dolor sit amet,
-														consectetur adipisicing elit. Quod laborum minima,
-														reprehenderit
-														laboriosam officiis praesentium? Impedit minus provident
-														assumenda
-														quae.
-													</p>
-												</div>
-
-											</li>
-											<!-- End Comment Item -->
-
-											<!-- Comment Item start-->
-											<li class="media">
-
-												<a class="pull-left" href="#!">
-													<img class="media-object comment-avatar"
-														src="../static/images/blog/avater-4.jpg" alt="" width="50"
-														height="50" />
-												</a>
-
-												<div class="media-body">
-
-													<div class="comment-info">
-														<div class="comment-author">
-															<a href="#!">Jonathon Andrew</a>
-														</div>
-														<time datetime="2013-04-06T13:53">July 02, 2015, at
-															11:34</time>
-														<a class="comment-button" href="#!"><i
-																class="tf-ion-chatbubbles"></i>Reply</a>
-													</div>
-
-													<p>
-														Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-														Quisque
-														at
-														magna ut ante eleifend eleifend. Lorem ipsum dolor sit amet,
-														consectetur adipisicing elit. Magni natus, nostrum iste non
-														delectus
-														atque ab a accusantium optio, dolor!
-													</p>
-
-												</div>
-
-											</li>
-											<!-- End Comment Item -->
-
-											<!-- Comment Item start-->
-											<li class="media">
-
-												<a class="pull-left" href="#!">
-													<img class="media-object comment-avatar"
-														src="../static/images/blog/avater-1.jpg" alt="" width="50"
-														height="50">
-												</a>
-
-												<div class="media-body">
-
-													<div class="comment-info">
-														<div class="comment-author">
-															<a href="#!">Jonathon Andrew</a>
-														</div>
-														<time datetime="2013-04-06T13:53">July 02, 2015, at
-															11:34</time>
-														<a class="comment-button" href="#!"><i
-																class="tf-ion-chatbubbles"></i>Reply</a>
-													</div>
-
-													<p>
-														Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-														Quisque
-														at
-														magna ut ante eleifend eleifend.
-													</p>
-
-												</div>
-
-											</li>
 										</ul>
 									</div>
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
@@ -304,7 +160,7 @@
 						<div class="product-item">
 							<div class="product-thumb">
 								<span class="bage">Sale</span>
-								<img class="img-responsive" src="../static/images/shop/products/product-5.jpg"
+								<img class="img-responsive" src="/images/shop/products/product-5.jpg"
 									alt="product-img" />
 								<div class="preview-meta">
 									<ul>
@@ -331,7 +187,7 @@
 					<div class="col-md-3">
 						<div class="product-item">
 							<div class="product-thumb">
-								<img class="img-responsive" src="../static/images/shop/products/product-1.jpg"
+								<img class="img-responsive" src="/images/shop/products/product-1.jpg"
 									alt="product-img" />
 								<div class="preview-meta">
 									<ul>
@@ -358,7 +214,7 @@
 					<div class="col-md-3">
 						<div class="product-item">
 							<div class="product-thumb">
-								<img class="img-responsive" src="../static/images/shop/products/product-2.jpg"
+								<img class="img-responsive" src="/images/shop/products/product-2.jpg"
 									alt="product-img" />
 								<div class="preview-meta">
 									<ul>
@@ -385,7 +241,7 @@
 					<div class="col-md-3">
 						<div class="product-item">
 							<div class="product-thumb">
-								<img class="img-responsive" src="../static/images/shop/products/product-3.jpg"
+								<img class="img-responsive" src="/images/shop/products/product-3.jpg"
 									alt="product-img" />
 								<div class="preview-meta">
 									<ul>
@@ -416,40 +272,7 @@
 
 
 
-		<!-- Modal -->
-		<div class="modal product-modal fade" id="product-modal">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<i class="tf-ion-close"></i>
-			</button>
-			<div class="modal-dialog " role="document">
-				<div class="modal-content">
-					<div class="modal-body">
-						<div class="row">
-							<div class="col-md-8">
-								<div class="modal-image">
-									<img class="img-responsive"
-										src="../static/images/shop/products/modal-product.jpg" />
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-short-details">
-									<h2 class="product-title">GM Pendant, Basalt Grey</h2>
-									<p class="product-price">$200</p>
-									<p class="product-short-description">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem iusto nihil
-										cum.
-										Illo
-										laborum numquam rem aut officia dicta cumque.
-									</p>
-									<a href="#!" class="btn btn-main">Add To Cart</a>
-									<a href="#!" class="btn btn-transparent">View Product Details</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 	</main>
 
 </body>

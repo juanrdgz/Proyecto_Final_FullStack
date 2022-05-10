@@ -8,7 +8,6 @@ package com.tienda.sanjuan.controladores;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -27,11 +26,6 @@ public class LoginController {
             modelo.addAttribute("error", "Usuario o contraseña incorrectos");
         }
         return "login";
-    }
-
-    @PostMapping("/")
-    public String formulario() {
-        return "index";
     }
 
 }

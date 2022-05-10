@@ -7,10 +7,18 @@ package com.tienda.sanjuan.servicios;
 
 import com.tienda.sanjuan.entidades.Usuario;
 import com.tienda.sanjuan.repositorios.UsuarioRepositorio;
+
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -20,12 +28,12 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  * @author Equipo6
  */
 @Service
-public class UsuarioServicio {
+public class UsuarioServicio  implements UserDetailsService {
 
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
 
-    public Usuario registrarUsuario(Usuario usuario) throws Exception {
+    public Usuario registrarUsuario(Usuario usuario, String password2) throws Exception {
 
         if (usuario.getUserName().isEmpty()) {
             throw new Exception("Este campo no puede estar vacío");
@@ -49,7 +57,7 @@ public class UsuarioServicio {
         if (user != null) {
             throw new Exception("El usuario ya existe, pruebe con otro nombre");
         }
-        if (!usuario.getPassword().equals(usuario.getPassword())) {
+        if (!usuario.getPassword().equals(password2)) {
             throw new Exception("Las contraseñas ingresadas deben ser iguales");
         }
 
@@ -105,8 +113,16 @@ public class UsuarioServicio {
         return usuarioRepositorio.getById(id);
     }
     
-    
-    
-
-  
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        try {
+            Usuario usuario = usuarioRepositorio.findByUserName(username);
+            List<GrantedAuthority> authorities = new ArrayList<>();
+            agregarUsuarioALaSesion(usuario);
+            authorities.add(new SimpleGrantedAuthority("ROLE_" + usuario.getRol()));
+            return new User(username, usuario.getPassword(), authorities);
+        } catch (Exception e) {
+            throw new UsernameNotFoundException("El usuario no existe");
+        }
+    }
 }

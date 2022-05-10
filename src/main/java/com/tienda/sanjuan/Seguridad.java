@@ -5,11 +5,16 @@
  */
 package com.tienda.sanjuan;
 
+import com.tienda.sanjuan.servicios.UsuarioServicio;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  *
@@ -18,9 +23,16 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class Seguridad extends WebSecurityConfigurerAdapter{
-    @Override
+    @Autowired
+    private UsuarioServicio usuarioServicio;
+
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(usuarioServicio).passwordEncoder(new BCryptPasswordEncoder());
+    }    
+    /* @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
@@ -33,7 +45,21 @@ public class Seguridad extends WebSecurityConfigurerAdapter{
                 .and()
             .logout()
                 .permitAll();
-               
+    } */
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests().antMatchers("/*", "/home", "/js/**", "/css/**", "/images/**","/plugins/**").permitAll()
+                .and().formLogin()
+                .loginPage("/login")
+                .usernameParameter("userName")
+                .passwordParameter("password")
+                .defaultSuccessUrl("/")
+                .loginProcessingUrl("/logincheck")
+                .failureUrl("/login?error=error")
+                .permitAll()
+                .and().logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/login");
     }
 }
 
