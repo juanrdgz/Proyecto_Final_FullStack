@@ -28,7 +28,7 @@ public class Seguridad extends WebSecurityConfigurerAdapter{
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
-                .loginPage("/login")
+                .loginPage("/login.html")
                 .permitAll()
                 .and()
             .logout()
