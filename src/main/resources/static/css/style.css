@@ -350,6 +350,7 @@ input[type="tel"]:focus {
     height: auto;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    position: absolute;
 }
 
 .category-box a {
@@ -380,8 +381,8 @@ input[type="tel"]:focus {
 
 .category-box .content h3 {
     margin: 0;
-    color: #333;
-    font-size: 20px;
+    color: #fff;
+    font-size: 25px;
     font-weight: 500;
 }
 
@@ -393,6 +394,8 @@ input[type="tel"]:focus {
 
 .category-box .content p {
     margin: 6px 0 0;
+    font-size: 1.6rem;
+    color:#111;
 }
 
 .page-header {
@@ -2897,5 +2900,73 @@ input[type="tel"]:focus {
     color: #555;
 }
 
+.about-div{
+    padding-top: 2rem;
+}
 
+.form-label{
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+
+.page-form{
+    padding-top: 0;
+}
+
+.lupa{
+    align-items:center;
+    justify-content:center;
+    display: flex;
+}
+
+.search-form::placeholder{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 1.2rem;
+    color: #222;
+}
+
+.side-options{
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.form-container{
+    display: inline-block;
+}
+
+.header-content{
+    margin-left: 5rem;
+}
+
+.page-header-form{
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.cat-img{
+    bottom: -30%;
+    position: absolute;
+}
+
+.cat-img-2{
+    position: absolute;
+}
+
+.products-main{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+section .call-to-action {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.instagram-feed {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
 /*# sourceMappingURL=style.css.map */

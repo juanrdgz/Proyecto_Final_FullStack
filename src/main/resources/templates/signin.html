@@ -30,7 +30,7 @@
               <h2 class="text-center">Crear cuenta</h2>
 
               <span th:if="${error != null}" style="color: red;" th:text="${error}"></span>
-              <span th:if="${succes != null}" style="color: green;" th:text="${succes}"></span>
+              <span th:if="${success != null}" style="color: green;" th:text="${succes}"></span>
 
               <form class="text-left clearfix" action="/usuario/registro" method="POST" th:object="${usuario}">
                 <div class="form-group">
@@ -38,29 +38,29 @@
                     placeholder="Nombre Completo">
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" th:field="*{email}" th:value="*{email}" placeholder="Email">
+                  <input type="email" class="form-control" th:field="*{email}" th:value="*{email}" placeholder="Correo electrónico">
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control" th:field="*{phoneNumber}" th:value="*{phoneNumber}"
-                    placeholder="Telefono">
+                    placeholder="Teléfono">
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control" th:field="*{userName}" th:value="*{userName}"
-                    placeholder="Username">
+                    placeholder="Nombre de usuario">
                 </div>
                 <div class="form-group">
                   <input type="password" class="form-control" th:field="*{password}" th:value="*{password}"
-                    placeholder="Password">
+                    placeholder="Contraseña">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" name="password2" placeholder="Confirmar Password">
+                  <input type="password" class="form-control" name="password2" placeholder="Confirmar contraseña">
                 </div>
                 <div class="text-center">
                   <button type="submit" class="btn btn-main text-center">Sign In</button>
                 </div>
               </form>
-              <p class="mt-20">Ya tiene una cuenta?<a href="/login"> Login</a></p>
-              <p><a href="forget-password.html"> Olvidó la contraseña?</a></p>
+              <p class="mt-20">Ya tiene una cuenta?<a href="/login"> Iniciar sesión</a></p>
+              <p>Olvidaste tu contraseña?</p>
             </div>
           </div>
         </div>
