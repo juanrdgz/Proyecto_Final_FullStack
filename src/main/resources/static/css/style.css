@@ -773,6 +773,14 @@ input[type="tel"]:focus {
     vertical-align: middle;
 }
 
+#contenedor{
+    padding-bottom: 0;
+}
+
+.logo-header{
+    height: 10rem;
+}
+
 @media (max-width: 768px) {
     .top-header .top-menu {
         text-align: center;

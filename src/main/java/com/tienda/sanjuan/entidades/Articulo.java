@@ -18,12 +18,10 @@ public class Articulo {
     private String id;
     private String title;
     private Double price;
-    @Enumerated(EnumType.STRING)
-    private Color color;
+    private String color;
     private String description;
     private Integer stock;
-    @Enumerated(EnumType.STRING)
-    private Material material;
+    private String material;
     /*@Enumerated(EnumType.STRING)
     private Medida sizea; // preguntar si tenemos que poner 3 Enum por cada medidad de talles
     */
@@ -34,19 +32,6 @@ public class Articulo {
     private Boolean destacado = false;
 
     public Articulo() {
-    }
-
-    public Articulo(String id, String title, Double price, Color color, String description, Integer stock, Material material, Medida sizea, Categoria categorie, Boolean alta, Boolean destacado) {
-        this.id = id;
-        this.title = title;
-        this.price = price;
-        this.color = color;
-        this.description = description;
-        this.stock = stock;
-        this.material = material;
-        this.categorie = categorie;
-        this.alta = alta;
-        this.destacado = destacado;
     }
 
     public String getId() {
@@ -73,11 +58,11 @@ public class Articulo {
         this.price = price;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
 
@@ -97,11 +82,11 @@ public class Articulo {
         this.stock = stock;
     }
 
-    public Material getMaterial() {
+    public String getMaterial() {
         return material;
     }
 
-    public void setMaterial(Material material) {
+    public void setMaterial(String material) {
         this.material = material;
     }
 
