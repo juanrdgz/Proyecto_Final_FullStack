@@ -10,5 +10,5 @@ package com.tienda.sanjuan.enums;
  * @author carop
  */
 public enum RopaNormal {
-    
+    S,M,L,XL,XXL;
 }
