@@ -269,7 +269,9 @@
                                             <ul>
                                                 <li class="dropdown-header">Hogar</li>
                                                 <li role="separator" class="divider"></li>
-                                                <li class="account-slider"><a href="shop.html">Compras</a></li>
+                                                <li sec:authorize="hasRole('ROLE_ADMINISTRADOR')" class="account-slider"><a href="/articulo">Cargar Productos</a></li>
+                                                <li sec:authorize="hasRole('ROLE_ADMINISTRADOR')" role="separator" class="divider"></li>                                     
+                                                <li class="account-slider"><a href="/">Compras</a></li>
                                                 <li role="separator" class="divider"></li>
                                                 <li class="account-slider"><a href="/usuario/perfil">Perfil</a></li>
                                                 <li role="separator" class="divider"></li>

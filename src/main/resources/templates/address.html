@@ -27,8 +27,8 @@
         <section class="user-dashboard page-wrapper">
             <div class="container">
                 <div class="row">
-                    <h1 th:if="${session?.usuario?.direccion == null}">Aun no hay direcciones cargadas.</h1>
-                    <div class="col-md-12" th:if="${session?.usuario?.direccion != null}>
+                    
+                    <div class="col-md-12">
                         <ul class="list-inline dashboard-menu text-center">
                             <li><a href="/usuario/compras">Dashboard</a></li>
                             <li><a class="active" href="/usuario/direccion">Direcciones</a></li>
@@ -48,19 +48,20 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td th:text="${session?.usuario?.fullName}">Adam Smith</td>
-                                            <td th:text="${session?.usuario?.direccion.address}">9/4 C Babor Road, Mohammad Pur, Dhaka</td>
-                                            <td th:text="${session?.usuario?.direccion.city}">Bangladesh</td>
-                                            <td th:text="'+'+${session?.usuario?.phoneNumber}">+884 5452 6452</td>
+                                            <td>Adam Smith</td>
+                                            <td>9/4 C Babor Road, Mohammad Pur, Dhaka</td>
+                                            <td>Bangladesh</td>
+                                            <td>+884 5452 6452</td>
                                             <td>
                                                 <div class="btn-group" role="group">
                                                     <button type="button" class="btn btn-default"><i class="tf-pencil2"
                                                             aria-hidden="true"></i></button>
-                                                    <button type="button" class="btn btn-default"><i
-                                                            class="tf-ion-close" aria-hidden="true"></i></button>
+                                                    <button type="button" class="btn btn-default"><i class="tf-ion-close"
+                                                            aria-hidden="true"></i></button>
                                                 </div>
                                             </td>
                                         </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
