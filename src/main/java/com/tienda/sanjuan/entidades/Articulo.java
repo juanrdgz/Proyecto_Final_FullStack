@@ -110,15 +110,6 @@ public class Articulo {
         this.material = material;
     }
 
-
-    public Seccion getCategorie() {
-        return categoria;
-    }
-
-    public void setCategorie(Seccion categoria) {
-        this.categoria = categoria;
-    }
-
     public Boolean getAlta() {
         return alta;
     }

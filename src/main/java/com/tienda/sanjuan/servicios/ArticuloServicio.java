@@ -46,9 +46,7 @@ public class ArticuloServicio {
         if (articulo.getMaterial() == null) {
             throw new Exception("El material del articulo no puede estar vacio");
         }
-        if (articulo.getCategorie()== null) {
-            throw new Exception("La categoría del articulo no puede estar vacio");
-        }
+        
         if (articulo.getStock() == 0 || articulo.getStock() == null) {
             throw new Exception("El stock del articulo no puede ser 0 o vacio");
         }
@@ -68,9 +66,7 @@ public class ArticuloServicio {
                 if (articulo.getMaterial() == null) {
                     throw new Exception("El nuevo material del articulo no puede estar vacio");
                 }
-                if (articulo.getCategorie()==null) {
-                    throw new Exception("La nueva categoria no puede estar vacia");
-                }
+                
         return articuloRepositorio.save(articulo);
     }
 
@@ -177,10 +173,9 @@ public class ArticuloServicio {
         return articulos;
     }
 
+
     public List<Articulo> listaIndex() {
         return articuloRepositorio.listaIndex();
     }
-    public List<Articulo> search(String palabra) {
-        return articuloRepositorio.buscarPorPalabra(palabra);
-    }
+
 }
