@@ -105,4 +105,6 @@ tipoMedida.addEventListener("change", (e) => {
   $('.hero-slider').slickAnimation();
 
 
+  
+
 })(jQuery);
