@@ -116,9 +116,7 @@ public class UsuarioServicio  implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         try {
-            System.out.println("username: "+username);
             Usuario usuario = usuarioRepositorio.findByUserName(username);
-            System.out.println("usuario: "+usuario);
             List<GrantedAuthority> authorities = new ArrayList<>();
             agregarUsuarioALaSesion(usuario);
             authorities.add(new SimpleGrantedAuthority("ROLE_" + usuario.getRol()));

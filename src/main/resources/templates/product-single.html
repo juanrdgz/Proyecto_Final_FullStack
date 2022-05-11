@@ -89,12 +89,12 @@
 								</ul> -->
 							</div>
 							<div class="product-size" th:if="${articulo.tipoMedida != null}">
-								<span>Talle/Tamaño:</span>
+								<span>Talle/Medida:</span>
 								<span th:if="${articulo.ropaComun != null}" th:text="${articulo.ropaComun}"></span>
-								<span th:if="${articulo.pantalones != null}" th:text="${articulo.pantalones}"></span>
-								<span th:if="${articulo.ninios != null}" th:text="${articulo.ninios}"></span>
-								<span th:if="${articulo.bebes != null}" th:text="${articulo.bebes}"></span>
-								<span th:if="${articulo.plazas != null}" th:text="${articulo.plazas}"></span>
+								<span th:if="${articulo.pantalones != null}" th:text="${articulo.pantalones.nombreVista}"></span>
+								<span th:if="${articulo.ninios != null}" th:text="${articulo.ninios.nombreVista}"></span>
+								<span th:if="${articulo.bebes != null}" th:text="${articulo.bebes.nombreVista}"></span>
+								<span th:if="${articulo.plazas != null}" th:text="${articulo.plazas.nombreVista}"></span>
 								<!-- <select class="form-control">
 									<option>S</option>
 									<option>M</option>
@@ -103,7 +103,9 @@
 								</select> -->
 							</div>
 							<div class="product-quantity">
-								<span>Quantity: 1</span>
+								<span>Cantidad:</span>
+								<span>1</span>
+								<span th:text="${articulo.stock}+' disponibles!'"></span>
 								<!-- <div class="product-quantity-slider">
 									<input id="product-quantity" type="text" value="0" name="product-quantity">
 								</div> -->
@@ -114,33 +116,10 @@
 									<li><a href="product-single.html" th:text="${articulo.categoria}"></a></li>
 								</ul>
 							</div>
-							<a th:href="@{/detalle/agregarAlCarrito (idArticulo=${articulo.id})}"
-								class="btn btn-main mt-20">Add To Cart</a>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="tabCommon mt-20">
-							<ul class="nav nav-tabs">
-								<li class="active"><a data-toggle="tab" href="#details"
-										aria-expanded="true">Detalles</a>
-								</li>
-							</ul>
-							<div class="tab-content patternbg">
-								<div id="details" class="tab-pane fade active in">
-									<h4>Descripcion del Producto</h4>
-									<p th:text="${articulo.description}"></p>
-								</div>
-								<div id="reviews" class="tab-pane fade">
-									<div class="post-comments">
-										<ul class="media-list comments-list m-bot-50 clearlist">
-
-										</ul>
-									</div>
-								</div>
-							</div>
-
+							<a th:if="${articulo.stock > 0}"
+							th:href="@{/detalle/agregarAlCarrito (idArticulo=${articulo.id})}"
+								class="btn btn-main mt-20">Agregar al Carrito</a>
+								<h3 th:if="${articulo.stock = 0}">Sin Stock</h3>
 						</div>
 					</div>
 				</div>
@@ -152,10 +131,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="title text-center">
-						<h2>Related Products</h2>
+						<h2>Productos Relacionados</h2>
 					</div>
-				</div>
+				</div>				
 				<div class="row">
+
 					<div class="col-md-3">
 						<div class="product-item">
 							<div class="product-thumb">
@@ -180,87 +160,6 @@
 							</div>
 							<div class="product-content">
 								<h4><a href="product-single.html">Reef Boardsport</a></h4>
-								<p class="price">$200</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="product-item">
-							<div class="product-thumb">
-								<img class="img-responsive" src="/images/shop/products/product-1.jpg"
-									alt="product-img" />
-								<div class="preview-meta">
-									<ul>
-										<li>
-											<span data-toggle="modal" data-target="#product-modal">
-												<i class="tf-ion-ios-search-strong"></i>
-											</span>
-										</li>
-										<li>
-											<a href="#"><i class="tf-ion-ios-heart"></i></a>
-										</li>
-										<li>
-											<a href="#!"><i class="tf-ion-android-cart"></i></a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="product-content">
-								<h4><a href="product-single.html">Rainbow Shoes</a></h4>
-								<p class="price">$200</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="product-item">
-							<div class="product-thumb">
-								<img class="img-responsive" src="/images/shop/products/product-2.jpg"
-									alt="product-img" />
-								<div class="preview-meta">
-									<ul>
-										<li>
-											<span data-toggle="modal" data-target="#product-modal">
-												<i class="tf-ion-ios-search"></i>
-											</span>
-										</li>
-										<li>
-											<a href="#"><i class="tf-ion-ios-heart"></i></a>
-										</li>
-										<li>
-											<a href="#!"><i class="tf-ion-android-cart"></i></a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="product-content">
-								<h4><a href="product-single.html">Strayhorn SP</a></h4>
-								<p class="price">$230</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="product-item">
-							<div class="product-thumb">
-								<img class="img-responsive" src="/images/shop/products/product-3.jpg"
-									alt="product-img" />
-								<div class="preview-meta">
-									<ul>
-										<li>
-											<span data-toggle="modal" data-target="#product-modal">
-												<i class="tf-ion-ios-search"></i>
-											</span>
-										</li>
-										<li>
-											<a href="#"><i class="tf-ion-ios-heart"></i></a>
-										</li>
-										<li>
-											<a href="#!"><i class="tf-ion-android-cart"></i></a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="product-content">
-								<h4><a href="product-single.html">Bradley Mid</a></h4>
 								<p class="price">$200</p>
 							</div>
 						</div>

@@ -23,7 +23,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
-//@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class Seguridad extends WebSecurityConfigurerAdapter{
     @Autowired
     private UsuarioServicio usuarioServicio;
@@ -59,7 +59,8 @@ public class Seguridad extends WebSecurityConfigurerAdapter{
                 .permitAll()
                 .and().logout()
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/login");
+                .logoutSuccessUrl("/login")
+                .and().csrf().disable();
     }
 }
 

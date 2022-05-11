@@ -135,5 +135,11 @@ public class ArticuloController {
             return "redirect:/articulo/listar";
         }
 
+        
+    }
+    @PostMapping("/search")
+    public String search(@RequestParam("palabra") String palabra, Model modelo) {        
+        modelo.addAttribute("articulos", articuloServicio.search(palabra));
+        return "shop";
     }
 }

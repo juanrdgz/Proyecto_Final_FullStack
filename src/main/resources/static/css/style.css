@@ -2969,4 +2969,15 @@ section .call-to-action {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+.shop-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.section-pading{
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
 /*# sourceMappingURL=style.css.map */
