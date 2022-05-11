@@ -3,7 +3,7 @@
  * To change this template file("36"), choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tienda.sanjuan.enums;
+package com.tienda.sanjuan.Enums;
 
 /**
  *
