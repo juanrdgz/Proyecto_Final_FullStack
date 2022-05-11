@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  *
@@ -60,7 +59,10 @@ public class ArticuloController {
     @GetMapping("/producto")
     public String mostrarProducto(@RequestParam("idArticulo") String id, Model modelo) {
         Articulo articulo = articuloServicio.buscarPorId(id);
+        List<Articulo> articulos = articuloServicio.buscarPorCategoria(articulo.getCategoria().toString());
+
         modelo.addAttribute("articulo", articulo);
+        modelo.addAttribute("articulos", articulos);
         return "product-single";
     }
 
@@ -137,9 +139,5 @@ public class ArticuloController {
 
         
     }
-    @PostMapping("/search")
-    public String search(@RequestParam("palabra") String palabra, Model modelo) {        
-        modelo.addAttribute("articulos", articuloServicio.search(palabra));
-        return "shop";
-    }
+
 }
