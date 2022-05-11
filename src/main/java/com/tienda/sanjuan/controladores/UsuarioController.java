@@ -40,12 +40,15 @@ public class UsuarioController {
         modelo.addAttribute("usuario", usuario);
         return "signin";
     }
-    //guardar usuario
+
+    // guardar usuario
     @PostMapping("/registro")
-    private String guardarUsuario(@ModelAttribute("usuario") Usuario usuario,@RequestParam(name = "password2", required = false) String password2, Model modelo) {
+    private String guardarUsuario(@ModelAttribute("usuario") Usuario usuario,
+                                @RequestParam(name = "password", required = false) String password, 
+                                @RequestParam(name = "password2", required = false) String password2,Model modelo) {
         try {
             if (usuario.getId() != null && usuario.getId().isEmpty()) {
-                usuarioServicio.registrarUsuario(usuario, password2);
+                usuarioServicio.registrarUsuario(usuario, password, password2);
             } else {
                 usuarioServicio.modificarUsuario(usuario);
             }
@@ -63,8 +66,8 @@ public class UsuarioController {
         modelo.addAttribute("usuarios", usuarios);
         return "";
     }
-    
-    //eliminar usuario - ADMIN
+
+    // eliminar usuario - ADMIN
     @GetMapping("/eliminar")
     private String eliminarUsuario(@RequestParam("usuarioId") String id) {
 
@@ -75,7 +78,8 @@ public class UsuarioController {
         }
         return "";
     }
-    //modificar usuario
+
+    // modificar usuario
     @GetMapping("/modificar")
     private String modificarUsuario(Model modelo, @RequestParam("id") String id) {
         Usuario usuario = usuarioServicio.buscarUsuario(id);
@@ -84,15 +88,17 @@ public class UsuarioController {
         return "signin";
     }
 
-    //mostrar perfil
+    // mostrar perfil
     @GetMapping("/perfil")
     private String mostrarPerfil() {
         return "profile-details";
     }
+
     @GetMapping("/direccion")
     private String direcciones() {
         return "address";
     }
+
     @GetMapping("/compras")
     private String compras(Model modelo, HttpSession session) {
 
@@ -104,11 +110,10 @@ public class UsuarioController {
             modelo.addAttribute("status", "Aun no hiciste ninguna compra.");
         } else {
             modelo.addAttribute("ordenes", ordenes);
-            modelo.addAttribute("status", null);            
+            modelo.addAttribute("status", null);
         }
 
         return "dashboard";
     }
-    
 
 }

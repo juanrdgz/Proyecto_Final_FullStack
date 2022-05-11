@@ -28,8 +28,8 @@
           <div class="col-md-6 col-md-offset-3">
             <div class="block text-center">
 
-              <div th:if="${error != null}" th:text="${error}" class="alert alert-danger alert-common" role="alert">
-                <i class="tf-ion-close-circled"></i><span>Error!</span>
+              <div th:if="${error != null}"  class="alert alert-danger alert-common" role="alert">
+                <i class="tf-ion-close-circled"></i><span th:text="${error}">Error!</span>
               </div>
               <h2 class="text-center">Bienvenido</h2>
 

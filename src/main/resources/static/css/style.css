@@ -2996,6 +2996,7 @@ section .call-to-action {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding-top: 2rem;
 }
 
 .product-single-div{
@@ -3058,5 +3059,22 @@ tbody>tr>td{
     font-size: 1.3rem;
     color:black;
     padding-left: 1rem;
+}
+.payment-icons{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4rem;
+}
+.payment-method{
+    height: 6rem;
+}
+
+.checkout-div{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.shopping-div{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 /*# sourceMappingURL=style.css.map */

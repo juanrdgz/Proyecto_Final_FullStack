@@ -33,7 +33,7 @@ public class UsuarioServicio  implements UserDetailsService {
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
 
-    public Usuario registrarUsuario(Usuario usuario, String password2) throws Exception {
+    public Usuario registrarUsuario(Usuario usuario, String password,String password2) throws Exception {
 
         if (usuario.getUserName().isEmpty()) {
             throw new Exception("Este campo no puede estar vacío");
@@ -57,12 +57,13 @@ public class UsuarioServicio  implements UserDetailsService {
         if (user != null) {
             throw new Exception("El usuario ya existe, pruebe con otro nombre");
         }
-        if (!usuario.getPassword().equals(password2)) {
+        if (!password.equals(password2)) {
             throw new Exception("Las contraseñas ingresadas deben ser iguales");
         }
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        usuario.setPassword(encoder.encode(usuario.getPassword()));
+        usuario.setPassword(encoder.encode(password));
+        
         return usuarioRepositorio.save(usuario);
     }
 

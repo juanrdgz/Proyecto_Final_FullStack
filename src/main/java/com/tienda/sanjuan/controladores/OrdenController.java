@@ -30,7 +30,7 @@ public class OrdenController {
     @Autowired
     private DetalleServicio detalleServicio;
 
-    @PreAuthorize("hasAnyRole('ROLE_USUARIO','ROLE_ADMINISTRADOR')")
+    //@PreAuthorize("hasAnyRole('ROLE_USUARIO','ROLE_ADMINISTRADOR')")
     @GetMapping("/checkout")
     public String checkout(Model modelo, HttpSession session) {
         /*
