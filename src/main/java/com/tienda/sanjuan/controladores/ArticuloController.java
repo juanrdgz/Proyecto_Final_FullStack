@@ -76,7 +76,7 @@ public class ArticuloController {
     public String listAll(Model modelo) {
         List<Articulo> articulos = articuloServicio.listarArticulos();
         modelo.addAttribute("listaDeArticulos", articulos);
-        return "listar-articulo";
+        return "shop";
     }
 
     @GetMapping("/alta")
@@ -135,5 +135,11 @@ public class ArticuloController {
             return "redirect:/articulo/listar";
         }
 
+        
+    }
+    @PostMapping("/search")
+    public String search(@RequestParam("palabra") String palabra, Model modelo) {        
+        modelo.addAttribute("articulos", articuloServicio.search(palabra));
+        return "shop";
     }
 }

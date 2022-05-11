@@ -24,4 +24,10 @@ public interface ArticuloRepositorio extends JpaRepository<Articulo, String> {
 
     @Query("select a from Articulo a where a.categoria= :cat")
     public List<Articulo> buscarPorCategoria(@Param("cat") Seccion categoria);
+
+    @Query("select a from Articulo a group by a.title")
+    public List<Articulo> listaIndex();
+
+    @Query("select a from Articulo a where a.title like '%palabra%'")
+    public List<Articulo> buscarPorPalabra(@Param("palabra") String palabra);
 }

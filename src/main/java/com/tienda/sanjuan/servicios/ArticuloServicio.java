@@ -176,4 +176,11 @@ public class ArticuloServicio {
         }
         return articulos;
     }
+
+    public List<Articulo> listaIndex() {
+        return articuloRepositorio.listaIndex();
+    }
+    public List<Articulo> search(String palabra) {
+        return articuloRepositorio.buscarPorPalabra(palabra);
+    }
 }

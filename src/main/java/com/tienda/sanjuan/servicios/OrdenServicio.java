@@ -32,15 +32,15 @@ public class OrdenServicio {
         return ordenRepositorio.getById(id);
     }
 
-    public void descontarStock(String id, Integer stock) {
+    public void descontarStock(String id, Integer vendidos) {
         Articulo articulo = articuloRepositorio.getById(id);
-        articulo.setStock(articulo.getStock() - stock);
+        articulo.setStock(articulo.getStock() - vendidos);
+        articuloRepositorio.save(articulo);
     }
 
-    /*
-     * public List<Orden> buscarPorUsuario(String idUsuario) {
-     * Usuario usuario = usuarioRepositorio.buscarUsuario(idUsuario);
-     * return ordenRepositorio.buscarPorUsuario(usuario);
-     * }
-     */
+    public List<Orden> buscarPorUsuario(Usuario usuario) {
+        return ordenRepositorio.buscarPorUsuario(usuario);
+        
+    }
+
 }

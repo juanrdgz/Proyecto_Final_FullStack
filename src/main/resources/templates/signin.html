@@ -30,7 +30,7 @@
               <h2 class="text-center">Crear cuenta</h2>
 
               <span th:if="${error != null}" style="color: red;" th:text="${error}"></span>
-              <span th:if="${success != null}" style="color: green;" th:text="${succes}"></span>
+              <span th:if="${success != null}" style="color: green;" th:text="${success}"></span>
 
               <form class="text-left clearfix" action="/usuario/registro" method="POST" th:object="${usuario}">
                 <div class="form-group">

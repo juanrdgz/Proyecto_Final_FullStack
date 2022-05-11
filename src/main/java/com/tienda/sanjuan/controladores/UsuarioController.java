@@ -5,7 +5,9 @@
  */
 package com.tienda.sanjuan.controladores;
 
+import com.tienda.sanjuan.entidades.Orden;
 import com.tienda.sanjuan.entidades.Usuario;
+import com.tienda.sanjuan.servicios.OrdenServicio;
 import com.tienda.sanjuan.servicios.UsuarioServicio;
 import java.util.List;
 import javax.servlet.http.HttpSession;
@@ -29,6 +31,9 @@ public class UsuarioController {
     @Autowired
     private UsuarioServicio usuarioServicio;
 
+    @Autowired
+    private OrdenServicio ordenServicio;
+
     @GetMapping("")
     private String formularioUsuario(Model modelo) {
         Usuario usuario = new Usuario();
@@ -39,15 +44,14 @@ public class UsuarioController {
     @PostMapping("/registro")
     private String guardarUsuario(@ModelAttribute("usuario") Usuario usuario,@RequestParam(name = "password2", required = false) String password2, Model modelo) {
         try {
-            if (usuario.getId().isEmpty()) {
+            if (usuario.getId() != null && usuario.getId().isEmpty()) {
                 usuarioServicio.registrarUsuario(usuario, password2);
             } else {
                 usuarioServicio.modificarUsuario(usuario);
             }
-
-            usuarioServicio.registrarUsuario(usuario ,password2);
-            modelo.addAttribute("success", "Tarea guardada con exito");
+            modelo.addAttribute("success", "Registrado con exito!");
         } catch (Exception ex) {
+            ex.printStackTrace();
             modelo.addAttribute("error", ex.getMessage());
         }
         return "signin";
@@ -82,14 +86,29 @@ public class UsuarioController {
 
     //mostrar perfil
     @GetMapping("/perfil")
-    private String mostrarPerfil(Model modelo, HttpSession session) {
-
-        Usuario usuario = (Usuario) session.getAttribute("usuario");
-        modelo.addAttribute("usuario", usuario);
-
+    private String mostrarPerfil() {
         return "profile-details";
     }
-    
+    @GetMapping("/direccion")
+    private String direcciones() {
+        return "address";
+    }
+    @GetMapping("/compras")
+    private String compras(Model modelo, HttpSession session) {
+
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+
+        List<Orden> ordenes = ordenServicio.buscarPorUsuario(usuario);
+
+        if (ordenes.isEmpty() || ordenes == null) {
+            modelo.addAttribute("status", "Aun no hiciste ninguna compra.");
+        } else {
+            modelo.addAttribute("ordenes", ordenes);
+            modelo.addAttribute("status", null);            
+        }
+
+        return "dashboard";
+    }
     
 
 }

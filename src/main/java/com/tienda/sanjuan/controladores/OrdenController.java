@@ -13,6 +13,7 @@ import com.tienda.sanjuan.servicios.OrdenServicio;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,6 +30,7 @@ public class OrdenController {
     @Autowired
     private DetalleServicio detalleServicio;
 
+    @PreAuthorize("hasAnyRole('ROLE_USUARIO','ROLE_ADMINISTRADOR')")
     @GetMapping("/checkout")
     public String checkout(Model modelo, HttpSession session) {
         /*
@@ -37,6 +39,7 @@ public class OrdenController {
          */
         Double total = 0.0;
         ArrayList<Detalle> carrito = (ArrayList<Detalle>) session.getAttribute("carrito");
+        System.out.println("carrito: " + carrito.toString());
         for (Detalle item : carrito) {
             total += item.getSubTotal();
         }
@@ -47,14 +50,16 @@ public class OrdenController {
     }
 
     @GetMapping("/realizarCompra")
-    public String hacerPedido(Model modelo, HttpSession session) {
+    public String hacerPedido(Model modelo, HttpSession session) throws Exception {
         // --------se genera la orden y se la persiste
-        ArrayList<Detalle> carrito = (ArrayList<Detalle>) session.getAttribute("carrito");
-        Usuario usuario = (Usuario) session.getAttribute("usuario");
         Double total = 0.0;
+
+        ArrayList<Detalle> carrito = (ArrayList<Detalle>) session.getAttribute("carrito");
+
         for (Detalle item : carrito) {
             total += item.getSubTotal();
         }
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
         try {
             Orden orden = new Orden();
             // SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
@@ -68,7 +73,7 @@ public class OrdenController {
                 ordenServicio.descontarStock(item.getArticulo().getId(), item.getQuantity());
             }
             session.removeAttribute("carrito");
-            modelo.addAttribute("succes", "Orden Generada");
+            
             return "confirmation";
         } catch (Exception e) {
             e.printStackTrace();
