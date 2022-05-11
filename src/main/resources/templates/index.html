@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
-  <head th:replace="layout::head">
-  </head>
+  <head th:replace="layout::head"> </head>
 
   <body id="body">
     <main layout:fragment="main">
-        
       <div class="hero-slider">
         <div
           class="slider-item th-fullpage hero-area"
@@ -162,308 +160,53 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-4">
-              <div class="product-item">
-                <div class="product-thumb">
-                  <span class="bage">Sale</span>
-                  <img
-                    class="img-responsive"
-                    src="images/shop/products/product-1.webp"
-                    alt="product-img"
-                  />
-                  <div class="preview-meta">
-                    <ul>
-                      <li>
-                        <span data-toggle="modal" data-target="#product-modal">
-                          <i class="tf-ion-ios-search-strong"></i>
-                        </span>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="tf-ion-ios-heart"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                      </li>
-                    </ul>
+            <div class="col-md-4" th:each="item : ${articulos}">
+              <a th:href="@{/articulo/producto (idArticulo=${item.id})}">
+                <div class="product-item">
+                  <div class="product-thumb">
+                    <img
+                      class="img-responsive"
+                      th:src="@{/foto/articulo(idArticulo= ${item.id})}"
+                      alt="product-img"
+                    />
+
+                    <!-- <div class="preview-meta">
+                        <ul>
+                          <li>
+                            <span data-toggle="modal" data-target="#product-modal"
+                              id="modal-product" th:data-id="#{item.id}">
+                              <i class="tf-ion-ios-search-strong">
+  
+                              </i>
+                            </span>
+                          </li>
+                          <li>
+                            <a href="#"><i class="tf-ion-ios-heart"></i></a>
+                          </li>
+                          <li>
+                            <a th:href="@{/detalle/agregarAlCarrito (idArticulo = ${item.id})}"><i
+                                class="tf-ion-android-cart"></i></a>
+                          </li>
+                        </ul>
+                      </div> -->
+                  </div>
+                  <div class="product-content">
+                    <h4>
+                      <a href="product-single.html" th:text="${item.title}">
+                      </a>
+                    </h4>
+                    <div>
+                      <p class="price" th:text="'$'+${item.price}"></p>
+                    </div>
                   </div>
                 </div>
-                <div class="product-content">
-                  <h4><a href="product-single.html">Campera Nylon Davor</a></h4>
-                  <p class="price">$9.990</p>
-                </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-4">
-              <div class="product-item">
-                <div class="product-thumb">
-                  <img
-                    class="img-responsive"
-                    src="images/shop/products/product-2.webp"
-                    alt="product-img"
-                  />
-                  <div class="preview-meta">
-                    <ul>
-                      <li>
-                        <span data-toggle="modal" data-target="#product-modal">
-                          <i class="tf-ion-ios-search-strong"></i>
-                        </span>
-                      </li>
-                      <li>
-                        <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="product-content">
-                  <h4>
-                    <a href="product-single.html"
-                      >Sweater media polera Batido Express</a
-                    >
-                  </h4>
-                  <p class="price">$5.900</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="product-item">
-                <div class="product-thumb">
-                  <img
-                    class="img-responsive"
-                    src="images/shop/products/product-3.webp"
-                    alt="product-img"
-                  />
-                  <div class="preview-meta">
-                    <ul>
-                      <li>
-                        <span data-toggle="modal" data-target="#product-modal">
-                          <i class="tf-ion-ios-search-strong"></i>
-                        </span>
-                      </li>
-                      <li>
-                        <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="product-content">
-                  <h4>
-                    <a href="product-single.html">Campera uniqlo holstark</a>
-                  </h4>
-                  <p class="price">$10.990</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="product-item">
-                <div class="product-thumb">
-                  <img
-                    class="img-responsive"
-                    src="images/shop/products/product-4.webp"
-                    alt="product-img"
-                  />
-                  <div class="preview-meta">
-                    <ul>
-                      <li>
-                        <span data-toggle="modal" data-target="#product-modal">
-                          <i class="tf-ion-ios-search-strong"></i>
-                        </span>
-                      </li>
-                      <li>
-                        <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="product-content">
-                  <h4>
-                    <a href="product-single.html"
-                      >Sweater angora Batido Express</a
-                    >
-                  </h4>
-                  <p class="price">$3.390</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="product-item">
-                <div class="product-thumb">
-                  <img
-                    class="img-responsive"
-                    src="images/shop/products/product-5.webp"
-                    alt="product-img"
-                  />
-                  <div class="preview-meta">
-                    <ul>
-                      <li>
-                        <span data-toggle="modal" data-target="#product-modal">
-                          <i class="tf-ion-ios-search-strong"></i>
-                        </span>
-                      </li>
-                      <li>
-                        <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="product-content">
-                  <h4>
-                    <a href="product-single.html"
-                      >Sweater rallado cuello redondo Rivaldi</a
-                    >
-                  </h4>
-                  <p class="price">$4.290</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="product-item">
-                <div class="product-thumb">
-                  <img
-                    class="img-responsive"
-                    src="images/shop/products/product-6.webp"
-                    alt="product-img"
-                  />
-                  <div class="preview-meta">
-                    <ul>
-                      <li>
-                        <span data-toggle="modal" data-target="#product-modal">
-                          <i class="tf-ion-ios-search-strong"></i>
-                        </span>
-                      </li>
-                      <li>
-                        <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="product-content">
-                  <h4>
-                    <a href="product-single.html">Bufandon Batido Express</a>
-                  </h4>
-                  <p class="price">$3.990</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="product-item">
-                <div class="product-thumb">
-                  <span class="bage">Sale</span>
-                  <img
-                    class="img-responsive"
-                    src="images/shop/products/product-7.webp"
-                    alt="product-img"
-                  />
-                  <div class="preview-meta">
-                    <ul>
-                      <li>
-                        <span data-toggle="modal" data-target="#product-modal">
-                          <i class="tf-ion-ios-search-strong"></i>
-                        </span>
-                      </li>
-                      <li>
-                        <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="product-content">
-                  <h4>
-                    <a href="product-single.html"
-                      >Manta polar lisa Galant Pierre Balmain</a
-                    >
-                  </h4>
-                  <p class="price">$6.490</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="product-item">
-                <div class="product-thumb">
-                  <img
-                    class="img-responsive"
-                    src="images/shop/products/product-8.webp"
-                    alt="product-img"
-                  />
-                  <div class="preview-meta">
-                    <ul>
-                      <li>
-                        <span data-toggle="modal" data-target="#product-modal">
-                          <i class="tf-ion-ios-search-strong"></i>
-                        </span>
-                      </li>
-                      <li>
-                        <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="product-content">
-                  <h4>
-                    <a href="product-single.html"
-                      >Set de Toalla/Toallon Alcoyana</a
-                    >
-                  </h4>
-                  <p class="price">$1.790</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="product-item">
-                <div class="product-thumb">
-                  <img
-                    class="img-responsive"
-                    src="images/shop/products/product-9.webp"
-                    alt="product-img"
-                  />
-                  <div class="preview-meta">
-                    <ul>
-                      <li>
-                        <span data-toggle="modal" data-target="#product-modal">
-                          <i class="tf-ion-ios-search-strong"></i>
-                        </span>
-                      </li>
-                      <li>
-                        <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="product-content">
-                  <h4>
-                    <a href="product-single.html">Cubrecama Kenia Palette</a>
-                  </h4>
-                  <p class="price">$4.690</p>
-                </div>
-              </div>
-            </div>
+          </div>
 
             <!-- Modal -->
             <!-- Aparece cuando aprieto el carrito pero hay que hacer que aparezca la imagen correspondiente -->
-            <div class="modal product-modal fade" id="product-modal">
+            <!-- <div class="modal product-modal fade" id="product-modal">
               <button
                 type="button"
                 class="close"
@@ -509,10 +252,10 @@
                 </div>
               </div>
             </div>
-            <!-- /.modal -->
+             /.modal
           </div>
         </div>
-      </section>
+      </section> -->
 
       <!--
 Start Call To Action

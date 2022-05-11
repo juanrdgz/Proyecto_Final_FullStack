@@ -38,6 +38,7 @@ com\tienda\sanjuan\controladores\UsuarioController.class
 com\tienda\sanjuan\servicios\UsuarioServicio.class
 com\tienda\sanjuan\Seguridad.class
 com\tienda\sanjuan\servicios\ArticuloServicio.class
+com\tienda\sanjuan\controladores\ErrorsController.class
 com\tienda\sanjuan\enums\Rol.class
 com\tienda\sanjuan\enums\TipoMedida.class
 com\tienda\sanjuan\servicios\CategoriaServicio.class
