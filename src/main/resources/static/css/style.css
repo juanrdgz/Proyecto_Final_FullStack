@@ -2904,12 +2904,6 @@ input[type="tel"]:focus {
     padding-top: 2rem;
 }
 
-.form-label{
-    font-size: 1.4rem;
-    font-weight: 500;
-    margin-right: 0.5rem;
-}
-
 .page-form{
     padding-top: 0;
 }
@@ -2969,4 +2963,33 @@ section .call-to-action {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+
+.form-label{
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: initial; */
+}
+
+.form-label-2{
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding-left:0;
+}
+
+.form-last{
+    display: block;
+}
+
+.form-options{
+    display: flex;
+    justify-content: center;
+}
+
+.form-options-group{
+    padding-top: 1rem;
+}
+
 /*# sourceMappingURL=style.css.map */

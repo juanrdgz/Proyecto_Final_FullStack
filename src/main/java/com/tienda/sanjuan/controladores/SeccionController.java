@@ -23,7 +23,7 @@ public class SeccionController {
     public String hombre(@RequestParam("categoria") String categoria, Model modelo) {
         List<Articulo> articulos = articuloServicio.buscarPorCategoria(categoria);
         modelo.addAttribute("articulos", articulos);
-        return "shop-sidebar";
+        return "shop";
     }
 
     @GetMapping("/about")

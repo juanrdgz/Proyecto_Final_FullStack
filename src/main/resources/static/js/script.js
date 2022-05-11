@@ -1,3 +1,21 @@
+let tipoMedida = document.getElementById("tipoMedida");
+console.log("tipoMedida", tipoMedida)
+tipoMedida.addEventListener("change", (e) => {
+  console.log(e.target.value)
+  const seleccion = e.target.value
+
+  const losOtrosSelect = document.getElementsByClassName("tipo-medida")
+
+  for (const item of losOtrosSelect) {
+    if (!item.classList.contains("d-none")) {
+      item.classList.add("d-none")
+    }
+  }
+  const selectAMostrar = document.getElementById(seleccion)
+  selectAMostrar.classList.toggle("d-none")
+})
+
+
 (function ($) {
   'use strict';
 
