@@ -2992,4 +2992,71 @@ section .call-to-action {
     padding-top: 1rem;
 }
 
+.product-single-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-single-div{
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.product-single-description{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.product-single-title{
+    padding-right: 3rem;
+    font-weight: 400;
+    font-size: 1.7rem;
+    color:black;
+}
+.product-single-title-2{
+    font-weight: 400;
+    font-size: 1.5rem;
+    color:black;
+    padding-left: 1rem;
+}
+
+.product-single-icons{
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.single-product-section{
+    padding-top: 0;
+}
+
+.shop-div{
+    display: flex;
+    align-items: center;
+}
+
+.cart-wrapper{
+    padding-top: 0;
+}
+
+.page-header-wrapper{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+thead>tr>th{
+    font-weight: 500;
+    font-size: 1.5rem;
+    color:black;
+    padding-left: 1rem;
+}
+
+tbody>tr>td{
+    font-weight: 400;
+    font-size: 1.3rem;
+    color:black;
+    padding-left: 1rem;
+}
 /*# sourceMappingURL=style.css.map */
