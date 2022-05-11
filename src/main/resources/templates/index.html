@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
-  <head th:replace="layout::head"> </head>
+  <head th:replace="layout::head"> 
+  </head>
 
   <body id="body">
     <main layout:fragment="main">
@@ -39,75 +40,63 @@
             </div>
           </div>
         </div>
-        <!-- <div
-          class="slider-item th-fullpage hero-area"
-          style="background-image: url(images/slider/modelos2.webp)"
-        >
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 text-left">
-                <p
-                  data-duration-in=".3"
-                  data-animation-in="fadeInUp"
-                  data-delay-in=".1"
-                >
-                  PRODUCTS
-                </p>
-                <h1
-                  data-duration-in=".3"
-                  data-animation-in="fadeInUp"
-                  data-delay-in=".5"
-                >
-                  The beauty of nature <br />
-                  is hidden in details.
-                </h1>
-                <a
-                  data-duration-in=".3"
-                  data-animation-in="fadeInUp"
-                  data-delay-in=".8"
-                  class="btn"
-                  href="shop.html"
-                  >Shop Now</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="slider-item th-fullpage hero-area"
-          style="background-image: url(images/slider/dormitorio.jpg)"
-        >
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 text-right">
-                <p
-                  data-duration-in=".3"
-                  data-animation-in="fadeInUp"
-                  data-delay-in=".1"
-                >
-                  PRODUCTS
-                </p>
-                <h1
-                  data-duration-in=".3"
-                  data-animation-in="fadeInUp"
-                  data-delay-in=".5"
-                >
-                  The beauty of nature <br />
-                  is hidden in details.
-                </h1>
-                <a
-                  data-duration-in=".3"
-                  data-animation-in="fadeInUp"
-                  data-delay-in=".8"
-                  class="btn"
-                  href="shop.html"
-                  >Shop Now</a
-                >
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
+      
+      <div class="col-md-12 index-info-section info-div">
+        <div class="index-info-section"> 
+            <img class="index-icons" src="/images/credit-card.png" alt="icon">
+            <div class="index-description">
+              <p>Multiples formas de pago</p>
+              <p class="higlighted-text-index">Ver Medios de pago</p>
+            </div>
+          </div>
+        <div class="index-info-section"> 
+            <img class="index-icons" src="/images/bag.png" alt="icon">
+            <div class="index-description">
+              <p>Solo las primeras marcas</p>
+              <p class="higlighted-text-index">En todos los departamentos</p>
+            </div>
+          </div>
+        <div class="index-info-section"> 
+            <img class="index-icons" src="/images/delivery-truck.png" alt="icon">
+            <div class="index-description">
+              <p>Envíos GRATIS y retiro en tienda</p>
+              <p class="higlighted-text-index">A Partir De $6.000</p>
+            </div>
+          </div>
+        <div class="index-info-section"> 
+            <img class="index-icons" src="/images/tag.png" alt="icon">
+            <div class="index-description">
+              <p>OFERTAS imperdibles!</p>
+              <p class="higlighted-text-index">Ver Promociones</p>
+            </div>
+          </div>
+      </div>
+      <div>
+        <div class="title text-center">
+          <h2 class="brands"><span>NUESTRAS MARCAS</span></h2>
+        </div>
+      </div>
+      <div class="brands-div">
+        <div class="brand-carousel section-padding owl-carousel col-md-8">
+          <div class="single-logo">
+            <img src="https://sanjuanar.vtexassets.com/arquivos/logo.png" alt="">
+          </div>
+        <div class="single-logo">
+            <img src="https://sanjuanar.vtexassets.com/arquivos/logo-2png.png" alt="">
+          </div>
+        <div class="single-logo">
+            <img src="https://sanjuanar.vtexassets.com/arquivos/logo-3.png" alt="">
+          </div>
+        <div class="single-logo">
+            <img src="https://sanjuanar.vtexassets.com/arquivos/logo-4.png" alt="">
+          </div>
+        <div class="single-logo">
+            <img src="https://sanjuanar.vtexassets.com/arquivos/logo-5.png" alt="">
+          </div>
+        </div>      
+      </div>
+      
 
       <section class="product-category section">
         <div class="container">
@@ -357,12 +346,12 @@ Start Call To Action
               </div>
             </div>
           </div>
-          <!-- <div class="row">
-                <div class="col-12">
-                    <div class="instagram-slider" id="instafeed" data-accessToken="IGQVJYeUk4YWNIY1h4OWZANeS1wRHZARdjJ5QmdueXN2RFR6NF9iYUtfcGp1NmpxZA3RTbnU1MXpDNVBHTzZAMOFlxcGlkVHBKdjhqSnUybERhNWdQSE5hVmtXT013MEhOQVJJRGJBRURn"></div>
-                </div>
-            </div> -->
+
         </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+      <script src="custom.js"></script>
       </section>
     </main>
   </body>
