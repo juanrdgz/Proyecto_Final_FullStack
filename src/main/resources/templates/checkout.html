@@ -19,9 +19,9 @@
 </head>
 
 <body id="body">
-    
+
     <main layout:fragment="main">
-        <section class="page-header">
+        <section class="page-header shopping-div">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -36,8 +36,8 @@
                 </div>
             </div>
         </section>
-        <div class="page-wrapper">
-            <div class="checkout shopping">
+        <div class="page-wrapper checkout-div">
+            <div class="checkout shopping shopping-div">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8">
@@ -78,7 +78,7 @@
                                 <div class="checkout-product-details">
                                     <div class="payment">
                                         <div class="card-details">
-                                            
+
                                             <form class="checkout-form">
                                                 <div class="form-group">
                                                     <label for="card-number">Numero de Tarjeta <span
@@ -93,12 +93,12 @@
                                                         placeholder="MM / YY">
                                                 </div>
                                                 <div class="form-group half-width padding-left">
-                                                    <label for="card-cvc">Codigo <span
-                                                            class="">*</span></label>
+                                                    <label for="card-cvc">Codigo <span class="">*</span></label>
                                                     <input id="card-cvc" class="form-control" type="tel" maxlength="4"
                                                         placeholder="CVC">
                                                 </div>
-                                                <a href="/orden/realizarCompra" class="btn btn-main mt-20">Realizar Compra</a>
+                                                <a href="/orden/realizarCompra" class="btn btn-main mt-20">Realizar
+                                                    Compra</a>
                                             </form>
 
                                         </div>
@@ -113,13 +113,15 @@
 
                                     <div class="media product-card" th:each="item : ${session.carrito}">
                                         <a class="pull-left" href="#">
-                                            <img class="media-object" th:src="@{/foto/articulo(idArticulo=${item.articulo.id})}"
+                                            <img class="media-object"
+                                                th:src="@{/foto/articulo(idArticulo=${item.articulo.id})}"
                                                 alt="Image" />
                                         </a>
                                         <div class="media-body">
-                                            <h4 class="media-heading"><a href="#" th:text="${item.articulo.title}">Ambassador Heritage
+                                            <h4 class="media-heading"><a href="#"
+                                                    th:text="${item.articulo.title}">Ambassador Heritage
                                                     1921</a></h4>
-                                                    
+
                                             <p class="price" th:text="${item.quantity}+'x'">1 x</p>
                                             <p class="price" th:text="'$'+${item.precioUnit}">$249</p>
                                             <!-- <span class="remove">Remove</span> -->
@@ -127,7 +129,7 @@
                                     </div>
 
                                     <div class="discount-code">
-                                       <!--  <p>Have a discount ? <a data-toggle="modal" data-target="#coupon-modal"
+                                        <!--  <p>Have a discount ? <a data-toggle="modal" data-target="#coupon-modal"
                                                 href="#!">enter it here</a></p> -->
                                     </div>
                                     <!-- <ul class="summary-prices">
@@ -141,8 +143,13 @@
                                         <span>Total</span>
                                         <span th:text="'$'+${total}">$</span>
                                     </div>
-                                    <div class="verified-icon">
-                                        <img src="/images/shop/verified.png">
+                                    <div class="payment-icons">
+                                        <img class="payment-method" src="https://logodownload.org/wp-content/uploads/2014/07/mastercard-logo-7.png"
+                                            alt="mastercard">
+                                        <img class="payment-method" src="https://logos-marcas.com/wp-content/uploads/2020/04/Visa-Logo.png"
+                                            alt="visa">
+                                        <img class="payment-method" src="https://brandemia.org/sites/default/files/inline/images/american_express_logo_wordmark_detail.png"
+                                            alt="american-express">
                                     </div>
                                 </div>
                             </div>

@@ -3163,6 +3163,7 @@ tbody > tr > td {
 .single-logo{
     display: flex;
     justify-content: space-around;
+    padding-top: 2rem;
 }
 
 .brands-div{
@@ -3170,4 +3171,78 @@ tbody > tr > td {
     margin-right: 20rem;
 }
 
+.product-single-description{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.product-single-title{
+    padding-right: 3rem;
+    font-weight: 400;
+    font-size: 1.7rem;
+    color:black;
+}
+.product-single-title-2{
+    font-weight: 400;
+    font-size: 1.5rem;
+    color:black;
+    padding-left: 1rem;
+}
+
+.product-single-icons{
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.single-product-section{
+    padding-top: 0;
+}
+
+.shop-div{
+    display: flex;
+    align-items: center;
+}
+
+.cart-wrapper{
+    padding-top: 0;
+}
+
+.page-header-wrapper{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+thead>tr>th{
+    font-weight: 500;
+    font-size: 1.5rem;
+    color:black;
+    padding-left: 1rem;
+}
+
+tbody>tr>td{
+    font-weight: 400;
+    font-size: 1.3rem;
+    color:black;
+    padding-left: 1rem;
+}
+.payment-icons{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4rem;
+}
+.payment-method{
+    height: 6rem;
+}
+
+.checkout-div{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.shopping-div{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+/*# sourceMappingURL=style.css.map */
 /*# sourceMappingURL=style.css.map */

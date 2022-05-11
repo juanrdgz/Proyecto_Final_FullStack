@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -36,13 +37,13 @@ public class ArticuloController {
     }
 
     @PostMapping("/save")
-    public String formularioData(@ModelAttribute("articulo") Articulo articulo, Model modelo) {
+    public String formularioData(@ModelAttribute("articulo") Articulo articulo, Model modelo, MultipartFile file) {
         try {
             modelo.addAttribute("articulo", articulo);
             if (articulo.getId() != null && !articulo.getId().isEmpty()) {
                 articuloServicio.modificarArticulo(articulo);
             } else {
-                articuloServicio.guardarArticulo(articulo);
+                articuloServicio.guardarArticulo(articulo, file);
             }
             modelo.addAttribute("exito", "articulo guardado correctamente");
 

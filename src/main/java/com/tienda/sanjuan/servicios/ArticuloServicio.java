@@ -8,7 +8,14 @@ package com.tienda.sanjuan.servicios;
 import com.tienda.sanjuan.DTOs.FiltroArticulo;
 import com.tienda.sanjuan.Filters.ArticuloFilter;
 import com.tienda.sanjuan.entidades.Articulo;
+import com.tienda.sanjuan.entidades.Foto;
+import com.tienda.sanjuan.enums.Bebes;
+import com.tienda.sanjuan.enums.Ninios;
+import com.tienda.sanjuan.enums.Pantalones;
+import com.tienda.sanjuan.enums.Plazas;
+import com.tienda.sanjuan.enums.RopaNormal;
 import com.tienda.sanjuan.enums.Seccion;
+import com.tienda.sanjuan.enums.TipoMedida;
 import com.tienda.sanjuan.repositorios.ArticuloRepositorio;
 
 import java.util.ArrayList;
@@ -16,6 +23,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -26,11 +34,14 @@ public class ArticuloServicio {
 
     @Autowired
     private ArticuloRepositorio articuloRepositorio;
+
+    @Autowired
+    private FotoServicio fotoServicio;
     
     @Autowired
     private ArticuloFilter  articuloFilter;
 
-    public Articulo guardarArticulo(Articulo articulo) throws Exception {
+    public Articulo guardarArticulo(Articulo articulo, MultipartFile file) throws Exception {
         if (articulo.getTitle().isEmpty()) {
             throw new Exception("El titulo del articulo no puede estar vacio");
         }
@@ -50,6 +61,11 @@ public class ArticuloServicio {
         if (articulo.getStock() == 0 || articulo.getStock() == null) {
             throw new Exception("El stock del articulo no puede ser 0 o vacio");
         }
+        
+        if (file != null) {
+            Foto foto = fotoServicio.guardar(file);            
+        }
+
         return articuloRepositorio.save(articulo);
     }
 
