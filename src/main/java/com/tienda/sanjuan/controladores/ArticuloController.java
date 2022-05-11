@@ -76,7 +76,7 @@ public class ArticuloController {
     public String listAll(Model modelo) {
         List<Articulo> articulos = articuloServicio.listarArticulos();
         modelo.addAttribute("listaDeArticulos", articulos);
-        return "listar-articulo";
+        return "shop";
     }
 
     @GetMapping("/alta")

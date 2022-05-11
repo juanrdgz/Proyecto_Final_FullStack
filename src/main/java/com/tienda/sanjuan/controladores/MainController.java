@@ -30,7 +30,7 @@ public class MainController {
     @GetMapping("")
     public String index(Model modelo){
         List<Articulo> lista = articuloServicio.listaIndex();
-        modelo.addAttribute("listaArticulos", lista);
+        modelo.addAttribute("articulos", lista);
 	return "index";
     }
     
