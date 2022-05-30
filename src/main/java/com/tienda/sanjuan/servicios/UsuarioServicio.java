@@ -28,23 +28,25 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  * @author Equipo6
  */
 @Service
-public class UsuarioServicio  implements UserDetailsService {
+public class UsuarioServicio implements UserDetailsService {
 
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
 
-    public Usuario registrarUsuario(Usuario usuario, String password,String password2) throws Exception {
+    public Usuario registrarUsuario(Usuario usuario, String password, String password2) throws Exception {
 
         if (usuario.getUserName().isEmpty()) {
             throw new Exception("Este campo no puede estar vacío");
         }
 
-        if (usuario.getPassword().isEmpty()) {
-            throw new Exception("Este campo no puede estar vacío");
-
+        if (password.isEmpty()) {
+            throw new Exception("La contraseña no puede estar vacía");
+        }
+        if (password2.isEmpty()) {
+            throw new Exception("La contraseña no puede estar vacía");
         }
         if (usuario.getEmail().isEmpty()) {
-            throw new Exception("La contraseña no puede estar vacía");
+            throw new Exception("El email no puede estar vacío");
         }
         if (usuario.getFullName().isEmpty()) {
             throw new Exception("Este campo no puede estar vacío");
@@ -62,8 +64,12 @@ public class UsuarioServicio  implements UserDetailsService {
         }
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        if (encoder.upgradeEncoding(usuario.getPassword())) {
+            usuario.setPassword(encoder.encode(password));
+        }
+
         usuario.setPassword(encoder.encode(password));
-        
+
         return usuarioRepositorio.save(usuario);
     }
 
@@ -85,7 +91,7 @@ public class UsuarioServicio  implements UserDetailsService {
         if (usuario.getPhoneNumber().isEmpty()) {
             throw new Exception("Este campo no puede estar vacío");
         }
-        
+
         usuarioRepositorio.save(usuario);
 
     }
@@ -95,7 +101,8 @@ public class UsuarioServicio  implements UserDetailsService {
     }
 
     public void agregarUsuarioALaSesion(Usuario usuario) {
-        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder
+                .currentRequestAttributes();
         HttpSession session = attributes.getRequest().getSession(true);
         session.setAttribute("usuario", usuario);
     }
@@ -113,7 +120,7 @@ public class UsuarioServicio  implements UserDetailsService {
     public Usuario buscarUsuario(String id) {
         return usuarioRepositorio.getById(id);
     }
-    
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         try {
