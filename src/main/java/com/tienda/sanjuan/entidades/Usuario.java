@@ -12,7 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import com.tienda.sanjuan.enums.Rol;
+import com.tienda.sanjuan.Enums.Rol;
 
 import org.hibernate.annotations.GenericGenerator;
 /**

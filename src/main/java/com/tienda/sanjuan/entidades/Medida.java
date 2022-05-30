@@ -5,7 +5,7 @@
  */
 package com.tienda.sanjuan.entidades;
 
-import com.tienda.sanjuan.enums.Pantalones;
+import com.tienda.sanjuan.Enums.Pantalones;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
