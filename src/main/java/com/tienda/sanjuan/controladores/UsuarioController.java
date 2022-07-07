@@ -47,7 +47,7 @@ public class UsuarioController {
                                 @RequestParam(name = "password", required = false) String password, 
                                 @RequestParam(name = "password2", required = false) String password2,Model modelo) {
         try {
-            if (usuario.getId() != null && usuario.getId().isEmpty()) {
+            if (usuario.getId() == null && usuario.getId().isEmpty()) {
                 usuarioServicio.registrarUsuario(usuario, password, password2);
             } else {
                 usuarioServicio.modificarUsuario(usuario);

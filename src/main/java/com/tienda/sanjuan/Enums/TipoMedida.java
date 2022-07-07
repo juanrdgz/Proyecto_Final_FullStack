@@ -1,4 +1,4 @@
-package com.tienda.sanjuan.Enums;
+package com.tienda.sanjuan.enums;
 
 public enum TipoMedida {
     ROPA_COMUN("Ropa Normal"), PANTALONES("Pantalones"), NIÑOS("Niños"), BEBES("Bebes"), PLAZAS("Plazas");

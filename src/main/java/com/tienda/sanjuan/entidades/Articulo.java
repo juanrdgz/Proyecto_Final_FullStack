@@ -1,12 +1,12 @@
 package com.tienda.sanjuan.entidades;
 
-import com.tienda.sanjuan.Enums.Bebes;
-import com.tienda.sanjuan.Enums.Ninios;
-import com.tienda.sanjuan.Enums.Pantalones;
-import com.tienda.sanjuan.Enums.Plazas;
-import com.tienda.sanjuan.Enums.RopaNormal;
-import com.tienda.sanjuan.Enums.Seccion;
-import com.tienda.sanjuan.Enums.TipoMedida;
+import com.tienda.sanjuan.enums.Bebes;
+import com.tienda.sanjuan.enums.Ninios;
+import com.tienda.sanjuan.enums.Pantalones;
+import com.tienda.sanjuan.enums.Plazas;
+import com.tienda.sanjuan.enums.RopaNormal;
+import com.tienda.sanjuan.enums.Seccion;
+import com.tienda.sanjuan.enums.TipoMedida;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;

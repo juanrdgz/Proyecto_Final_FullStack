@@ -1,7 +1,7 @@
 package com.tienda.sanjuan.repositorios;
 
 import com.tienda.sanjuan.entidades.Articulo;
-import com.tienda.sanjuan.Enums.Seccion;
+import com.tienda.sanjuan.enums.Seccion;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

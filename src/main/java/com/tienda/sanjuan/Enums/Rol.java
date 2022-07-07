@@ -1,4 +1,4 @@
-package com.tienda.sanjuan.Enums;
+package com.tienda.sanjuan.enums;
 
 public enum Rol {
     USUARIO, ADMINISTRADOR;

@@ -1,4 +1,4 @@
-package com.tienda.sanjuan.Enums;
+package com.tienda.sanjuan.enums;
 
 public enum Seccion {
     HOMBRE("Hombre"), MUJER("Mujer"), NINIOS("Niños"), BEBES("Bebes"), COLEGIAL("Colegial"), BANIO("Baño"),

@@ -1,4 +1,4 @@
-package com.tienda.sanjuan.Enums;
+package com.tienda.sanjuan.enums;
 
 public enum Ninios {
     T4("4"), T6("6"), T8("8"), T10("10"), T12("12"), T14("14"), T16("16"), T18("18"), T20("20");
